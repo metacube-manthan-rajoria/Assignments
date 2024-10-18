@@ -39,16 +39,16 @@ class Item {
 	}
 	
 	//Setters
-	public void getItemID(String itemID){
+	public void setItemID(String itemID){
 	    this.itemID = itemID;
 	}
-	public void getItemName(String itemName){
+	public void setItemName(String itemName){
 	    this.itemName = itemName;
 	}
-	public void getItemDescription(String itemDescription){
+	public void setItemDescription(String itemDescription){
 	    this.itemDescription = itemDescription;
 	}
-	public void getItemPrice(double itemPrice){
+	public void setItemPrice(double itemPrice){
 	    this.itemPrice = itemPrice;
 	}
 }
@@ -72,15 +72,17 @@ class Cart {
 	};
 	
 	public void deleteItem(Item item){
-	    
+	    for(int i = 0; i<itemsList.size(); i++){
+	        if(itemsList.get(i).getItemID() == item.getItemID()){
+	            itemsList.remove(i);
+	        }
+	    }
 	};
 	
 	public int displayQuantity(Item item){
-		/*
-		Goes over every key in hashmap using itemID from item. 
-		Returns price if id matches.
-		*/
-		return 0;
+	    if(item == null) return 0;
+		String itemId = item.getItemID();
+		return cart.getOrDefault(itemId, 0);
 	};
 	
 	public double displayBill(){
@@ -94,6 +96,17 @@ class Cart {
 		
 		return totalPrice;
 	};
+	
+	public Item getItem(String itemIDtobeSearched){
+	    for(int i = 0; i<itemsList.size(); i++){
+	        if(itemsList.get(i).getItemID().equals(itemIDtobeSearched)){
+	            System.out.println("bhjbjh");
+	            return itemsList.get(i);
+	        }
+	    }
+	    
+	    return null;
+	}
 	
 }
 
@@ -135,6 +148,9 @@ class GFG {
     		
     		cart.addToCart(item, itemQuantity);
 	    }
+	    
+	    Item item1 = cart.getItem("003");
+	    System.out.println(cart.displayQuantity(item1));
 	    
 	    
 	    
