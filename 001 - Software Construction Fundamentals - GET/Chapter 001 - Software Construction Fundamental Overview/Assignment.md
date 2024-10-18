@@ -1,5 +1,5 @@
-/*package whatever //do not write package name here */
 
+```java
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -168,3 +168,4 @@ class GFG {
 	    System.out.println(totalBill);
 	}
 }
+```
