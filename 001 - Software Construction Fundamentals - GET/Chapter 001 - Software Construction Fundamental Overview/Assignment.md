@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 class Item {
 	private String itemID 			= "";
@@ -68,15 +69,14 @@ class Cart {
 	};
 	
 	public void updateQuantity(Item item, int quantity){
-	    
+	    if(cart.containsKey(item.getItemID())){
+	        int oldValue = cart.get(item.getItemID());
+	        cart.put(item.getItemID(), oldValue + quantity);
+	    }
 	};
 	
 	public void deleteItem(Item item){
-	    for(int i = 0; i<itemsList.size(); i++){
-	        if(itemsList.get(i).getItemID() == item.getItemID()){
-	            itemsList.remove(i);
-	        }
-	    }
+	    cart.remove(item);
 	};
 	
 	public int displayQuantity(Item item){
@@ -88,11 +88,19 @@ class Cart {
 	public double displayBill(){
 		double totalPrice = 0;
 		
-		/*
-		Goes over every key in hashmap and iterates over itemsList. 
-		Returns price if id matches and multiplies it with hash value to get price for the item.
-		Adds that price to totalPrice.
-		*/
+		for (Map.Entry<String, Integer> entry : cart.entrySet()) {
+            String itemId = entry.getKey();
+            int itemQuantity = (int)entry.getValue();
+            
+            for(int i = 0; i<itemsList.size(); i++){
+                if(itemsList.get(i).getItemID().equals(itemId)){
+                    double price = itemsList.get(i).getItemPrice();
+                    totalPrice = totalPrice + (price * itemQuantity);
+                    
+                }
+                
+            }
+        }
 		
 		return totalPrice;
 	};
@@ -100,7 +108,6 @@ class Cart {
 	public Item getItem(String itemIDtobeSearched){
 	    for(int i = 0; i<itemsList.size(); i++){
 	        if(itemsList.get(i).getItemID().equals(itemIDtobeSearched)){
-	            System.out.println("bhjbjh");
 	            return itemsList.get(i);
 	        }
 	    }
@@ -122,6 +129,7 @@ class GFG {
 	    itemsToAdd = scanner.nextInt();
 	    scanner.nextLine();
 	    
+	    // Adding items to cart
 	    for(int i = 0; i<itemsToAdd; i++){
 	        String itemId           = scanner.nextLine();
     	    String itemName         = scanner.nextLine();
@@ -149,11 +157,14 @@ class GFG {
     		cart.addToCart(item, itemQuantity);
 	    }
 	    
-	    Item item1 = cart.getItem("003");
+	    Item item1 = cart.getItem("002");
+	    
+	    // Testing Functions below
+	    System.out.println(cart.displayQuantity(item1));
+	    cart.updateQuantity(item1, 5);
 	    System.out.println(cart.displayQuantity(item1));
 	    
-	    
-	    
-		
+	    double totalBill = cart.displayBill();
+	    System.out.println(totalBill);
 	}
 }
