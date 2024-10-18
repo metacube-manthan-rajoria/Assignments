@@ -1,3 +1,6 @@
+# Shopping Cart
+The program below assumes that the Items will be saved in a list and the Quantity in cart.
+I'm storing the Items in an ArrayList and Cart using the HashMap.
 
 ```java
 import java.io.*;
