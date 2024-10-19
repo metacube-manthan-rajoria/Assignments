@@ -4,6 +4,5 @@
 
 - [My Solution (Annotated Markdown File)](./Assignment.md)
 <br>
-
 - [My Solution (Raw Java File)](./Assignment.java)
 
