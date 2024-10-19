@@ -1,3 +1,6 @@
+# This file Is only for planning and trying out ideas.
+
+```java
 Class Item {
 	private String itemID 			= "";
 	private String itemName 		= "";
@@ -61,3 +64,4 @@ Class Cart {
 	};
 	
 }
+```
