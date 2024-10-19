@@ -63,13 +63,14 @@ class Cart {
 	HashMap<String, Integer> cart = new HashMap<String, Integer>();
 
 	public void addToCart(Item item, int quantity) {
-		if (!itemsList.contains(item)) {
+		Item itemAlreadyExists = getItem(item.getItemID());
+		if (itemAlreadyExists == null) {
 			itemsList.add(item);
+			cart.put(item.getItemID(), quantity);
+		}else{
+			int itemsInCart = cart.getOrDefault(item.getItemID(), 0);
+			cart.put(item.getItemID(), itemsInCart + quantity);
 		}
-		cart.put(item.getItemID(), quantity);
-
-		// Delete the sout's during production
-		System.out.println("Item Quantity : " + cart.get(item.getItemID()) + "\n");
 	};
 
 	public void updateQuantity(Item item, int quantity) {
@@ -101,9 +102,7 @@ class Cart {
 				if (itemsList.get(i).getItemID().equals(itemId)) {
 					double price = itemsList.get(i).getItemPrice();
 					totalPrice = totalPrice + (price * itemQuantity);
-
 				}
-
 			}
 		}
 
@@ -119,16 +118,16 @@ class Cart {
 
 		return null;
 	}
-
 }
 
 class GFG {
 	public static void main(String[] args) {
-		System.out.println("Shopping Cart\n");
+		System.out.println("Shopping Cart");
 
 		Cart cart = new Cart();
 		Scanner scanner = new Scanner(System.in);
 
+		System.out.print("Enter number of items to add : ");
 		int itemsToAdd = 0;
 		itemsToAdd = scanner.nextInt();
 		scanner.nextLine();
