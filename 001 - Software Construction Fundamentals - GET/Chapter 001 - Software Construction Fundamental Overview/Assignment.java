@@ -63,6 +63,11 @@ class Cart {
 	HashMap<String, Integer> cart = new HashMap<String, Integer>();
 
 	public void addToCart(Item item, int quantity) {
+		if(item == null) {
+			System.out.println("Invalid Item - Enter correct inputs.");
+			return;
+		}
+
 		Item itemAlreadyExists = getItem(item.getItemID());
 		if (itemAlreadyExists == null) {
 			itemsList.add(item);
@@ -74,6 +79,11 @@ class Cart {
 	};
 
 	public void updateQuantity(Item item, int quantity) {
+		if(item == null) {
+			System.out.println("Invalid Item - Enter correct inputs.");
+			return;
+		}
+
 		if (cart.containsKey(item.getItemID())) {
 			int oldValue = cart.get(item.getItemID());
 			cart.put(item.getItemID(), oldValue + quantity);
@@ -81,12 +91,12 @@ class Cart {
 	};
 
 	public void deleteItem(Item item) {
+		if(item == null) return;
 		cart.remove(item.getItemID());
 	};
 
 	public int displayQuantity(Item item) {
-		if (item == null)
-			return 0;
+		if (item == null) return 0;
 		String itemId = item.getItemID();
 		return cart.getOrDefault(itemId, 0);
 	};
@@ -131,15 +141,24 @@ class GFG {
 		int itemsToAdd = 0;
 		itemsToAdd = scanner.nextInt();
 		scanner.nextLine();
+		System.out.println();
 
 		// Adding items to cart
 		for (int i = 0; i < itemsToAdd; i++) {
+
+			// Getting user input
+			System.out.print("Item ID : ");
 			String itemId = scanner.nextLine();
+			System.out.print("Item Name : ");
 			String itemName = scanner.nextLine();
+			System.out.print("Item Description : ");
 			String itemDescription = scanner.nextLine();
+			System.out.print("Item Price : ");
 			double itemPrice = scanner.nextDouble();
+			System.out.print("Item Quantity : ");
 			int itemQuantity = scanner.nextInt();
 			scanner.nextLine();
+			System.out.println();
 
 			// Validation
 			boolean validID = !itemId.equals("");
