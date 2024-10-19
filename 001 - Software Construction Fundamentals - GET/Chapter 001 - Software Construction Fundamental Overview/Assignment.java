@@ -176,15 +176,14 @@ class GFG {
 			}
 		}
 
-		Item item1 = cart.getItem("002");
-
+		
 		// Testing Functions below
-		System.out.println(cart.displayQuantity(item1));
+		Item item1 = cart.getItem("002");
 		cart.updateQuantity(item1, 5);
-		System.out.println(cart.displayQuantity(item1));
+		cart.deleteItem(item1);
 
 		double totalBill = cart.displayBill();
-		System.out.println(totalBill);
+		System.out.println("Total Bill : " + totalBill);
 
 		scanner.close();
 	}
