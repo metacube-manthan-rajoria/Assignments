@@ -4,7 +4,6 @@ import java.util.Map;
 
 class BaseConverter {
 	private final HashMap<String, String> map = new HashMap<String, String>();
-	private final int CHAR_NORMALIZE = 87;
 
 	public BaseConverter(){
 		map.put("0", "0");
