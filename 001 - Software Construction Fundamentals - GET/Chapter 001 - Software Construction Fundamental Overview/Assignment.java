@@ -130,7 +130,7 @@ class Cart {
 	}
 }
 
-class GFG {
+class Assignment {
 	public static void main(String[] args) {
 		System.out.println("Shopping Cart");
 
