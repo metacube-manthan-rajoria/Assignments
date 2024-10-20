@@ -2,7 +2,7 @@
 The program below assumes that the Items will be saved in a list and the Quantity in cart.
 I'm storing the Items in an ArrayList and Cart using the HashMap.
 
-Note
+### Note
 - I coded both classes in same file to make it easier for others to review the code. It would be split in production.
 - The problem statement specified it needed Item instance to delete update display an item insted of ID which is why I had to make a few odd decisions while designing this solution
 
