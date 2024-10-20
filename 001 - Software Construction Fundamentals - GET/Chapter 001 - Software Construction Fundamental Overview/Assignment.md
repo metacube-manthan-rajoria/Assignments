@@ -6,6 +6,12 @@ I'm storing the Items in an ArrayList and Cart using the HashMap.
 - I coded both classes in same file to make it easier for others to review the code. It would be split in production.
 - The problem statement specified it needed Item instance to delete update display an item insted of ID which is why I had to make a few odd decisions while designing this solution
 
+### Explanations
+- The Item Class is POJO Class.
+- The Cart Class implements both the ArrayList to store items and HashMap to Keep track of Quantity.
+- addToCart() function checks the itemID and adds the Item to List and Cart if the match is not found, or it adds the item to the quantity present in cart if it matches.  
+
+
 
 ```java
 import java.util.Scanner;
