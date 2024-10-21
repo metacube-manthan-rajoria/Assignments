@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 class Task implements Comparable<Task> {
+    // Auto increments id at each new instance
     private static int idCounter = 0;
 
     private int taskID = 0;
     private int taskArrivalTime = 0;
     private int taskBurstTime = 0;
-
     private double taskCompletionTime = 0;
     private double taskWaitingTime = 0;
     private double taskTurnAroundTime = 0;
@@ -19,19 +19,16 @@ class Task implements Comparable<Task> {
         this.taskID = idCounter++;
     }
 
+    // Getters and Setters
     public int getTaskID() {
         return this.taskID;
     }
-
     public int getTaskArrivalTime() {
         return this.taskArrivalTime;
     }
-
     public int getTaskBurstTime() {
         return this.taskBurstTime;
     }
-
-
     public double getTaskCompletionTime(){
         return this.taskCompletionTime;
     }
@@ -51,6 +48,7 @@ class Task implements Comparable<Task> {
         this.taskTurnAroundTime = taskTurnAroundTime;
     }
 
+    // CompareTo method for Collections.sort()
     @Override
     public int compareTo(Task other) {
         return taskArrivalTime - other.getTaskArrivalTime();
@@ -68,6 +66,7 @@ class JobScheduler {
         Collections.sort(jobs);
     }
 
+    // Main Logic for Scheduler
     public void startScheduler(){
         for(Task task : jobs){
             totalCompletionTime += task.getTaskBurstTime();
@@ -87,6 +86,7 @@ class JobScheduler {
         printJobsDetailed();
     }
 
+    // Print Tasks
     public void printJobs(){
         int len = this.jobs.size();
         for (int i = 0; i < len; i++) {
@@ -111,6 +111,7 @@ class JobScheduler {
         );
     }
 
+    // Getters for total_CT, avg_WT, max_WT
     private double getTotalCompletionTime(){
         return this.totalCompletionTime;
     }
