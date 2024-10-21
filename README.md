@@ -6,7 +6,7 @@ This is a Academy Goal Management Repo. <br>
 ### Sections
 
 <details open>
-<summary>💚<b>Software Construction Fundamentals</b></summary>
+<summary>🧩 <b>Software Construction Fundamentals</b></summary>
   
 - [Shopping Cart](https://github.com/metacube-manthan-rajoria/Assignments/blob/51164e9a614cb6c427a8be9dc59a59f5ad2dd61b/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20001%20-%20Software%20Construction%20Fundamental%20Overview/Assignment.java)
 
