@@ -114,10 +114,12 @@ class HexCalc {
 		return bc.toBase(num1_decimal * num2_decimal, base2) + "";
 	}
 
-	// Prints 
-	// 1  if num1 > num2
-	// 0  if num1 = num2
-	// -1 if num2 < num2
+	/* 
+ 	*  Prints 
+	*  1  if num1 > num2
+	*  0  if num1 = num2
+	*  -1 if num2 < num2
+	*/
 	public static int compare(String num1, String num2, int base){
 		int num1_decimal = bc.toDecimal(num1, base);
 		int num2_decimal = bc.toDecimal(num2, base);
