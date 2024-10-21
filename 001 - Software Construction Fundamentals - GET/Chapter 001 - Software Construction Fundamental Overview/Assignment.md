@@ -8,19 +8,19 @@ An Item should have the following fields .
 - Price
 
 Keep the items in memory. Use either hashMap or ArrayList for storing items and their quantities. Shopping Cart will support the following features. 
-> Add an item to a cart with the given quantity . 
+> Add an item to a cart with the given quantity. <br>
 > addToCart(Item item,Integer quantity)
 
-> Show quantity for added item . 
+> Show quantity for added item. <br>
 > Integer displayQty(Item item)
 
-> Update quantity of added item.
+> Update quantity of added item. <br>
 > updateQty(Item item,Integer quantity)
 
-> Delete Item from cart.
+> Delete Item from cart. <br>
 > deleteItem(Item item)
 
-> Display cart total value (Total bill Amount)
+> Display cart total value (Total bill Amount). <br>
 > Double displayBill()
 
 Note: Please do validation upfront
