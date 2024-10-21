@@ -7,6 +7,6 @@
 - [My Solution (Raw Java File)](./Assignment%201/Assignment.java)
 
 ### Job Scheduler
-- [My Solution (Annotated Markdown File)](./Assignment.md)
-- [My Solution (Raw Java File)](./Assignment.java)
+- [My Solution (Annotated Markdown File)](./Assignment%202/Assignment.md)
+- [My Solution (Raw Java File)](./Assignment%202/Assignment.java)
 
