@@ -72,13 +72,13 @@ class BaseConverter {
 		return result;
 	}
 
-	public String toBase(int number, int base){
-		if(base > 35) return "Invalid Base";
+	public String toBase(int number, int outputBase){
+		if(outputBase > 35) return "Invalid Base";
 		String result = "";
 		int numberCopy = number;
 		while(numberCopy > 0){
-			int remainder = numberCopy % base;
-			numberCopy = numberCopy / base;
+			int remainder = numberCopy % outputBase;
+			numberCopy = numberCopy / outputBase;
 
 			if(remainder <= 9){
 				result = remainder + result;
@@ -139,7 +139,11 @@ class HexCalc {
 
 class Assignment {
 	public static void main(String[] args) {
+		BaseConverter bc = new BaseConverter();
 
+		System.out.println(bc.toDecimal("4CC", 16));
+		System.out.println(bc.toBase(1228, 16));
+		
 		System.out.println(HexCalc.addNumber("1000", "228", 10, 16));
 		System.out.println(HexCalc.compare("4F", "4C", 16));
 		
