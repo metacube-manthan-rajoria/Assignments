@@ -104,11 +104,11 @@ class JobScheduler {
                 "TAT: " + jobs.get(i).getTaskTurnAroundTime() + "\t\t" +
                 "TAT: " + jobs.get(i).getTaskWaitingTime()
             );
-            System.out.println(
-                "Avg Waiting Time : " + avgWaitingTime + "\n" +
-                "Max Waiting Time : " + maxWaitingTime
-            );
         }
+        System.out.println(
+            "Avg Waiting Time : " + avgWaitingTime + "\n" +
+            "Max Waiting Time : " + maxWaitingTime
+        );
     }
 
     private double getTotalCompletionTime(){
