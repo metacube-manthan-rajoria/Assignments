@@ -72,7 +72,18 @@ class JobScheduler {
         for(Task task : jobs){
             totalCompletionTime += task.getTaskBurstTime();
             task.setTaskCompletionTime(totalCompletionTime);
+            task.setTaskTurnAroundTime(task.getTaskCompletionTime() - task.getTaskArrivalTime());
+            task.setTaskWaitingTime(task.getTaskTurnAroundTime() - task.getTaskBurstTime());
         }
+
+        for(Task task: jobs){
+            avgWaitingTime += task.getTaskWaitingTime();
+            if(maxWaitingTime < task.getTaskWaitingTime()){
+                maxWaitingTime = task.getTaskWaitingTime();
+            }
+        }
+        avgWaitingTime = avgWaitingTime/jobs.size();
+
         printJobsDetailed();
     }
 
@@ -90,8 +101,12 @@ class JobScheduler {
                 "AT : " + jobs.get(i).getTaskArrivalTime() + "\t\t" +
                 "BT : " + jobs.get(i).getTaskBurstTime() + "\t\t" +
                 "CT : " + jobs.get(i).getTaskCompletionTime() + "\t\t" +
-                "WT : " + jobs.get(i).getTaskWaitingTime() + "\t\t" +
-                "TAT: " + jobs.get(i).getTaskTurnAroundTime();
+                "TAT: " + jobs.get(i).getTaskTurnAroundTime() + "\t\t" +
+                "TAT: " + jobs.get(i).getTaskWaitingTime()
+            );
+            System.out.println(
+                "Avg Waiting Time : " + avgWaitingTime + "\n" +
+                "Max Waiting Time : " + maxWaitingTime
             );
         }
     }
@@ -111,10 +126,11 @@ class Assignment {
     public static void main(String[] args) {
         ArrayList<Task> jobs = new ArrayList<Task>();
 
-        jobs.add(new Task(0, 10));
-        jobs.add(new Task(60, 10));
-        jobs.add(new Task(6, 20));
-        jobs.add(new Task(90, 5));
+        jobs.add(new Task(2, 2));
+        jobs.add(new Task(5, 6));
+        jobs.add(new Task(0, 4));
+        jobs.add(new Task(0, 7));
+        jobs.add(new Task(7, 4));
 
         JobScheduler js = new JobScheduler(jobs);
         js.startScheduler();
