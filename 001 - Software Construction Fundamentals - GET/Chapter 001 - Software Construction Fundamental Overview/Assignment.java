@@ -39,23 +39,6 @@ class Item {
 	public double getItemPrice() {
 		return this.itemPrice;
 	}
-
-	// Setters - I Commented them because they have no use right now. 
-	/*public void setItemID(String itemID) {
-		this.itemID = itemID;
-	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-
-	public void setItemDescription(String itemDescription) {
-		this.itemDescription = itemDescription;
-	}
-
-	public void setItemPrice(double itemPrice) {
-		this.itemPrice = itemPrice;
-	}*/
 }
 
 class Cart {
@@ -119,6 +102,7 @@ class Cart {
 		return totalPrice;
 	};
 
+	// Search for item using ID
 	public Item getItem(String itemIDtobeSearched) {
 		for (int i = 0; i < itemsList.size(); i++) {
 			if (itemsList.get(i).getItemID().equals(itemIDtobeSearched)) {
