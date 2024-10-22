@@ -70,7 +70,11 @@ class JobScheduler {
     public void startScheduler(){
         for(Task task : jobs){
             totalCompletionTime += task.getTaskBurstTime();
-            task.setTaskCompletionTime(totalCompletionTime);
+            if(task.getTaskArrivalTime() > totalCompletionTime){
+                task.setTaskCompletionTime(task.getTaskArrivalTime() + task.getTaskBurstTime());
+            }else{
+                task.setTaskCompletionTime(totalCompletionTime);
+            }
             task.setTaskTurnAroundTime(task.getTaskCompletionTime() - task.getTaskArrivalTime());
             task.setTaskWaitingTime(task.getTaskTurnAroundTime() - task.getTaskBurstTime());
         }
@@ -102,7 +106,7 @@ class JobScheduler {
                 "BT : " + jobs.get(i).getTaskBurstTime() + "\t\t" +
                 "CT : " + jobs.get(i).getTaskCompletionTime() + "\t\t" +
                 "TAT: " + jobs.get(i).getTaskTurnAroundTime() + "\t\t" +
-                "TAT: " + jobs.get(i).getTaskWaitingTime()
+                "WT : " + jobs.get(i).getTaskWaitingTime()
             );
         }
         System.out.println(
@@ -127,11 +131,15 @@ class Assignment {
     public static void main(String[] args) {
         ArrayList<Task> jobs = new ArrayList<Task>();
 
-        jobs.add(new Task(2, 2));
-        jobs.add(new Task(5, 6));
-        jobs.add(new Task(0, 4));
-        jobs.add(new Task(0, 7));
-        jobs.add(new Task(7, 4));
+        jobs.add(new Task(0, 10));
+        jobs.add(new Task(6, 20));
+        jobs.add(new Task(60, 10));
+        jobs.add(new Task(110, 5));
+        // jobs.add(new Task(2, 2));
+        // jobs.add(new Task(5, 6));
+        // jobs.add(new Task(0, 4));
+        // jobs.add(new Task(0, 7));
+        // jobs.add(new Task(7, 4));
 
         JobScheduler js = new JobScheduler(jobs);
         js.startScheduler();
