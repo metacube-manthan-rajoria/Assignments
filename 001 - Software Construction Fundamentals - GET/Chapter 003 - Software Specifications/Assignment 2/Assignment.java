@@ -4,20 +4,33 @@ class ClassMarksheet {
 	ArrayList<Integer> marksheet = new ArrayList<Integer>();
 	private final int PASSING_MARKS = 40; 
 
+	/**
+	 * add marks to list
+	 * @param marks marks obtained by student
+	 */
 	public void addMarks(int marks){
 		if(marks<0 || marks>100) return;
 		marksheet.add(marks);
 	}
 
+	/**
+	 * get average of all marks
+	 * @return double average rounded to 2 decimal places 
+	 */
 	public double averageMarks(){
 		if(marksheet.isEmpty()) return 0;
 		double sum = 0;
 		for(Integer i : marksheet){
 			sum += i;
 		}
-		return sum/marksheet.size();
+		double result = sum/(double)marksheet.size();
+		return Double.parseDouble(String.format("%.2f", result));
 	}
 
+	/**
+	 * maximum marks obtained
+	 * @return int maximum marks in list
+	 */
 	public int maximumMarks(){
 		if(marksheet.isEmpty()) return 0;
 		int max = 0;
@@ -27,6 +40,10 @@ class ClassMarksheet {
 		return max;
 	}
 
+	/**
+	 * minimum marks obtained
+	 * @return int minimum marks in list
+	 */
 	public int minimumMarks(){
 		if(marksheet.isEmpty()) return 0;
 		int min = 100;
@@ -36,6 +53,10 @@ class ClassMarksheet {
 		return min;
 	}
 
+	/**
+	 * Percent of students who passed( marks > 40 )
+	 * @return double percentage rounded to 2 decimal places
+	 */
 	public double percentOfPassedStudents(){
 		if(marksheet.isEmpty()) return 0;
 
@@ -47,10 +68,10 @@ class ClassMarksheet {
 		}
 
 		double ratio = passedCount/(double)marksheet.size();
-		return ratio*100;
+		return Double.parseDouble(String.format("%.2f", ratio*100));
 	}
-
 }
+
 class Assignment {
 	public static void main(String[] args) {
 		ClassMarksheet marksheet = new ClassMarksheet();
