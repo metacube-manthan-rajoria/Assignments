@@ -1,4 +1,4 @@
-class StringManip{
+class StringManipulation{
 	static final int CHAR_CASE_SHIFT = 32;
 	static final int ASCII_FOR_SPACE = 32;
 
@@ -77,17 +77,16 @@ class StringManip{
 class Assignment {
 	public static void main(String[] args) {
 		// String compare usage
-		int out = StringManip.compare("String", "String");
+		int out = StringManipulation.compare("String", "String");
 		System.out.println(out);
 
 		// String reverse usage
-		System.out.println(StringManip.reverseString("String"));
+		System.out.println(StringManipulation.reverseString("String"));
 
 		// String reverseCase usage
-		System.out.println(StringManip.reverseCase("String"));
+		System.out.println(StringManipulation.reverseCase("String"));
 
 		// Longest word in string usage
-		System.out.println(StringManip.longestWordInString(" How are doing my buddy"));
-		
+		System.out.println(StringManipulation.longestWordInString(" How are doing my buddy"));
 	}
 }
