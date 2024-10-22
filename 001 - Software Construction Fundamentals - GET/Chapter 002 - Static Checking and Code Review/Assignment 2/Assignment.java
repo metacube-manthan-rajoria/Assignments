@@ -135,11 +135,6 @@ class Assignment {
         jobs.add(new Task(6, 20));
         jobs.add(new Task(60, 10));
         jobs.add(new Task(110, 5));
-        // jobs.add(new Task(2, 2));
-        // jobs.add(new Task(5, 6));
-        // jobs.add(new Task(0, 4));
-        // jobs.add(new Task(0, 7));
-        // jobs.add(new Task(7, 4));
 
         JobScheduler js = new JobScheduler(jobs);
         js.startScheduler();
