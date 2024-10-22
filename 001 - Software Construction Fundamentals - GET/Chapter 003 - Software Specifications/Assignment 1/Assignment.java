@@ -1,9 +1,18 @@
+/**
+ * @author Manthan Raj Rajoria
+ * @version 1.0.0
+ */
+
 class StringManipulation{
 	static final int CHAR_CASE_SHIFT = 32;
 	static final int ASCII_FOR_SPACE = 32;
 
-
-	// Returns 1 if strings match else 0
+	/**
+	 * Compare the value of two Strings.
+	 * @param s1 first string
+	 * @param s2 second string
+	 * @return 1 if strings match else 0
+	 */
 	public static int compare(String s1, String s2){
 		int lengthOfS1 = s1.length();
 		int lengthOfS2 = s2.length();
@@ -17,6 +26,11 @@ class StringManipulation{
 		return 1;
 	}
 
+	/**
+	 * reverse the given String.
+	 * @param s string that needs to be reversed
+	 * @return reversed String
+	 */
 	public static String reverseString(String s){
 		String result = "";
 
@@ -28,6 +42,11 @@ class StringManipulation{
 		return result;
 	}
 
+	/**
+	 * reverse the Case for all Characters in the string.
+	 * @param s input string
+	 * @return String with all characters Case reversed
+	 */
 	public static String reverseCase(String s){
 		String result = "";
 
@@ -47,6 +66,11 @@ class StringManipulation{
 		return result;
 	}
 
+	/**
+	 * get the longest word in a string. in case of two words with same length, last 
+	 * @param s input string
+	 * @return String with all characters Case reversed
+	 */
 	static public String longestWordInString(String s){
 		String longestString = "";
 		String currentString = "";
