@@ -67,9 +67,9 @@ class StringManipulation{
 	}
 
 	/**
-	 * get the longest word in a string. in case of two words with same length, last 
+	 * get the longest word in a string. in case of two words with same length, return the last word
 	 * @param s input string
-	 * @return String with all characters Case reversed
+	 * @return last longest string 
 	 */
 	static public String longestWordInString(String s){
 		String longestString = "";
