@@ -26,23 +26,22 @@ class ArrOperation {
 			right = i;
 			int window = 0;
 
-			boolean immediateInt = false;
+			int immediateInt = 0;
 			while (left > 0 && right < intArraySize - 1) {
 				left--;
 				right++;
-				immediateInt = true;
+				immediateInt++;
 				if (intArray[left] == intArray[right]) {
-					if (immediateInt){
+					if (immediateInt == 1){
 						window++;
 					}
 					window += 2;
+					if (window > 1){
+						mirrors.add(window);
+					}
 				} else {
 					window = 0;
 				}
-			}
-
-			if (window > 1){
-				mirrors.add(window);
 			}
 		}
 
@@ -181,7 +180,7 @@ class Assignment {
 			int noOfInputs = scanner.nextInt();
 			System.out.println();
 			for (int i = 0; i < noOfInputs; i++) {
-				System.out.println("Enter int for index " + i + " : ");
+				System.out.print("Enter int for index " + i + " : ");
 				int input = scanner.nextInt();
 				intArray.add(input);
 				System.out.println();
@@ -191,17 +190,18 @@ class Assignment {
 			// Example uses
 			ArrOperation op = new ArrOperation(intArray);
 
-			System.out.println(op.maxMirror());
+			System.out.println("Max Mirror Size : " + op.maxMirror());
 
-			System.out.println(op.clumpArray());
+			System.out.println("Clumps in Array : " + op.clumpArray());
 
 			int fixedArray[] = op.fixXY(4, 5);
+			System.out.print("Fixed Array : ");
 			for (int i = 0; i < noOfInputs; i++) {
 				System.out.print(fixedArray[i] + " ");
 			}
+			System.out.println();
 
-			System.out.println(op.splitArray());
-
+			System.out.println("Split Array Position : " + op.splitArray());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
