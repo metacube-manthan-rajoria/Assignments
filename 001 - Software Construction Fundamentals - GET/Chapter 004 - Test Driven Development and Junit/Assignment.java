@@ -13,60 +13,64 @@ class ArrOperation {
 		}
 	}
 
-	public int maxMirror(){
+	public int maxMirror() {
 		ArrayList<Integer> mirrors = new ArrayList<Integer>();
-		System.out.println();
 
+		// 2 Pointers used in both for Loops
 		int left = 0;
 		int right = 0;
-		for(int i = 0; i<intArraySize; i++){
+
+		// Handles odd mirrors(For ex: 121)
+		for (int i = 0; i < intArraySize; i++) {
 			left = i;
 			right = i;
 			int window = 0;
 
-			int immediateInt = 0;
-			while(left > 0 && right < intArraySize-1){
-				left  -= 1;
-				right += 1;
-				immediateInt++;
-				if(intArray[left] == intArray[right]){
-					if(immediateInt == 1){
+			boolean immediateInt = false;
+			while (left > 0 && right < intArraySize - 1) {
+				left--;
+				right++;
+				immediateInt = true;
+				if (intArray[left] == intArray[right]) {
+					if (immediateInt){
 						window++;
 					}
-					System.out.println("Loop 1 - Index : " + i + " = " + intArray[left] + " : " + intArray[right]);
 					window += 2;
+				} else {
+					window = 0;
 				}
 			}
 
-			if(window > 1){
+			if (window > 1){
 				mirrors.add(window);
 			}
 		}
-		for(int i = 0; i<intArraySize; i++){
+
+		// Handles even mirrors(For ex: 1221)
+		for (int i = 0; i < intArraySize; i++) {
 			left = i;
-			right = i+1;
+			right = i + 1;
 			int window = 0;
 
-			while(left > 0 && right < intArraySize - 1){
-				left  -= 1;
-				right += 1;
-				if(intArray[left] == intArray[right]){
-					System.out.println("Loop 2 - Index : " + i + " = " + intArray[left] + " : " + intArray[right]);
+			while (left > 0 && right < intArraySize - 1) {
+				left--;
+				right++;
+				if (intArray[left] == intArray[right]){
 					window += 1;
 				}
 			}
 
-			if(window > 1){
+			if (window > 1){
 				mirrors.add(window);
 			}
-
 		}
-		
 
-
+		// Find max window in mirrors list
 		int maxMirror = 0;
-		for(int i = 0; i<mirrors.size(); i++){
-			if(mirrors.get(i) > maxMirror) maxMirror = mirrors.get(0);
+		for (int i = 0; i < mirrors.size(); i++) {
+			if (mirrors.get(i) > maxMirror){
+				maxMirror = mirrors.get(0);
+			}
 		}
 		return maxMirror;
 	}
@@ -84,8 +88,9 @@ class ArrOperation {
 			}
 
 			if (intArray[i] == lastElement) {
-				if (newElement)
+				if (newElement){
 					clusters += 1;
+				}
 				newElement = false;
 			} else {
 				newElement = true;
@@ -107,7 +112,10 @@ class ArrOperation {
 		ArrayList<Integer> freeIntegers = new ArrayList<Integer>();
 
 		try {
-			// if number of X != number of Y
+			/*
+			 * If number of X != number of Y then throw error
+			 * Also count number and index of all X
+			 */
 			int totalXNumbers = 0;
 			int totalYNumbers = 0;
 			for (int i = 0; i < intArraySize; i++) {
@@ -122,22 +130,23 @@ class ArrOperation {
 					resultArray[i] = -1;
 				}
 			}
-			if (totalXNumbers != totalYNumbers || resultArray[intArraySize - 1] == x)
+			// Error if count of x != count of y  OR  last element is x
+			if (totalXNumbers != totalYNumbers || resultArray[intArraySize - 1] == x){
 				throw new Exception("Invalid Array");
+			}
 
-
-
-			//
+			// Set all values after x to y
 			for (Integer i : indexOfAllX) {
 				resultArray[i + 1] = y;
 			}
+
+			// Put all non x,y numbers in rest of the spaces
 			for (int i = 0; i < intArraySize; i++) {
 				if (resultArray[i] == -1) {
 					resultArray[i] = freeIntegers.get(0);
 					freeIntegers.remove(0);
 				}
 			}
-
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -146,7 +155,7 @@ class ArrOperation {
 	}
 
 	public int splitArray() {
-		int total = 0;
+		int total = 0; // Total sum of array
 		for (int i = 0; i < intArraySize; i++) {
 			total += intArray[i];
 		}
@@ -154,8 +163,9 @@ class ArrOperation {
 		int leftWindow = 0;
 		for (int i = 0; i < intArraySize; i++) {
 			leftWindow += intArray[i];
-			if (total - leftWindow == leftWindow)
+			if (total - leftWindow == leftWindow){
 				return i + 1;
+			}
 		}
 		return total;
 	}
@@ -165,7 +175,6 @@ class Assignment {
 	public static void main(String[] args) {
 		ArrayList<Integer> intArray = new ArrayList<Integer>();
 		try {
-
 			// Taking user input
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("Enter number of inputs : ");
@@ -187,7 +196,7 @@ class Assignment {
 			System.out.println(op.clumpArray());
 
 			int fixedArray[] = op.fixXY(4, 5);
-			for(int i = 0; i<noOfInputs; i++){
+			for (int i = 0; i < noOfInputs; i++) {
 				System.out.print(fixedArray[i] + " ");
 			}
 
@@ -196,7 +205,6 @@ class Assignment {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 
 }
