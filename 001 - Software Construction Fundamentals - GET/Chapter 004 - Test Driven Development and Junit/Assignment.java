@@ -159,7 +159,6 @@ class ArrOperation {
 		}
 		return total;
 	}
-
 }
 
 class Assignment {
@@ -168,43 +167,31 @@ class Assignment {
 		try {
 
 			// Taking user input
-			// Scanner scanner = new Scanner(System.in);
-			// System.out.print("Enter number of inputs : ");
-			// int noOfInputs = scanner.nextInt();
-			// System.out.println();
-			// for (int i = 0; i < noOfInputs; i++) {
-			// 	System.out.println("Enter int for index " + i + " : ");
-			// 	int input = scanner.nextInt();
-			// 	intArray.add(input);
-			// 	System.out.println();
-
-			// }
-			// scanner.close();
-			intArray.add(1);
-			intArray.add(2);
-			intArray.add(1);
-			intArray.add(3);
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("Enter number of inputs : ");
+			int noOfInputs = scanner.nextInt();
+			System.out.println();
+			for (int i = 0; i < noOfInputs; i++) {
+				System.out.println("Enter int for index " + i + " : ");
+				int input = scanner.nextInt();
+				intArray.add(input);
+				System.out.println();
+			}
+			scanner.close();
 
 			// Example uses
 			ArrOperation op = new ArrOperation(intArray);
-			// System.out.println(op.clumpArray());
-			// System.out.println(op.splitArray());
 
-			// int fixedArray[] = op.fixXY(4, 5);
-			// for(int i = 0; i<noOfInputs; i++){
-			// 	System.out.print(fixedArray[i] + " ");
-			// }
-			
+			System.out.println(op.maxMirror());
 
+			System.out.println(op.clumpArray());
 
-
-			/// Change to noOfInputs
-			for(int i = 0; i<intArray.size(); i++){
-				System.out.print(intArray.get(i) + " ");
+			int fixedArray[] = op.fixXY(4, 5);
+			for(int i = 0; i<noOfInputs; i++){
+				System.out.print(fixedArray[i] + " ");
 			}
 
-			int ans = op.maxMirror();
-			System.out.println("Max : " + ans);
+			System.out.println(op.splitArray());
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
