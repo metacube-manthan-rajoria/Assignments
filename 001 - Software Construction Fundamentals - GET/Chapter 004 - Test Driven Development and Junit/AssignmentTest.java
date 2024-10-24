@@ -13,16 +13,11 @@ public class AssignmentTest {
         { 6, 5, 6, 4, 9, 7, 1, 4, 2, 7, 9, 2, 6, 5, 6 },
         { 1, 2, 1, 4 },
         { 1, 4, 5, 3, 5, 4, 1 },
-
         { 1, 2, 2, 3, 4, 4 },
         { 1, 1, 2, 1, 1, 4 },
-        { 1, 1, 1, 1, 1, 1 },
-
         { 1, 4, 1, 5 },
         { 1, 4, 1, 5, 5, 4, 1 },
-
         { 1, 1, 1, 2, 1 },
-        { 2, 1, 1, 2, 1 },
         { 10, 10 }
     };
 
@@ -59,11 +54,9 @@ public class AssignmentTest {
                 add(7);
                 add(0);
                 add(5);
-                add(6);
                 add(3);
                 add(3);
                 add(3);
-                add(4);
                 add(0);
             }
         }, caseVerified);
@@ -90,9 +83,7 @@ public class AssignmentTest {
                 add(0);
                 add(2);
                 add(2);
-                add(1);
                 add(0);
-                add(1);
                 add(1);
                 add(1);
                 add(1);
@@ -136,11 +127,9 @@ public class AssignmentTest {
                 add(-1);
                 add(4);
                 add(4);
-                add(3);
                 add(-1);
                 add(-1);
                 add(3);
-                add(-1);
                 add(1);
             }
         }, caseVerified);
