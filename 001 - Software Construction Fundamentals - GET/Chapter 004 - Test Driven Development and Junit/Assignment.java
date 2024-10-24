@@ -25,8 +25,10 @@ class ArrOperation {
 			left = i;
 			right = i;
 			int window = 0;
-
+			boolean cont = true;
 			int immediateInt = 0;
+			int addWindow = 1;
+
 			while (left > 0 && right < intArraySize - 1) {
 				left--;
 				right++;
@@ -34,13 +36,22 @@ class ArrOperation {
 				if (intArray[left] == intArray[right]) {
 					if (immediateInt == 1){
 						window++;
+						addWindow = 2;
+						cont = true;
 					}
-					window += 2;
+					if(cont){
+						window += addWindow;
+					}else{
+						addWindow = 1;
+						window += addWindow;
+					}
 					if (window > 1){
 						mirrors.add(window);
 					}
 				} else {
 					window = 0;
+					addWindow = 1;
+					cont = false;
 				}
 			}
 		}
@@ -68,7 +79,7 @@ class ArrOperation {
 		int maxMirror = 0;
 		for (int i = 0; i < mirrors.size(); i++) {
 			if (mirrors.get(i) > maxMirror){
-				maxMirror = mirrors.get(0);
+				maxMirror = mirrors.get(i);
 			}
 		}
 		return maxMirror;

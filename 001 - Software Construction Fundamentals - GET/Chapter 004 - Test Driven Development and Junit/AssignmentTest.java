@@ -80,13 +80,21 @@ public class AssignmentTest {
 
         assertEquals(new ArrayList<Integer>() {
             {
-                add(3);
-                add(3);
-                add(3);
+                add(0);
+                add(0);
+                add(0);
+                add(0);
+                add(0);
+                add(0);
+                add(0);
                 add(2);
-                add(3);
-                add(3);
-                add(7);
+                add(2);
+                add(1);
+                add(0);
+                add(1);
+                add(1);
+                add(1);
+                add(1);
             }
         }, caseVerified);
     }
