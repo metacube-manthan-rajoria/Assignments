@@ -34,18 +34,18 @@ class ArrOperation {
 				right++;
 				immediateInt++;
 				if (intArray[left] == intArray[right]) {
-					if (immediateInt == 1){
+					if (immediateInt == 1) {
 						window++;
 						addWindow = 2;
 						cont = true;
 					}
-					if(cont){
+					if (cont) {
 						window += addWindow;
-					}else{
+					} else {
 						addWindow = 1;
 						window += addWindow;
 					}
-					if (window > 1){
+					if (window > 1) {
 						mirrors.add(window);
 					}
 				} else {
@@ -65,12 +65,12 @@ class ArrOperation {
 			while (left > 0 && right < intArraySize - 1) {
 				left--;
 				right++;
-				if (intArray[left] == intArray[right]){
+				if (intArray[left] == intArray[right]) {
 					window += 1;
 				}
 			}
 
-			if (window > 1){
+			if (window > 1) {
 				mirrors.add(window);
 			}
 		}
@@ -78,7 +78,7 @@ class ArrOperation {
 		// Find max window in mirrors list
 		int maxMirror = 0;
 		for (int i = 0; i < mirrors.size(); i++) {
-			if (mirrors.get(i) > maxMirror){
+			if (mirrors.get(i) > maxMirror) {
 				maxMirror = mirrors.get(i);
 			}
 		}
@@ -98,7 +98,7 @@ class ArrOperation {
 			}
 
 			if (intArray[i] == lastElement) {
-				if (newElement){
+				if (newElement) {
 					clusters += 1;
 				}
 				newElement = false;
@@ -140,8 +140,8 @@ class ArrOperation {
 					resultArray[i] = -1;
 				}
 			}
-			// Error if count of x != count of y  OR  last element is x
-			if (totalXNumbers != totalYNumbers || resultArray[intArraySize - 1] == x){
+			// Error if count of x != count of y OR last element is x
+			if (totalXNumbers != totalYNumbers || resultArray[intArraySize - 1] == x) {
 				throw new Exception("Invalid Array");
 			}
 
@@ -173,7 +173,7 @@ class ArrOperation {
 		int leftWindow = 0;
 		for (int i = 0; i < intArraySize; i++) {
 			leftWindow += intArray[i];
-			if (total - leftWindow == leftWindow){
+			if (total - leftWindow == leftWindow) {
 				return i + 1;
 			}
 		}
