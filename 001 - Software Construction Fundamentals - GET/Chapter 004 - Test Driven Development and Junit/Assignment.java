@@ -177,7 +177,7 @@ class ArrOperation {
 				return i + 1;
 			}
 		}
-		return total;
+		return -1;
 	}
 }
 
