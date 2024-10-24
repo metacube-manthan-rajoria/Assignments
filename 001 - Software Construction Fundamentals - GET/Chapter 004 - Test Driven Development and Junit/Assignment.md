@@ -41,7 +41,7 @@ Return an array that contains exactly the same numbers as the input array, but r
 
 Let’s say value of X is 4 and Y is 5. Then 
 	
-	fixXY([5, 4, 9, 4, 9, 5]) → [9, 4, 5, 4, 5, 9]
+fixXY([5, 4, 9, 4, 9, 5]) → [9, 4, 5, 4, 5, 9]
 fixXY([1, 4, 1, 5]) → [1, 4, 5, 1]
 fixXY([1, 4, 1, 5, 5, 4, 1]) → [1, 4, 5, 1, 1, 4, 5]
 Assume we are receiving an array of integers along with value of X and Y as a method parameter.
