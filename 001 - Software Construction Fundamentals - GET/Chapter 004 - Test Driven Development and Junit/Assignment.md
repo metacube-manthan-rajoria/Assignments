@@ -70,9 +70,3 @@ Write Junit test cases for all the previous assignments done so far. <br>
 Include both positive and negative test cases for each problem using JUnit concepts. <br>
 Also use concept of parameterized test cases wherever applicable. <br>
 
-
-# 
-
-```java
-
-```
