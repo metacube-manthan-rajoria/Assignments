@@ -3,8 +3,8 @@
 // import java.util.HashMap;
 
 public class ChessBoard {
-	int board[][];
-	int boardSize = 0;
+	private int board[][];
+	private int boardSize = 0;
 
 	public ChessBoard(int size) {
 		board = new int[size][size];
@@ -30,7 +30,6 @@ public class ChessBoard {
 		for (int row = 0; row < boardSize; row++) {
 			if (isPositionSafe(board, row, col)) {
 				board[row][col] = 1;
-				printBoard();
 
 				if (nQueens(board, col + 1) == true)
 					return true;
@@ -110,6 +109,10 @@ public class ChessBoard {
 		}
 		System.out.println("=================");
 		System.out.println();
+	}
+
+	public int[][] getBoard(){
+		return this.board;
 	}
 }
 
