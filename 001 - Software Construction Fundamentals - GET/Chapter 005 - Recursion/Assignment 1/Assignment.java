@@ -1,60 +1,46 @@
 import java.util.Scanner;
 
 class MathOperations {
-	private int number1 = 0;
-	private int number2 = 0;
-
-	public MathOperations(int number1, int number2) {
-		this.number1 = number1;
-		this.number2 = number2;
-	}
-
-	public int getHCF(int a, int b) {
-        if (a == 0) return b;
-        return getHCF(b % a, a);
-    }
-
-	public int getLCM(int a, int b) {
-        return (a / getLCM(a, b)) * b;
-    }
-
-	/**
-     * @return int return the number1
+    /**
+     * Gives the Highest Common Factor of two numbers
+     * 
+     * @param number1 first number
+     * @param number2 second number
+     * @return integer hcf
      */
-    public int getNumber1() {
-        return number1;
+    public int getHCF(int number1, int number2) {
+        int remainder = number1 % number2;
+
+        if (remainder == 0)
+            return number2;
+        return getHCF(number2, remainder);
     }
 
     /**
-     * @param number1 the number1 to set
+     * Gives the Lowest Common Multiple of two numbers
+     * 
+     * @param number1 first number
+     * @param number2 second number
+     * @return integer lcm
      */
-    public void setNumber1(int number1) {
-        this.number1 = number1;
-    }
-
-    /**
-     * @return int return the number2
-     */
-    public int getNumber2() {
-        return number2;
-    }
-
-    /**
-     * @param number2 the number2 to set
-     */
-    public void setNumber2(int number2) {
-        this.number2 = number2;
+    public int getLCM(int number1, int number2) {
+        int hcfOfNumbers = getHCF(number1, number2);
+        int product = number1 * number2;
+        return (int) product / hcfOfNumbers;
     }
 }
 
 class Assignment {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int num1 = scanner.nextInt();
-		int num2 = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num1 = 25;
+        int num2 = 10;
+        // int num1 = scanner.nextInt();
+        // int num2 = scanner.nextInt();
 
-		MathOperations mathOp = new MathOperations(num1, num2);
-		System.out.println(mathOp.getLCM(num1, num2));
-		System.out.println(mathOp.getHCF(num1, num2));
-	}
+        MathOperations mathOp = new MathOperations();
+        System.out.println("LCM : " + mathOp.getLCM(num1, num2));
+        System.out.println("HCF : " + mathOp.getHCF(num1, num2));
+        scanner.close();
+    }
 }
