@@ -2,38 +2,83 @@
 // import java.util.ArrayList;
 // import java.util.HashMap;
 
-class MathOperations {
-	int index = 0;
+class RecursiveSearch {
 
-	public int findNumber(int numArray[], int num){
-		if((index == numArray.length - 1) && numArray[index] != num) return -1;
+	/**
+	 * Search a number in a array using linear search
+	 * 
+	 * @param numArray array to be searched
+	 * @param numberToBeSearched number to be searched
+	 * @return int index of numberToBeSearched
+	 */
+	public int linearSearch(int numArray[], int numberToBeSearched) {
+		int index = 0;
+		return linearSearch(numArray, numberToBeSearched, index);
+	}
+	private int linearSearch(int numArray[], int numberToBeSearched, int index) {
+		if ((index == numArray.length - 1) && numArray[index] != numberToBeSearched)
+			return -1;
 
-		if(numArray[index] == num){
+		if (numArray[index] == numberToBeSearched) {
 			return index;
 		}
 
 		index++;
 
-		findNumber(numArray, num);
-		return index;
+		return linearSearch(numArray, numberToBeSearched, index);
 	}
-	static int gcd(int a, int b) {
-        if (a == 0) return b;
-        return gcd(b % a, a);
-    }
 
-	
-    static int lcm(int a, int b) {
-        return (a / gcd(a, b)) * b;
-    }
+	/**
+	 * Search a number in a array using binary search
+	 * 
+	 * @param numArray array to be searched
+	 * @param numberToBeSearched number to be searched
+	 * @return int index of numberToBeSearched
+	 */
+	public int binarySearch(int numArray[], int numberToBeSearched) {
+		if(numArray.length == 0) return -1;
+		if(numArray.length == 1 && numArray[0] != numberToBeSearched) return -1;
 
+		int start = 0;
+		int end = numArray.length - 1;
+
+		int mid = (start + end)/2;
+		if(numArray[mid] == numberToBeSearched){
+			return mid;
+		}
+
+		if(numArray[mid] > numberToBeSearched){
+			return binarySearch(numArray, numberToBeSearched, start, mid);
+		}else{
+			return binarySearch(numArray, numberToBeSearched, mid, end);
+		}
+	}
+	private int binarySearch(int numArray[], int numberToBeSearched, int start, int end) {
+		if(start > end) return -1;
+
+		int mid = (start + end)/2;
+		if(numArray[mid] == numberToBeSearched){
+			return mid;
+		}
+
+		if(numArray[mid] > numberToBeSearched){
+			return binarySearch(numArray, numberToBeSearched, start, mid);
+		}else{
+			return binarySearch(numArray, numberToBeSearched, mid, end);
+		}
+	}
 }
 
 public class Assignment {
 	public static void main(String[] args) {
-		int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-		MathOperations mo = new MathOperations();
-		int res = mo.findNumber(arr, 7);
-		System.out.println(res);
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		RecursiveSearch rs = new RecursiveSearch();
+		int linearResult = rs.linearSearch(arr, 7);
+		int binaryResult = rs.binarySearch(arr, 7);
+
+		System.out.println(
+			"L : " + linearResult + "\n" +
+			"B : " + binaryResult
+		);
 	}
 }
