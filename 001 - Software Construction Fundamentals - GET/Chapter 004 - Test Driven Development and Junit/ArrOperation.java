@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class ArrOperation {
+public class ArrOperation {
 	private int intArray[];
 	private int intArraySize = 0;
 
@@ -217,5 +217,4 @@ class Assignment {
 			System.out.println(e.getMessage());
 		}
 	}
-
 }
