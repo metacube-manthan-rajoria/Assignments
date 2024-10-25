@@ -2,7 +2,7 @@
 // import java.util.ArrayList;
 // import java.util.HashMap;
 
-class ChessBoard {
+public class ChessBoard {
 	int board[][];
 	int boardSize = 0;
 
@@ -113,7 +113,7 @@ class ChessBoard {
 	}
 }
 
-public class Assignment {
+class Assignment {
 	public static void main(String[] args) {
 		ChessBoard cb = new ChessBoard(4);
 		cb.solveNQueens();
