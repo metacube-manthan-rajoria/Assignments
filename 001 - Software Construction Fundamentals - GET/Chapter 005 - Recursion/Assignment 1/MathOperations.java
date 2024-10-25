@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class MathOperations {
+public class MathOperations {
     /**
      * Gives the Highest Common Factor of two numbers
      * 

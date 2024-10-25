@@ -2,7 +2,7 @@
 // import java.util.ArrayList;
 // import java.util.HashMap;
 
-class RecursiveSearch {
+public class RecursiveSearch {
 
 	/**
 	 * Search a number in a array using linear search
@@ -69,7 +69,7 @@ class RecursiveSearch {
 	}
 }
 
-public class Assignment {
+class Assignment {
 	public static void main(String[] args) {
 		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		RecursiveSearch rs = new RecursiveSearch();
