@@ -11,8 +11,14 @@ public class ChessBoard {
 		boardSize = size;
 	}
 
+	/**
+	 * Start solving nQueens starting with 0 col 0 row
+	 * 
+	 * @return boolean. false if no solution exists else otherwise
+	 */
 	public boolean solveNQueens() {
-		if(boardSize == 2 || boardSize == 3) return false;
+		if (boardSize == 2 || boardSize == 3)
+			return false;
 
 		boolean solvableBoard = nQueens(board, 0);
 		if (solvableBoard) {
@@ -23,6 +29,13 @@ public class ChessBoard {
 		}
 	}
 
+	/**
+	 * Goes over board recursively and iterates over rows to find a solution
+	 * 
+	 * @param board 2D array board
+	 * @param col   current column index
+	 * @return boolean. false if no solution exists else otherwise
+	 */
 	private boolean nQueens(int[][] board, int col) {
 		if (col >= boardSize)
 			return true;
@@ -41,6 +54,14 @@ public class ChessBoard {
 		return false;
 	}
 
+	/**
+	 * Checks whether a position is attacked by other queens
+	 * 
+	 * @param board the 2D board array
+	 * @param row   current row index
+	 * @param col   current column index
+	 * @return boolean if position is safe
+	 */
 	private boolean isPositionSafe(int[][] board, int row, int col) {
 		int rowCopy = row;
 		int colCopy = col;
@@ -98,6 +119,9 @@ public class ChessBoard {
 		return true;
 	}
 
+	/**
+	 * Prints the board to console
+	 */
 	public void printBoard() {
 		for (int i = 0; i < boardSize; i++) {
 			if (i < boardSize)
@@ -111,7 +135,12 @@ public class ChessBoard {
 		System.out.println();
 	}
 
-	public int[][] getBoard(){
+	/**
+	 * Returns board
+	 * 
+	 * @return 2D array board
+	 */
+	public int[][] getBoard() {
 		return this.board;
 	}
 }
