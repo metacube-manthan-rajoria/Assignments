@@ -9,7 +9,17 @@ public class AssignmentTest {
     public void nQueensTest() {
         final int BOARD_SIZE= 4;
 
-        Assignment assignment = new Assignment(BOARD_SIZE);
+        ChessBoard board = new ChessBoard(BOARD_SIZE);
+        board.solveNQueens();
+
+        assertArrayEquals(new int[][]{
+            {0,0,1,0},
+            {1,0,0,0},
+            {0,0,0,1},
+            {0,1,0,0}
+        }, board.getBoard());
+
+        assertEquals(false, new ChessBoard(2).solveNQueens());
    
     }
 }
