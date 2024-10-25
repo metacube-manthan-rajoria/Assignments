@@ -12,20 +12,32 @@ Assume x and y as positive integers.
 ```
 <br>
 
+### Euclids Algo for finding HCF
+```Note
+If we have to find the HCF of 320 and 132, we apply the Euclid’s Division Lemma on these two numbers:
+
+320 = 132(2) + 56 ......... (step 1)
+
+We observe (based on our discussion above) that since the HCF (call it x) is a factor of both 320 and 132, it must also be a factor of the remainder 56 in the division step above. Now, we apply the division lemma on 132 and 56:
+
+132 = 56(2) + 20 ......... (step 2)
+
+Once again, since the HCF x is a common factor of both 132 and 56, it must also be a common factor of 20. So, in the next step, we apply the division lemma to 56 and 20:
+
+56 = 20(2) + 16 ............ (step 3)
+
+As earlier, since x is a common factor of both 56 and 20, it must also be a common factor of 16. Next, we apply the division lemma to 20 and 16:
+
+20 = 16(1) + 4 .............. (step 4)
+
+We see that x, being a factor of both 20 and 16, must also be a factor of 4. In the last step, we have:
+
+16 = 4(4) + 0 .............. (step 5)
+
+We have no remainder left. We now assert that the second last remainder is the HCF, that is, the HCF of 320 and 132 is equal to 4.
+
+⇒ HCF (320,132)= 4
 ```
-Question 2
-
-Design a class “Search” to search for an element in an array using following strategy
-Linear Search
-Binary Search
-
-Each of the above methods will receive an array and an element to be search in array as input. It will return the index where this element occurs in array. Assume array to be sorted for Binary search.
-
-Linear Search : Linear search or sequential search is a method for finding a target value within an array. It sequentially checks each element of the array for the target value until a match is found or until all the elements have been searched.
-
-Binary Search :  Binary search is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found.
-```
-<br>
 
 ```
 Question 3
