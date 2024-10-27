@@ -1,6 +1,6 @@
 # Recursion
 
-[Click to open the Original Problem document](https://docs.google.com/presentation/d/1ir3_F-KOm2Lduk1h5KSoqad6DALKMhxw-ZhX6TE9BjY/edit)
+[Click to open the Original Problem document](https://docs.google.com/document/d/1yfCs-gpNrC7TlHSvXAWuA02Cra6w1WHh/edit)
 
 ### MathOperation
 - [My Solution (Annotated Markdown File)](./Assignment%201/Assignment.md)
