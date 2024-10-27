@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 
 class Item {
@@ -8,12 +9,21 @@ class Item {
 	private String itemName = "";
 	private String itemDescription = "";
 	private double itemPrice = 0.0;
+	private boolean isValidItem = true;
 
 	public Item(String itemID, String itemName, String itemDescription, double itemPrice) {
 		this.itemID = itemID;
 		this.itemName = itemName;
 		this.itemDescription = itemDescription;
 		this.itemPrice = itemPrice;
+		
+		boolean validID = !this.itemID.equals("") || this.itemID == null;
+		boolean validName = !this.itemName.equals("") || this.itemName == null;
+		boolean validPrice = this.itemPrice >= 0;
+		boolean validInputs = validID && validName && validPrice;
+		if(!validInputs){
+			isValidItem = false;
+		}
 	}
 
 	public void printDetails() {
@@ -32,12 +42,12 @@ class Item {
 		return this.itemName;
 	}
 
-	public String getItemDescription() {
-		return this.itemDescription;
-	}
-
 	public double getItemPrice() {
 		return this.itemPrice;
+	}
+
+	public boolean getIsValidItem(){
+		return this.isValidItem;
 	}
 }
 
@@ -46,8 +56,13 @@ class Cart {
 	HashMap<String, Integer> cart = new HashMap<String, Integer>();
 
 	public void addToCart(Item item, int quantity) {
-		if(item == null) {
-			System.out.println("Invalid Item - Enter correct inputs.");
+		if (item == null || !item.getIsValidItem()) {
+			System.out.println("Invalid Item");
+			return;
+		}
+
+		if(quantity < 0){
+			System.out.println("Cannot add negative items");
 			return;
 		}
 
@@ -55,15 +70,15 @@ class Cart {
 		if (itemAlreadyExists == null) {
 			itemsList.add(item);
 			cart.put(item.getItemID(), quantity);
-		}else{
+		} else {
 			int itemsInCart = cart.getOrDefault(item.getItemID(), 0);
 			cart.put(item.getItemID(), itemsInCart + quantity);
 		}
 	};
 
 	public void updateQuantity(Item item, int quantity) {
-		if(item == null) {
-			System.out.println("Invalid Item - Enter correct inputs.");
+		if (item == null || !item.getIsValidItem()) {
+			System.out.println("Invalid Item");
 			return;
 		}
 
@@ -74,12 +89,14 @@ class Cart {
 	};
 
 	public void deleteItem(Item item) {
-		if(item == null) return;
+		if (item == null)
+			return;
 		cart.remove(item.getItemID());
 	};
 
 	public int displayQuantity(Item item) {
-		if (item == null) return 0;
+		if (item == null)
+			return 0;
 		String itemId = item.getItemID();
 		return cart.getOrDefault(itemId, 0);
 	};
@@ -131,41 +148,30 @@ class Assignment {
 		for (int i = 0; i < itemsToAdd; i++) {
 
 			// Getting user input
-			System.out.print("Item ID : ");
-			String itemId = scanner.nextLine();
-			System.out.print("Item Name : ");
-			String itemName = scanner.nextLine();
-			System.out.print("Item Description : ");
-			String itemDescription = scanner.nextLine();
-			System.out.print("Item Price : ");
-			double itemPrice = scanner.nextDouble();
-			System.out.print("Item Quantity : ");
-			int itemQuantity = scanner.nextInt();
-			scanner.nextLine();
-			System.out.println();
+			try {
+				System.out.print("Item ID : ");
+				String itemId = scanner.nextLine();
+				System.out.print("Item Name : ");
+				String itemName = scanner.nextLine();
+				System.out.print("Item Description : ");
+				String itemDescription = scanner.nextLine();
+				System.out.print("Item Price : ");
+				double itemPrice = scanner.nextDouble();
+				System.out.print("Item Quantity : ");
+				int itemQuantity = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println();
 
-			// Validation
-			boolean validID = !itemId.equals("");
-			boolean validName = !itemName.equals("");
-			boolean validPrice = itemPrice >= 0;
-			boolean validQuantity = itemQuantity >= 0;
-			boolean validInputs = validID && validName && validPrice && validQuantity;
-
-			if (validInputs) {
 				Item item = new Item(itemId, itemName, itemDescription, itemPrice);
-				cart.addToCart(item, itemQuantity);
-			} else {
-				System.out.println("Invalid Inputs for Object");
-				continue;
+				if(item.getIsValidItem()){
+					cart.addToCart(item, itemQuantity);
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid Inputs - Mismatch Error");
 			}
 		}
 
-		
 		// Testing Functions below
-		Item item1 = cart.getItem("002");
-		cart.updateQuantity(item1, 5);
-		cart.deleteItem(item1);
-
 		double totalBill = cart.displayBill();
 		System.out.println("Total Bill : " + totalBill);
 
