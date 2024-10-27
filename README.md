@@ -10,8 +10,6 @@ This is a Academy Goal Management Repo. <br>
 > [!note]
 > The Assignment.md code is only for reference and does not represent the final code.
 
-<br><br>
-
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
 
 ### Sections
