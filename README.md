@@ -1,6 +1,15 @@
 # Academia
 This is a Academy Goal Management Repo. <br>
 
+### Usage Guidelines
+- Each folder contains a README file for further info.
+- Assignment.md file contains general overview of problem and some demo code.
+- Assignment - Blueprint.md file contains my rough ideas or old snippets, and is not meant for use. So ignore that file.
+- This readme has a list of direct URL's for every java file in the section for easier access.
+
+> [!warning]
+> The Assignment.md code is only for reference and does not represent the final code. 
+
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
 
 ### Sections
