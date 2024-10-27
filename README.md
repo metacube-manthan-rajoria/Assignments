@@ -30,4 +30,4 @@ This is a Academy Goal Management Repo. <br>
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
-*Only for education purposes*
+*Only for educational purposes*
