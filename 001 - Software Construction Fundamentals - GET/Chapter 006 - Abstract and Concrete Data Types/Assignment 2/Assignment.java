@@ -20,6 +20,13 @@ final class PolyOperation {
         }
     }
 
+    /**
+     * Adds two polynomial equation.
+     * 
+     * @param polynomial1 the first equation
+     * @param polynomial2 the second equation
+     * @return 2D int array with all terms with same power added
+     */
     public static int[][] addPoly(PolyOperation polynomial1, PolyOperation polynomial2) {
         int poly1Length = polynomial1.getLength();
         int poly2Length = polynomial2.getLength();
@@ -65,6 +72,13 @@ final class PolyOperation {
         return normalisedResult;
     }
 
+    /**
+     * Multiplies two polynomial equations together
+     * 
+     * @param polynomial1 the first equation
+     * @param polynomial2 the second equation
+     * @return 2D int array as a result of polynomial multiplication
+     */
     public static int[][] multiplyPoly(PolyOperation polynomial1, PolyOperation polynomial2) {
         int poly1Length = polynomial1.getLength();
         int poly2Length = polynomial2.getLength();
@@ -91,7 +105,7 @@ final class PolyOperation {
         // Adding all terms with same power
         int cumulativeResult[][] = new int[poly1Length + poly2Length][2];
         int biggestDegree = poly1Degree + poly2Degree;
-        for(int i = 0; i<=biggestDegree; i++){
+        for (int i = 0; i <= biggestDegree; i++) {
             int sum = 0;
             for (int j = 0; j < result.length; j++) {
                 if (result[j][1] == i) {
@@ -123,6 +137,12 @@ final class PolyOperation {
         return normalisedResult;
     }
 
+    /**
+     * Calculates the value of a equation for a value
+     * 
+     * @param value the input value of x
+     * @return float y = f(x)
+     */
     public float evaluate(float value) {
         double sum = 0;
         for (int i = 0; i < coefficients.length; i++) {
@@ -131,6 +151,11 @@ final class PolyOperation {
         return (float) sum;
     }
 
+    /**
+     * Returns the degree of equation
+     * 
+     * @return integer highest degree of all terms
+     */
     public int degree() {
         int maxDegree = 0;
 
@@ -142,6 +167,11 @@ final class PolyOperation {
         return maxDegree;
     }
 
+    /**
+     * Get length of 2D terms array
+     * 
+     * @return int length of array
+     */
     public int getLength() {
         return this.termsArray.length;
     }
@@ -203,6 +233,8 @@ public class Assignment {
             }
         } catch (InputMismatchException e) {
             System.out.println("Input Mismatch");
+        } catch (Exception e) {
+            System.out.println("Unknown Error");
         }
     }
 }
