@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 final class IntSet {
     private final int currentSet[];
@@ -154,8 +155,31 @@ final class IntSet {
 
 public class Assignment{
     public static void main(String[] args) {
-        int arr1[] = {1,2,3,4,5};
-        int arr2[] = {3,4,7};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter size of first set : ");
+        int set1Size = scanner.nextInt();
+        int arr1[] = new int[set1Size];
+
+        System.out.println();
+        for(int i = 0; i<set1Size; i++){
+            System.out.print("Enter number " + (i + 1) + " : ");
+            int input = scanner.nextInt();
+            arr1[i] = input; 
+        }
+
+        System.out.print("\nEnter size of second set : ");
+        int set2Size = scanner.nextInt();
+        int arr2[] = new int[set2Size];
+
+        System.out.println();
+        for(int i = 0; i<set2Size; i++){
+            System.out.print("Enter number " + (i + 1) + " : ");
+            int input = scanner.nextInt();
+            arr2[i] = input; 
+        }
+
+        System.out.print("\nEnter a random number : ");
+        int randomNumber = scanner.nextInt();
          
         IntSet intSet1 = new IntSet(arr1);
         IntSet intSet2 = new IntSet(arr2);
@@ -164,21 +188,23 @@ public class Assignment{
         int res2[] = intSet1.intersection(intSet2);
         int res3[] = intSet1.difference(intSet2);
         
-
-        System.out.println(intSet1.isMember(7));
-        System.out.println(intSet1.getSet().size());
-        System.out.println(intSet1.isSubSet(intSet2));
+        System.out.println("\nIs " + randomNumber + " member of set1 : " + intSet1.isMember(randomNumber));
+        System.out.println("Set 1 size : " + intSet1.getSet().size());
+        System.out.println("Is set2 subset of set1 : " + intSet1.isSubSet(intSet2));
        
+        System.out.println("\nUnion");
         for(int i = 0; i<res1.length; i++){
-            System.out.println(res1[i]);
+            System.out.print(res1[i] + " ");
         }
-        System.out.println();
+        //System.out.println();
+        System.out.println("\n\nIntersection");
         for(int i = 0; i<res2.length; i++){
-            System.out.println(res2[i]);
+            System.out.print(res2[i] + " ");
         }
-        System.out.println();
+        //System.out.println();
+        System.out.println("\n\nDifference");
         for(int i = 0; i<res3.length; i++){
-            System.out.println(res3[i]);
+            System.out.print(res3[i] + " ");
         }
     }
 }
