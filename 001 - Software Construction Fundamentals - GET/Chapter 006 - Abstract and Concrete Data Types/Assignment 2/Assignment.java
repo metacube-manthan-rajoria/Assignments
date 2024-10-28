@@ -87,7 +87,7 @@ final class PolyOperation {
 
         int result[][] = new int[poly1Length * poly2Length][2];
 
-        // Array of all multiplications
+        // Array of all multiplications(cross - product)
         int currentTerm = 0;
         for (int i = 0; i < poly1Length; i++) {
             int poly1Coefficient = polynomial1.getTermsArray()[i][0];
