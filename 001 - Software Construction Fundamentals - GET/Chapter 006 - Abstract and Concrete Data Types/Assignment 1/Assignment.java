@@ -26,7 +26,8 @@ final class IntSet {
     }
 
     public boolean isSubSet(IntSet s){
-        HashMap<Integer, Integer> m = s.getSet();
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+        m.putAll(s.getSet());
         boolean isSubSet = true;
 
         for(Integer i : m.keySet()){
@@ -51,15 +52,16 @@ final class IntSet {
     }
     
     public int[] union(IntSet s){
-        HashMap<Integer, Integer> m = s.getSet();
+        HashMap<Integer, Integer> union = new HashMap<Integer, Integer>();
+        union.putAll(s.getSet());
         
         for(Integer i : map.keySet()){
-            m.put(i, 1);
+            union.put(i, 1);
         }
         
-        int result[] = new int[m.size()];
+        int result[] = new int[union.size()];
         int index = 0;
-        for(Integer i : m.keySet()){
+        for(Integer i : union.keySet()){
             result[index] = i;
             index++;
         }
@@ -87,7 +89,8 @@ final class IntSet {
     }
 
     public int[] difference(IntSet s){
-        HashMap<Integer, Integer> difference = map;
+        HashMap<Integer, Integer> difference = new HashMap<Integer, Integer>();
+        difference.putAll(map);
         for(Integer i : s.getSet().keySet()){
             difference.remove(i);
         }
@@ -117,16 +120,18 @@ public class Assignment{
     public static void main(String[] args) {
         int arr1[] = {1,2,3,4,5};
         int arr2[] = {3,4,7};
+         
         IntSet intSet1 = new IntSet(arr1);
         IntSet intSet2 = new IntSet(arr2);
 
         int res1[] = intSet1.union(intSet2);
         int res2[] = intSet1.intersection(intSet2);
-        //int res3[] = intSet1.difference(intSet2);
+        int res3[] = intSet1.difference(intSet2);
+        
 
-        // System.out.println(intSet1.isMember(7));
-        // System.out.println(intSet1.getSet().size());
-        // System.out.println(intSet1.isSubSet(intSet2));
+        System.out.println(intSet1.isMember(7));
+        System.out.println(intSet1.getSet().size());
+        System.out.println(intSet1.isSubSet(intSet2));
        
         for(int i = 0; i<res1.length; i++){
             System.out.println(res1[i]);
@@ -136,9 +141,8 @@ public class Assignment{
             System.out.println(res2[i]);
         }
         System.out.println();
-        // for(int i = 0; i<res3.length; i++){
-        //     System.out.println(res3[i]);
-        // }
+        for(int i = 0; i<res3.length; i++){
+            System.out.println(res3[i]);
+        }
     }
-
 }
