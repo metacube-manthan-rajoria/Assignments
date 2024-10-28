@@ -3,19 +3,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 final class PolyOperation {
-    private final int coefficients[];
-    private final int powers[];
     private final int termsArray[][];
     private final HashMap<Integer, Integer> terms = new HashMap<Integer, Integer>();
 
     public PolyOperation(int terms[][]) {
-        coefficients = new int[terms.length];
-        powers = new int[terms.length];
         termsArray = terms;
 
         for (int i = 0; i < terms.length; i++) {
-            coefficients[i] = terms[i][0];
-            powers[i] = terms[i][1];
             this.terms.put(terms[i][0], terms[i][1]);
         }
     }
@@ -145,8 +139,8 @@ final class PolyOperation {
      */
     public float evaluate(float value) {
         double sum = 0;
-        for (int i = 0; i < coefficients.length; i++) {
-            sum += coefficients[i] * Math.pow(value, powers[i]);
+        for (int i = 0; i < termsArray.length; i++) {
+            sum += termsArray[i][0] * Math.pow(value, termsArray[i][1]);
         }
         return (float) sum;
     }
