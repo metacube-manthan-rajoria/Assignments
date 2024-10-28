@@ -36,6 +36,10 @@ This is a Academy Goal Management Repo. <br>
 - [RecursiveSearch](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20005%20-%20Recursion/Assignment%202/RecursiveSearch.java)
 
 - [ChessBoard](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20005%20-%20Recursion/Assignment%203/ChessBoard.java)
+
+- [IntSet](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20006%20-%20Abstract%20and%20Concrete%20Data%20Types/Assignment%201/Assignment.java)
+
+- [PolyOperation](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20006%20-%20Abstract%20and%20Concrete%20Data%20Types/Assignment%202/Assignment.java)
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
