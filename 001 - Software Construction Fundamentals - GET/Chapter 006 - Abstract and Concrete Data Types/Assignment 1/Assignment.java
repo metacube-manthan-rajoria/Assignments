@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 final class IntSet {
-    private final int array[];
+    private final int currentSet[];
     private final HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
 
     public IntSet(int arr[]){
@@ -11,9 +11,14 @@ final class IntSet {
                 map.put(arr[i], 1);
             }
         }
-        array = arr;
+        currentSet = arr;
     }
 
+    /**
+     * Checks whether x is the part of current set
+     * @param x integer to be checked
+     * @return boolean. true if set contains x, false otherwise.
+     */
     public boolean isMember(int x){
         if(map.getOrDefault(x, 0) >= 1){
             return true;
@@ -21,10 +26,19 @@ final class IntSet {
         return false;
     }
 
+    /**
+     * Gives count of unique elements in the set 
+     * @return integer size of set
+     */
     public int size(){
         return map.size();
     }
 
+    /**
+     * Checks if every element of s is present in current set
+     * @param s set that is to be checked
+     * @return boolean. true if s is subset of current set
+     */
     public boolean isSubSet(IntSet s){
         HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
         m.putAll(s.getSet());
@@ -39,6 +53,10 @@ final class IntSet {
         return isSubSet;
     }
 
+    /**
+     * Returns universal set - current set
+     * @return int array of complement of current set
+     */
     public int[] getComplement(){
         int result[] = new int[1000 - map.size()];
         int index = 0;
@@ -51,6 +69,11 @@ final class IntSet {
         return result;
     }
     
+    /**
+     * Returns union of current set and input set
+     * @param s input set
+     * @return integer array containing union of both sets
+     */
     public int[] union(IntSet s){
         HashMap<Integer, Integer> union = new HashMap<Integer, Integer>();
         union.putAll(s.getSet());
@@ -69,6 +92,11 @@ final class IntSet {
         return result;
     }
 
+    /**
+     * Gives all elements that are present in both sets
+     * @param s input array
+     * @return integer array containing intersection of both sets
+     */
     public int[] intersection(IntSet s){
         ArrayList<Integer> resultArray = new ArrayList<Integer>();
 
@@ -88,6 +116,11 @@ final class IntSet {
         return result;
     }
 
+    /**
+     * Gives all elements that are only present in cureent set
+     * @param s input set
+     * @return integer array containing difference
+     */
     public int[] difference(IntSet s){
         HashMap<Integer, Integer> difference = new HashMap<Integer, Integer>();
         difference.putAll(map);
@@ -105,9 +138,12 @@ final class IntSet {
         return result;
     }
 
+    /**
+     * Prints the set
+     */
     public void show(){
-        for(int i = 0; i<array.length; i++){
-            System.out.println(array[i]);
+        for(int i = 0; i<currentSet.length; i++){
+            System.out.println(currentSet[i]);
         }
     }
 
