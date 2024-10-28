@@ -5,3 +5,7 @@
 ### IntSet
 - [My Solution (Annotated Markdown File)](./Assignment%201/Assignment.md)
 - [My Solution (Raw Java File)](./Assignment%201/Assignment.java)
+
+### Polynomial Operation
+- [My Solution (Annotated Markdown File)](./Assignment%202/Assignment.md)
+- [My Solution (Raw Java File)](./Assignment%202/Assignment.java)
