@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-final class Matrix {
+public final class Matrix {
     private final int rowLength;
     private final int colLength;
     private final HashMap<String, Integer> matrixMap = new HashMap<String, Integer>();
@@ -158,7 +158,7 @@ final class Matrix {
 
 }
 
-public class Assignment {
+class Assignment {
     public static void main(String[] args) {
         try {
             Scanner scanner = new Scanner(System.in);
