@@ -58,6 +58,8 @@ final class Matrix {
             int matrix2RowLength = matrix2.getRowLength();
             int matrix2ColLength = matrix2.getColLength();
 
+            int breakpoint = matrix1RowLength <= matrix2ColLength ? matrix1RowLength : matrix2ColLength;
+
             if (matrix1ColLength != matrix2RowLength) {
                 System.out.println("Invalid Multiplication Operation : Dimentions do not match the criteria.");
                 return null;
@@ -77,7 +79,7 @@ final class Matrix {
                     sum += (matrix1Value * matrix2Value);
                 }
                 resultArr[currentRowIndex][currentColIndex] = sum;
-                if ((i + 1) % matrix1ColLength == 0) {
+                if ((i + 1) % breakpoint == 0) {
                     currentRowIndex++;
                     currentColIndex = -1;
                 }
