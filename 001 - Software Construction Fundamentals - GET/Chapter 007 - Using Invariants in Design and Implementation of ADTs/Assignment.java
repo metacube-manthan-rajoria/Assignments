@@ -34,11 +34,13 @@ final class Matrix {
                 System.out.println("The Matrices are not equal.");
                 return null;
             }
+
             int resultArr[][] = new int[matrix1RowLength][matrix1ColLength];
 
             for (int i = 0; i < matrix1RowLength; i++) {
                 for (int j = 0; j < matrix1ColLength; j++) {
-                    resultArr[i][j] = matrix1.getMatrix().get(i + " " + j) + matrix2.getMatrix().get(i + " " + j);
+                    resultArr[i][j] = matrix1.getMatrix().getOrDefault(i + " " + j, 0) +
+                            matrix2.getMatrix().getOrDefault(i + " " + j, 0);
                 }
             }
 
@@ -56,16 +58,30 @@ final class Matrix {
             int matrix2RowLength = matrix2.getRowLength();
             int matrix2ColLength = matrix2.getColLength();
 
-            if (matrix1RowLength != matrix2RowLength || matrix1ColLength != matrix2ColLength) {
-                System.out.println("The Matrices are not equal.");
+            if (matrix1ColLength != matrix2RowLength) {
+                System.out.println("Invalid Multiplication Operation : Dimentions do not match the criteria.");
                 return null;
             }
-            int resultArr[][] = new int[matrix1RowLength][matrix1ColLength];
 
-            for (int i = 0; i < matrix1RowLength; i++) {
+            int resultArr[][] = new int[matrix1RowLength][matrix2ColLength];
+
+            int currentRowIndex = 0;
+            int currentColIndex = 0;
+
+            for (int i = 0; i < matrix1RowLength * matrix2ColLength; i++) {
+                int sum = 0;
                 for (int j = 0; j < matrix1ColLength; j++) {
-                    resultArr[i][j] = matrix1.getMatrix().get(i + " " + j) + matrix2.getMatrix().get(i + " " + j);
+                    int matrix1Value = matrix1.getMatrix().getOrDefault(currentRowIndex + " " + j, 0);
+                    int matrix2Value = matrix2.getMatrix().getOrDefault(j + " " + currentColIndex, 0);
+
+                    sum += (matrix1Value * matrix2Value);
                 }
+                resultArr[currentRowIndex][currentColIndex] = sum;
+                if ((i + 1) % matrix1ColLength == 0) {
+                    currentRowIndex++;
+                    currentColIndex = -1;
+                }
+                currentColIndex++;
             }
 
             return new Matrix(resultArr);
@@ -197,14 +213,17 @@ public class Assignment {
             Matrix matrix1 = new Matrix(array1);
             Matrix matrix2 = new Matrix(array2);
 
-            Matrix transMatrix = matrix1.getTranspose();
-            transMatrix.printMatrix();
+            // Matrix transMatrix = matrix1.getTranspose();
+            // transMatrix.printMatrix();
 
-            boolean isMatrix1Symmetric = matrix1.isSymmetrical();
-            System.out.println("Matrix 1 is symmetrical : " + isMatrix1Symmetric);
+            // boolean isMatrix1Symmetric = matrix1.isSymmetrical();
+            // System.out.println("Matrix 1 is symmetrical : " + isMatrix1Symmetric);
 
-            Matrix sumMatrix = Matrix.addMatrices(matrix1, matrix2);
-            sumMatrix.printMatrix();
+            // Matrix sumMatrix = Matrix.addMatrices(matrix1, matrix2);
+            // sumMatrix.printMatrix();
+
+            Matrix producMatrix = Matrix.multiplyMatrix(matrix1, matrix2);
+            producMatrix.printMatrix();
 
         } catch (InputMismatchException e) {
             System.out.println("Invalid Inputs - Mismatch");
