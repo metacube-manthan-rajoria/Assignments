@@ -23,6 +23,13 @@ public final class Matrix {
         }
     }
 
+    /**
+     * Adds two matrices if their dimentions are same
+     * 
+     * @param matrix1 first matrix of Matrix Class Type
+     * @param matrix2 second matrix of Matrix Class Type
+     * @return Matrix object containing sum of matrices
+     */
     public static Matrix addMatrices(Matrix matrix1, Matrix matrix2) {
         try {
             int matrix1RowLength = matrix1.getRowLength();
@@ -51,6 +58,13 @@ public final class Matrix {
         }
     }
 
+    /**
+     * Gives product of two matrices
+     * 
+     * @param matrix1 first matrix of Matrix Class Type
+     * @param matrix2 second matrix of Matrix Class Type
+     * @return Matrix object containing product of matrices
+     */
     public static Matrix multiplyMatrix(Matrix matrix1, Matrix matrix2) {
         try {
             int matrix1RowLength = matrix1.getRowLength();
@@ -91,6 +105,11 @@ public final class Matrix {
         }
     }
 
+    /**
+     * Gives the transpose of matrix (ie Dimentions reversed)
+     * 
+     * @return Matrix object with dimentions reversed
+     */
     public Matrix getTranspose() {
         try {
             int result[][] = new int[this.colLength][this.rowLength];
@@ -109,6 +128,11 @@ public final class Matrix {
         }
     }
 
+    /**
+     * Checks if matrix is symmetrical along the diagonal
+     * 
+     * @return boolean true if symmetrical
+     */
     public boolean isSymmetrical() {
         try {
             boolean isSymmetricalMatrix = true;
@@ -129,6 +153,9 @@ public final class Matrix {
         }
     }
 
+    /**
+     * Prints the matrix
+     */
     public void printMatrix() {
         try {
             System.out.println("\nDimentions : " + rowLength + " x " + colLength);
@@ -156,6 +183,21 @@ public final class Matrix {
         return this.matrixMap;
     }
 
+    public int[][] getIntArrayMatrix() {
+        try {
+            int arr[][] = new int[rowLength][colLength];
+            for (int i = 0; i < rowLength; i++) {
+                for (int j = 0; j < colLength; j++) {
+                    int value = matrixMap.getOrDefault(i + " " + j, 0);
+                    arr[i][j] = value;
+                }
+            }
+            return arr;
+        } catch (NullPointerException e) {
+            System.out.println("Invalid Array Operation");
+            return new int[0][0];
+        }
+    }
 }
 
 class Assignment {
