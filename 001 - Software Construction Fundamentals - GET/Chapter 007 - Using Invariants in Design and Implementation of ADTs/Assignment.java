@@ -95,7 +95,7 @@ final class Matrix {
 
     public Matrix getTranspose() {
         try {
-            int result[][] = new int[this.rowLength][this.colLength];
+            int result[][] = new int[this.colLength][this.rowLength];
 
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
@@ -192,7 +192,7 @@ public class Assignment {
             int arr2RowLength = 0;
             int arr2ColLength = 0;
 
-            System.out.print("Enter number of rows in matrix : ");
+            System.out.print("\nEnter number of rows in matrix : ");
             arr2RowLength = scanner.nextInt();
             System.out.print("Enter number of cols in matrix : ");
             arr2ColLength = scanner.nextInt();
@@ -215,17 +215,17 @@ public class Assignment {
             Matrix matrix1 = new Matrix(array1);
             Matrix matrix2 = new Matrix(array2);
 
-            // Matrix transMatrix = matrix1.getTranspose();
-            // transMatrix.printMatrix();
+            Matrix transMatrix = matrix1.getTranspose();
+            transMatrix.printMatrix();
 
-            // boolean isMatrix1Symmetric = matrix1.isSymmetrical();
-            // System.out.println("Matrix 1 is symmetrical : " + isMatrix1Symmetric);
+            boolean isMatrix1Symmetric = matrix1.isSymmetrical();
+            System.out.println("Matrix 1 is symmetrical : " + isMatrix1Symmetric);
 
             // Matrix sumMatrix = Matrix.addMatrices(matrix1, matrix2);
             // sumMatrix.printMatrix();
 
-            Matrix producMatrix = Matrix.multiplyMatrix(matrix1, matrix2);
-            producMatrix.printMatrix();
+            Matrix productMatrix = Matrix.multiplyMatrix(matrix1, matrix2);
+            productMatrix.printMatrix();
 
         } catch (InputMismatchException e) {
             System.out.println("Invalid Inputs - Mismatch");
