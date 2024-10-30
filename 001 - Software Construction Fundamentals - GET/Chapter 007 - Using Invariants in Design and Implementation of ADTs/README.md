@@ -4,4 +4,4 @@
 
 ### Matrix
 - [My Solution (Annotated Markdown File)](./Assignment.md)
-- [My Solution (Raw Java File)](./Assignment.java)
+- [My Solution (Raw Java File)](./Matrix.java)
