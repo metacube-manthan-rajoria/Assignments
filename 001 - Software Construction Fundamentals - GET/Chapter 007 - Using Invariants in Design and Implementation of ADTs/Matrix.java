@@ -1,5 +1,5 @@
 import java.util.HashMap;
-import java.util.InputMismatchException; 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public final class Matrix {
@@ -83,6 +83,8 @@ public final class Matrix {
             int currentColIndex = 0;
 
             for (int i = 0; i < matrix1RowLength * matrix2ColLength; i++) {
+
+                // Adding all terms for 1 iteration
                 int sum = 0;
                 for (int j = 0; j < matrix1ColLength; j++) {
                     int matrix1Value = matrix1.getMatrix().getOrDefault(currentRowIndex + " " + j, 0);
@@ -91,6 +93,8 @@ public final class Matrix {
                     sum += (matrix1Value * matrix2Value);
                 }
                 resultArr[currentRowIndex][currentColIndex] = sum;
+
+                // Breaking when we read column count and incrementing row for matrix1 and resettting col for matrix 2
                 if ((i + 1) % matrix2ColLength == 0) {
                     currentRowIndex++;
                     currentColIndex = -1;
@@ -112,6 +116,7 @@ public final class Matrix {
      */
     public Matrix getTranspose() {
         try {
+            // Creating a array of reversed dimentions
             int result[][] = new int[this.colLength][this.rowLength];
 
             for (int i = 0; i < rowLength; i++) {
@@ -137,6 +142,7 @@ public final class Matrix {
         try {
             boolean isSymmetricalMatrix = true;
 
+            // Checking if [i, j] == [j, i]
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     int value = matrixMap.getOrDefault(i + " " + j, 0);
