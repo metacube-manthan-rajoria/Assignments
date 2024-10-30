@@ -1,5 +1,5 @@
 import java.util.HashMap;
-import java.util.InputMismatchException;
+import java.util.InputMismatchException; 
 import java.util.Scanner;
 
 public final class Matrix {
@@ -180,7 +180,9 @@ public final class Matrix {
     }
 
     public HashMap<String, Integer> getMatrix() {
-        return this.matrixMap;
+        HashMap<String, Integer> matrixCopy = new HashMap<String, Integer>();
+        matrixCopy.putAll(matrixMap);
+        return matrixCopy;
     }
 
     public int[][] getIntArrayMatrix() {
