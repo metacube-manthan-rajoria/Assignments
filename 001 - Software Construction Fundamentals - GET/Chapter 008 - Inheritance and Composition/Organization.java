@@ -9,7 +9,10 @@ public final class Organization {
     }
 
     public int addDepartment(Department department){
-        departments.add(department);
+        if(!"".equals(department.getDepartmentName())){
+            departments.add(department);
+        }
+        
         return departments.size();
     }
 
