@@ -1,7 +1,6 @@
 package Departments;
 
 import Employees.Employee;
-import java.util.HashMap;
 
 abstract public class Department {
     protected final String departmentName;
