@@ -43,8 +43,8 @@ public class ITDepartment extends Department{
         return removeEmployee(employee);
     }
 
-    public HashMap<Developer, Integer> getEmployees() {
-        HashMap<Developer, Integer> employeesCopy = new HashMap<Developer, Integer>();
+    public HashMap<Employee, Integer> getEmployees() {
+        HashMap<Employee, Integer> employeesCopy = new HashMap<Employee, Integer>();
         employeesCopy.putAll(employees);
         return employeesCopy;
     }

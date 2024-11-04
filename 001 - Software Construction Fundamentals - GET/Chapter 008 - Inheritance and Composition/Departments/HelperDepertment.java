@@ -43,8 +43,8 @@ public class HelperDepertment extends Department{
         return removeEmployee(employee);
     }
 
-    public HashMap<Helper, Integer> getEmployees() {
-        HashMap<Helper, Integer> employeesCopy = new HashMap<Helper, Integer>();
+    public HashMap<Employee, Integer> getEmployees() {
+        HashMap<Employee, Integer> employeesCopy = new HashMap<Employee, Integer>();
         employeesCopy.putAll(employees);
         return employeesCopy;
     }
