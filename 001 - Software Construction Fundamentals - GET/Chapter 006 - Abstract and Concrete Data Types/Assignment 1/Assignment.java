@@ -180,6 +180,7 @@ public class Assignment{
 
         System.out.print("\nEnter a random number : ");
         int randomNumber = scanner.nextInt();
+        scanner.close();
          
         IntSet intSet1 = new IntSet(arr1);
         IntSet intSet2 = new IntSet(arr2);
