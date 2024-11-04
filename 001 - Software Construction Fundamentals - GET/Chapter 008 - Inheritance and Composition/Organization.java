@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import Departments.Department;
+import Employees.Employee;
+
 public final class Organization {
     private final List<Department> departments;
 

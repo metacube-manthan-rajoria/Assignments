@@ -1,3 +1,5 @@
+import Employees.Employee;
+
 public class Payroll {
     static private final int[] TAX_SLAB = {
         300000,
