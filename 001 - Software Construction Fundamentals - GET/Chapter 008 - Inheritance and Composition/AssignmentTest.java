@@ -3,6 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class AssignmentTest {
+    @Test
     public void payoutTest(){
         Department dept1 = new Department("Founders");
         Department dept2 = new Department("Finance");
@@ -14,5 +15,12 @@ public class AssignmentTest {
         dept3.join("Swastik Agarwal", 15000, 10000);
         dept3.join("Rahul Meena", 20000, 10000);
         dept3.join("V1", 18000, 10000);
+
+        Organization organization = new Organization();
+        organization.addDepartment(dept1);
+        organization.addDepartment(dept2);
+        organization.addDepartment(dept3);
+
+        organization.printPaySlips();
     }
 }
