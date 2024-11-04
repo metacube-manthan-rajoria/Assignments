@@ -15,6 +15,7 @@ public class Department {
             employees = new ArrayList<Employee>();
         }else{
             idInitilizer--;
+            throw new IllegalArgumentException("Empty Department Name not allowed.");
         }
     }
 
@@ -37,6 +38,7 @@ public class Department {
             return -1;
 
         employees.remove(employeeId);
+        idInitilizer--;
         return employees.size();
     }
 
