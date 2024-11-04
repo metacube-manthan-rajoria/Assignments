@@ -187,6 +187,15 @@ class Assignment {
 		try {
 			// Taking user input
 			Scanner scanner = new Scanner(System.in);
+
+			// For fixXY
+			int x = 0;
+			int y = 0;
+			System.out.print("Enter x for fixXY : ");
+			x = scanner.nextInt();
+			System.out.print("Enter y for fixXY : ");
+			y = scanner.nextInt();
+
 			System.out.print("Enter number of inputs : ");
 			int noOfInputs = scanner.nextInt();
 			System.out.println();
@@ -205,7 +214,7 @@ class Assignment {
 
 			System.out.println("Clumps in Array : " + op.clumpArray());
 
-			int fixedArray[] = op.fixXY(4, 5);
+			int fixedArray[] = op.fixXY(x, y);
 			System.out.print("Fixed Array : ");
 			for (int i = 0; i < noOfInputs; i++) {
 				System.out.print(fixedArray[i] + " ");
