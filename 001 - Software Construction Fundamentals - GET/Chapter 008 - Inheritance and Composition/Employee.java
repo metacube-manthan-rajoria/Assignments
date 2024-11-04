@@ -1,17 +1,13 @@
-public class Employee implements EmployeeInterface {
+abstract public class Employee {
     private static int idInitilizer = 0;
     private final int employeeId;
     private final String employeeName;
     private final int employeeDepartmentId;
-    private final double employeeSalary;
-    private final double employeeBonus;
 
-    public Employee(String employeeName, double employeeSalary, double employeeBonus, int employeeDepartmentId) {
+    public Employee(String employeeName, int employeeDepartmentId) {
         this.employeeId = idInitilizer++;
         this.employeeName = employeeName;
         this.employeeDepartmentId = employeeDepartmentId;
-        this.employeeSalary = employeeSalary;
-        this.employeeBonus = employeeBonus;
     }
 
     public int getId() {
@@ -26,15 +22,9 @@ public class Employee implements EmployeeInterface {
         return this.employeeDepartmentId;
     }
 
-    public double getBasicSalary() {
-        return this.employeeSalary;
-    }
+    abstract public double getBasicSalary();
 
-    public double getBonus() {
-        return this.employeeBonus;
-    };
+    abstract public double getBonus();
 
-    public double getCompensation() {
-        return this.employeeSalary + this.employeeBonus;
-    }
+    abstract public double getCompensation();
 }
