@@ -1,3 +1,5 @@
+package Employees;
+
 abstract public class Employee {
     private static int idInitilizer = 0;
     private final int employeeId;
