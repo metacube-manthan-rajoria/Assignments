@@ -4,8 +4,8 @@ public class Helper extends Employee{
     private final double employeeSalary;
     private final double employeeBonus;
     
-    public Helper(String employeeName, double employeeSalary, double employeeBonus, int employeeDepartmentId){
-        super(employeeName, employeeDepartmentId);
+    public Helper(String employeeName, double employeeSalary, double employeeBonus){
+        super(employeeName);
         this.employeeSalary = employeeSalary;
         this.employeeBonus = employeeBonus;
     }

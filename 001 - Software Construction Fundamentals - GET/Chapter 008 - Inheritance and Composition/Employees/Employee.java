@@ -4,12 +4,10 @@ abstract public class Employee {
     private static int idInitilizer = 0;
     private final int employeeId;
     private final String employeeName;
-    private final int employeeDepartmentId;
 
-    public Employee(String employeeName, int employeeDepartmentId) {
+    public Employee(String employeeName) {
         this.employeeId = idInitilizer++;
         this.employeeName = employeeName;
-        this.employeeDepartmentId = employeeDepartmentId;
     }
 
     public int getId() {
@@ -18,10 +16,6 @@ abstract public class Employee {
 
     public String getName() {
         return this.employeeName;
-    }
-
-    public int getEmployeeDepartmentId(){
-        return this.employeeDepartmentId;
     }
 
     abstract public double getBasicSalary();

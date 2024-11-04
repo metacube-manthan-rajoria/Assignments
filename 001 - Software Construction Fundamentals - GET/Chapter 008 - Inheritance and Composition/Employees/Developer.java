@@ -4,8 +4,8 @@ public class Developer extends Employee{
     private final double employeeSalary;
     private final double employeeBonus;
     
-    public Developer(String employeeName, double employeeSalary, double employeeBonus, int employeeDepartmentId){
-        super(employeeName, employeeDepartmentId);
+    public Developer(String employeeName, double employeeSalary, double employeeBonus){
+        super(employeeName);
         this.employeeSalary = employeeSalary;
         this.employeeBonus = employeeBonus;
     }
