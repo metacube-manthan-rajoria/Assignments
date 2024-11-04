@@ -1,6 +1,7 @@
 package Departments;
 
 import Employees.Employee;
+import java.util.HashMap;
 
 abstract public class Department {
     protected final String departmentName;
@@ -20,4 +21,6 @@ abstract public class Department {
     abstract public boolean join(Employee employee);
 
     abstract public boolean relieve(Employee employee);
+
+    abstract public HashMap<Employee, Integer> getEmployees();
 }
