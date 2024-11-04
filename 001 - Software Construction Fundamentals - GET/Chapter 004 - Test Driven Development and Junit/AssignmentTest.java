@@ -4,7 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class AssignmentTest {
+class AssignmentTest {
     int[][] intMatrix = {
         { 5, 9, 4, 9, 4, 5 },
         { 5, 4, 9, 4, 9, 5 },
