@@ -18,6 +18,7 @@ abstract public class Department {
         return this.departmentName;
     }
 
+    // Abstract Methods for Department
     abstract public boolean join(Employee employee);
 
     abstract public boolean relieve(Employee employee);

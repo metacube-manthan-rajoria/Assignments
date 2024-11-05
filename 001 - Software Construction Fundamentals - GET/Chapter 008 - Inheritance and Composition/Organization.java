@@ -20,6 +20,12 @@ public final class Organization {
         departments = new HashMap<Department, Integer>();
     }
 
+    /**
+     * Adds a department to the Organization
+     * 
+     * @param department object of any 4 types
+     * @return boolean if department was added.
+     */
     public boolean addDepartment(Department department) {
         int isDepartmentAdded = departments.getOrDefault(department, 0);
         if ("".equals(department.getDepartmentName()) || isDepartmentAdded == 1)
@@ -29,6 +35,11 @@ public final class Organization {
         return true;
     }
 
+    /**
+     * Returns a copy of all employees hashmap
+     * 
+     * @return Hashmap<Employee, Integer> of all employees in organisation
+     */
     HashMap<Employee, Integer> getAllEmployees() {
         HashMap<Employee, Integer> result = new HashMap<Employee, Integer>();
         for (Department department : departments.keySet()) {
@@ -37,7 +48,12 @@ public final class Organization {
         return result;
     }
 
-    public ArrayList<Employee> getSortedEmployeesList(){
+    /**
+     * Returns a sorted copy of getAllEmployees function
+     * 
+     * @return ArrayList<Employee> of all employees
+     */
+    public ArrayList<Employee> getSortedEmployeesList() {
         HashMap<Employee, Integer> employeesList = getAllEmployees();
         ArrayList<Employee> sortedEmployeesList = new ArrayList<Employee>();
         for (Employee employee : employeesList.keySet()) {
@@ -47,6 +63,9 @@ public final class Organization {
         return sortedEmployeesList;
     }
 
+    /**
+     * Prints payslips of all employees
+     */
     public void printPaySlips() {
         ArrayList<Employee> sortedEmployeesList = getSortedEmployeesList();
 
@@ -89,7 +108,7 @@ class Main {
             org.printPaySlips();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

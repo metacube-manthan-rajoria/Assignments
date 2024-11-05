@@ -18,12 +18,14 @@ abstract public class Employee implements Comparable<Employee>{
         return this.employeeName;
     }
 
+    // Abstract Methods for Employee
     abstract public double getBasicSalary();
 
     abstract public double getBonus();
 
     abstract public double getCompensation();
 
+    // Interface Comparable compareTo() implementation
     @Override
     public int compareTo(Employee other) {
         return employeeId - other.getId();

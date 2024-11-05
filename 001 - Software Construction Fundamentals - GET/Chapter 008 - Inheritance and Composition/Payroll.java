@@ -1,6 +1,7 @@
 import Employees.Employee;
 
 public class Payroll {
+    // Tax Slabs for new tax structure
     static private final int[] TAX_SLAB = {
         300000,
         700000,
@@ -30,6 +31,7 @@ public class Payroll {
             currentTax = 30;
         }
 
+        // Per month taxable income (2 floating point integers)
         taxable_income = Double.parseDouble(String.format("%.2f", ((compensation * currentTax) / 100)/12));
     }
 
@@ -37,6 +39,11 @@ public class Payroll {
         return taxable_income;
     }
 
+    /**
+     * Returns the total compensation after taxes each month
+     * 
+     * @return double payout per month
+     */
     public double getPayoutPerMonth(){
         double monthlyPayout = (employee.getCompensation()/12) - taxable_income;
         double formattedMonthlyPayout = Double.parseDouble(String.format("%.2f", monthlyPayout));
