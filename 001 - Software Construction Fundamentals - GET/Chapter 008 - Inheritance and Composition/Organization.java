@@ -54,7 +54,7 @@ class Main {
             Department dept3 = new HelperDepertment("Finance");
             Department dept4 = new QADepartment("Finance");
 
-            Employee e1 = new Developer("Raja Pari", 600000, 20000);
+            Employee e1 = new Developer("Raja Pari", 10000000, 0);
             Employee e2 = new Developer("Hulla Hullare Hulle Hulle-Hulle", 1300000, 75000);
             Employee e3 = new Manager("Shona", 1200000, 100000);
             Employee e4 = new Tester("Alexandrovich Kasperov", 500000, 20000);
