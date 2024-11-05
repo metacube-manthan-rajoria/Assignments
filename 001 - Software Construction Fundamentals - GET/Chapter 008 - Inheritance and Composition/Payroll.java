@@ -30,7 +30,7 @@ public class Payroll {
             currentTax = 30;
         }
 
-        taxable_income = Double.parseDouble(String.format("%.2f", (compensation * currentTax) / 100));
+        taxable_income = Double.parseDouble(String.format("%.2f", ((compensation * currentTax) / 100)/12));
     }
 
     public double getTaxableIncome(){
@@ -46,7 +46,8 @@ public class Payroll {
         slipString.append("Bonus\t: " + employee.getBonus() + "\n");
         slipString.append("Total Compensation\t: " + employee.getCompensation() + "\n");
         slipString.append("Total Taxable Income\t: " + taxable_income + "\n");
-        slipString.append("Final Payout\t: " + (employee.getCompensation() - taxable_income) + "\n");
+        double monthlyPayout = Double.parseDouble(String.format("%.2f", (employee.getCompensation()/12) - taxable_income));
+        slipString.append("Final Monthly Payout\t: " + monthlyPayout + "\n");
         return slipString.toString();
     }
 
