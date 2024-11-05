@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import Departments.Department;
@@ -35,9 +37,20 @@ public final class Organization {
         return result;
     }
 
-    public void printPaySlips() {
+    public ArrayList<Employee> getSortedEmployeesList(){
         HashMap<Employee, Integer> employeesList = getAllEmployees();
+        ArrayList<Employee> sortedEmployeesList = new ArrayList<Employee>();
         for (Employee employee : employeesList.keySet()) {
+            sortedEmployeesList.add(employee);
+        }
+        Collections.sort(sortedEmployeesList);
+        return sortedEmployeesList;
+    }
+
+    public void printPaySlips() {
+        ArrayList<Employee> sortedEmployeesList = getSortedEmployeesList();
+
+        for (Employee employee : sortedEmployeesList) {
             String slip = new Payroll(employee).toString();
             System.out.println(slip + "\n");
         }
