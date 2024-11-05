@@ -40,6 +40,10 @@ This is a Academy Goal Management Repo. <br>
 - [IntSet](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20006%20-%20Abstract%20and%20Concrete%20Data%20Types/Assignment%201/Assignment.java)
 
 - [PolyOperation](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20006%20-%20Abstract%20and%20Concrete%20Data%20Types/Assignment%202/Assignment.java)
+
+- [Matrix](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20007%20-%20Using%20Invariants%20in%20Design%20and%20Implementation%20of%20ADTs/Matrix.java)
+
+- [Organization](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20008%20-%20Inheritance%20and%20Composition/Organization.java)
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
