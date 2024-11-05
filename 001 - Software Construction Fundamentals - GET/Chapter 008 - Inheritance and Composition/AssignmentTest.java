@@ -16,9 +16,10 @@ import Employees.Manager;
 import Employees.Tester;
 
 public class AssignmentTest {
-    @Test
-    public void payoutTest() {
-        Organization org = new Organization();
+    Organization org;
+
+    public AssignmentTest(){
+        org = new Organization();
 
         Department dept1 = new ITDepartment("IT");
         Department dept2 = new ManagerialDepartment("Finance");
@@ -43,7 +44,10 @@ public class AssignmentTest {
         org.addDepartment(dept2);
         org.addDepartment(dept3);
         org.addDepartment(dept4);
+    }
 
+    @Test
+    public void payoutTest() {
         ArrayList<Employee> empList = org.getSortedEmployeesList();
         Double taxableIncomeArray[] = new Double[empList.size()];
 
@@ -55,6 +59,22 @@ public class AssignmentTest {
         }
 
         Double output[] = { 583333.33, 91666.66, 86666.66, 41166.66, 24541.66, 32458.34 };
+        assertArrayEquals(output, taxableIncomeArray);
+    }
+
+    @Test
+    public void taxableIncomeTest() {
+        ArrayList<Employee> empList = org.getSortedEmployeesList();
+        Double taxableIncomeArray[] = new Double[empList.size()];
+
+        int taxArrayIndex = 0;
+        for (Employee employee : empList) {
+            Payroll payroll = new Payroll(employee);
+            taxableIncomeArray[taxArrayIndex] = payroll.getTaxableIncome();
+            taxArrayIndex++;
+        }
+
+        Double output[] = { 250000.0, 22916.67, 21666.67, 2166.67, 1291.67, 1708.33 };
         assertArrayEquals(output, taxableIncomeArray);
     }
 }
