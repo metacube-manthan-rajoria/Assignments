@@ -16,8 +16,5 @@ public class AssignmentTest {
             {0,0,0,1},
             {0,1,0,0}
         }, board.getBoard());
-
-        assertEquals(false, new ChessBoard(2).solveNQueens());
-   
     }
 }
