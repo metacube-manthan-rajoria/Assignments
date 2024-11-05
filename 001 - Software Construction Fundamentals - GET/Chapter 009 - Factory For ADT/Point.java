@@ -1,4 +1,3 @@
-
 public class Point {
     private long x = 0;
     private long y = 0;
