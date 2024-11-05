@@ -37,6 +37,12 @@ public class Payroll {
         return taxable_income;
     }
 
+    public double getPayoutPerMonth(){
+        double monthlyPayout = (employee.getCompensation()/12) - taxable_income;
+        double formattedMonthlyPayout = Double.parseDouble(String.format("%.2f", monthlyPayout));
+        return formattedMonthlyPayout;
+    }
+
     @Override
     public String toString() {
         StringBuilder slipString = new StringBuilder();
@@ -46,8 +52,8 @@ public class Payroll {
         slipString.append("Bonus\t: " + employee.getBonus() + "\n");
         slipString.append("Total Compensation\t: " + employee.getCompensation() + "\n");
         slipString.append("Total Taxable Income\t: " + taxable_income + "\n");
-        double monthlyPayout = Double.parseDouble(String.format("%.2f", (employee.getCompensation()/12) - taxable_income));
-        slipString.append("Final Monthly Payout\t: " + monthlyPayout + "\n");
+        
+        slipString.append("Final Monthly Payout\t: " + getPayoutPerMonth() + "\n");
         return slipString.toString();
     }
 
