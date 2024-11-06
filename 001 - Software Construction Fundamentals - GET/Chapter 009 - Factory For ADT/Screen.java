@@ -5,25 +5,27 @@ import java.util.ArrayList;
 public class Screen {
     private int xMax = 0;
     private int yMax = 0;
+    private Point screenEnd;
 
     private List<Shape> shapes;
 
-    public Screen(int xMax, int yMax){
+    public Screen(int xMax, int yMax) {
         this.xMax = Math.abs(yMax);
         this.yMax = Math.abs(yMax);
+        screenEnd = new Point(xMax, yMax);
         shapes = new ArrayList<Shape>();
     }
 
-    public void addShape(Shape.ShapeType shape){
+    public void addShape(Shape.ShapeType shape) {
         Scanner scanner = new Scanner(System.in);
 
         // Checking number of sides.
         int noOfSides = 0;
-        if(shape == Shape.ShapeType.TRIANGLE || shape == Shape.ShapeType.POLYGON){
+        if (shape == Shape.ShapeType.TRIANGLE || shape == Shape.ShapeType.POLYGON) {
             noOfSides = 1;
-        }else if(shape == Shape.ShapeType.RECTANGLE) {
+        } else if (shape == Shape.ShapeType.RECTANGLE) {
             noOfSides = 2;
-        }else if(shape == Shape.ShapeType.CIRCLE){
+        } else if (shape == Shape.ShapeType.CIRCLE) {
             noOfSides = 0;
         }
 
@@ -37,8 +39,8 @@ public class Screen {
 
         // Taking sides
         List<Integer> sides = new ArrayList<>(noOfSides);
-        for(int i = 0; i<noOfSides; i++){
-            System.out.print("Enter the side " + (i+1) + " for " + shape + " : ");
+        for (int i = 0; i < noOfSides; i++) {
+            System.out.print("Enter the side " + (i + 1) + " for " + shape + " : ");
             Integer side = scanner.nextInt();
             sides.add(side);
         }
@@ -48,27 +50,46 @@ public class Screen {
         Point p = new Point(xCoordinateOrigin, yCoordinateOrigin);
         Shape newShape = ShapeFactory.createShape(shape, p, sides);
 
-        // TODO : Check if shape if addadble(inblounds of xMax and yMax)
+        boolean isShapeInbound = isShapeInbound(newShape);
 
-
-        System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() +")\n");
-        shapes.add(newShape);
+        if (isShapeInbound) {
+            System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() + ")\n");
+            shapes.add(newShape);
+        } else {
+            System.out.println(
+                    "Cannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")\n");
+        }
     }
 
-    public Shape getShape(int index){
+    public Shape getShape(int index) {
         return shapes.get(index);
     }
 
-    public void deleteShape(int index){
+    public void deleteShape(int index) {
         shapes.remove(index);
     }
-    public void deleteAllShapeTypes(Shape.ShapeType shapeType){
 
+    public void deleteAllShapeTypes(Shape.ShapeType shapeType) {
+        for (int i = 0; i < shapes.size(); i++) {
+            Shape.ShapeType currentShapeType = shapes.get(i).getShapeType();
+            if (currentShapeType == shapeType) {
+                shapes.remove(i);
+            }
+        }
     }
 
-    // TODO : add code here later
-    private boolean isShapeInbounds(Shape shape){
+    public boolean isShapeInbound(Shape shape) {
+        if (shape == null || !shape.isValid())
+            return false;
+        List<Point> allShapeVertex = shape.getVertexes();
+        if (allShapeVertex.size() == 0 || allShapeVertex == null)
+            return false;
+
+        for (Point point : allShapeVertex) {
+            if (point.getX() > xMax || point.getY() > yMax)
+                return false;
+        }
+
         return true;
     }
-    
 }
