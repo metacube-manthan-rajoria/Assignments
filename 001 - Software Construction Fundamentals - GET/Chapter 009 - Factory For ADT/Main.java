@@ -72,7 +72,8 @@ public class Main {
                         "\t1. Area\n" +
                         "\t2. Timestamp\n" +
                         "\t3. Origin\n" +
-                        "\t4. All Attributes\n"
+                        "\t4. Is Point Enclosed\n" +
+                        "\t5. All Attributes\n"
                     );
 
                     System.out.print("\tEnter attribute index : ");
@@ -89,12 +90,40 @@ public class Main {
                     }else if(userAttributeSelection == 3){
                         Point origin = selectedShape.getOrigin();
                         System.out.println("\tOrigin : ( " + origin.getX() + ", " + origin.getY() + " )");
+                    }else if(userAttributeSelection == 4){
+                        System.out.print("\t\tEnter x coordinate for enclosed point to check : ");
+                        int enclosedPointX = 0;
+                        enclosedPointX = scanner.nextInt();
+                        System.out.print("\t\tEnter y coordinate for enclosed point to check : ");
+                        int enclosedPointY = 0;
+                        enclosedPointY = scanner.nextInt();
+
+                        Point enclosedPointCheck = new Point(enclosedPointX, enclosedPointY);
+                        System.out.println(
+                            "\t\tThe point " + 
+                            (selectedShape.isPointEnclosed(enclosedPointCheck) ? "is" : "is not") + 
+                            " enclosed in the shape"
+                        );
                     }else{
                         System.out.println("\tPerimeter : " + selectedShape.getPerimeter());
                         System.out.println("\tArea : " + selectedShape.getArea());
                         System.out.println("\tTimestamp : " + selectedShape.getTimestamp());
                         Point origin = selectedShape.getOrigin();
                         System.out.println("\tOrigin : ( " + origin.getX() + ", " + origin.getY() + " )");
+
+                        System.out.print("\t\tEnter x coordinate for enclosed point to check : ");
+                        int enclosedPointX = 0;
+                        enclosedPointX = scanner.nextInt();
+                        System.out.print("\t\tEnter y coordinate for enclosed point to check : ");
+                        int enclosedPointY = 0;
+                        enclosedPointY = scanner.nextInt();
+
+                        Point enclosedPointCheck = new Point(enclosedPointX, enclosedPointY);
+                        System.out.println(
+                            "\t\tThe point " + 
+                            (selectedShape.isPointEnclosed(enclosedPointCheck) ? "is" : "is not") + 
+                            " enclosed in the shape"
+                        );
                     }
                 }else if(userSelection == 3){
                     System.out.print("Enter shape index to delete: ");
