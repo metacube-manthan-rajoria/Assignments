@@ -91,7 +91,7 @@ public class Screen {
         }
     }
 
-    public boolean isShapeInbound(Shape shape) {
+    private boolean isShapeInbound(Shape shape) {
         if (shape == null || !shape.isValid())
             return false;
         List<Point> allShapeVertex = shape.getVertexes();
