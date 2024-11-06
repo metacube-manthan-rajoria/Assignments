@@ -43,5 +43,10 @@ A method that returns all the shape objects that are on top of a given shape obj
 > [!Warning]
 > Rendering not required
 
+### Useful Links
 
+- [Find coordinates from angle and length](https://math.stackexchange.com/questions/4171316/how-to-find-x-y-coordinate-given-an-angle-and-distance-from-the-origin)
+- [Area of regular Polygon](https://byjus.com/maths/area-of-regular-polygon/)
+- [Triangle Calculator](https://www.triangle-calculator.com/?what=vc)
+- [Check if a point is inside a polygon](https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/)
 
