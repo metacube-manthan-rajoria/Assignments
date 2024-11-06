@@ -8,21 +8,26 @@ public class Polygon implements Shape {
     private Point p;
     private List<Integer> sides = new ArrayList<Integer>(NUMBER_OF_SIDES);
     private List<Point> shapeVertexes;
+    long timeStamp = 0;
     boolean isValid = true;
 
     public Polygon(Point p, List<Integer> sides) {
-        if (sides.size() != NUMBER_OF_SIDES || p == null) isValid = false;
-        
+        if (sides.size() != NUMBER_OF_SIDES || p == null)
+            isValid = false;
+
         this.p = p;
         this.sides = sides;
         this.NUMBER_OF_VERTEX = sides.get(1);
-        if (this.NUMBER_OF_VERTEX <= 4) isValid = false;
+        if (this.NUMBER_OF_VERTEX <= 4)
+            isValid = false;
         this.shapeVertexes = new ArrayList<Point>(NUMBER_OF_VERTEX);
+        timeStamp = System.nanoTime();
         makeVertexes();
     }
 
-    private void makeVertexes(){
-        if(!isValid) return;
+    private void makeVertexes() {
+        if (!isValid)
+            return;
 
         double side = sides.get(0);
 
@@ -34,9 +39,9 @@ public class Polygon implements Shape {
         int angle = 2;
         double lastX = p.getX() + side;
         double lastY = p.getY();
-        for(int i = 0; i < NUMBER_OF_VERTEX - 2; i++){
-            double vpx = lastX + (side * Math.cos((Math.PI * angle)/NUMBER_OF_VERTEX));
-            double vpy = lastY + (side * Math.sin((Math.PI * angle)/NUMBER_OF_VERTEX));
+        for (int i = 0; i < NUMBER_OF_VERTEX - 2; i++) {
+            double vpx = lastX + (side * Math.cos((Math.PI * angle) / NUMBER_OF_VERTEX));
+            double vpy = lastY + (side * Math.sin((Math.PI * angle) / NUMBER_OF_VERTEX));
             lastX = vpx;
             lastY = vpy;
 
@@ -108,5 +113,9 @@ public class Polygon implements Shape {
 
     public Shape.ShapeType getShapeType() {
         return Shape.ShapeType.POLYGON;
+    }
+
+    public long getTimestamp() {
+        return this.timeStamp;
     }
 }
