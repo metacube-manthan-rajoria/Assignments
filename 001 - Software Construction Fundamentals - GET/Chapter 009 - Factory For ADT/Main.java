@@ -1,5 +1,5 @@
-import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -22,9 +22,16 @@ public class Main {
             }
 
             Screen screen = new Screen(xMax, yMax);
-            screen.addShape(Shape.ShapeType.CIRCLE);
-            
+            screen.addShape(Shape.ShapeType.TRIANGLE);
 
+            //Delete this later
+            System.out.println(screen.getShape(0).getPerimeter());
+            System.out.println(screen.getShape(0).getArea());
+
+            List<Point> a = screen.getShape(0).getVertexes();
+            for(Point pw : a){
+                System.out.println(pw.getX() + "  " + pw.getY());
+            }
             
 
             scanner.close();
@@ -32,6 +39,8 @@ public class Main {
             System.out.println(e.getMessage());
         } catch (InputMismatchException e){
             System.out.println("Input Mismatch Error - Enter valid inputs.");
+        } catch (NullPointerException e) {
+            System.out.println("You are trying to access a null object : \n" + e.getMessage() + "\n");
         } catch (Exception e){
             System.out.println("We ran into an error");
             System.out.println(e.getMessage() + "\n");
