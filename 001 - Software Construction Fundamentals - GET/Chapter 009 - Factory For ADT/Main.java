@@ -22,8 +22,7 @@ public class Main {
 
             Screen screen = new Screen(xMax, yMax);
 
-            int userSelection = 0;
-            while(userSelection >= 0){
+            while(true){
                 System.out.println(
                     "\nOperations ->\n" +
                     "0. Exit\n" +
@@ -34,19 +33,21 @@ public class Main {
                     ""
                 );
 
-                userSelection = scanner.nextInt();
+                System.out.print("Enter operation index : ");
+                int userSelection = scanner.nextInt();
 
                 if(userSelection <= 0){
                     break;
                 }else if(userSelection == 1){
                     System.out.println(
-                        "\tEnter type of shape to add ->\n" +
+                        "\n\tEnter type of shape to add ->\n" +
                         "\t0. Triangle\n" +
                         "\t1. Rectangle\n" +
                         "\t2. Polygon\n" +
                         "\t3. Circle\n"
                     );
 
+                    System.out.print("\tEnter shape index : ");
                     int userShapeSelection = 0;
                     userShapeSelection = scanner.nextInt();
 
@@ -100,7 +101,7 @@ public class Main {
                     continue;
                 }
             }
-            
+
             scanner.close();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -112,7 +113,5 @@ public class Main {
             System.out.println("We ran into an error : More details below\n");
             System.out.println(e.getMessage() + "\n");
         }
-
     }
-
 }
