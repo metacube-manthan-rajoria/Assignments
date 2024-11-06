@@ -11,4 +11,6 @@ public interface Shape{
     public Point getOrigin();
     public double isPointEnclosed(Point p);
     public double isPointEnclosed(double x, double y);
+    public boolean isValid();
+    public Shape.ShapeType getShapeType();
 }
