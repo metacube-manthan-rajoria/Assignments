@@ -28,18 +28,18 @@ public class Screen {
         // Taking origin
         double xCoordinateOrigin = 0;
         double yCoordinateOrigin = 0;
-        System.out.print("Enter the x origin for " + shape + " : ");
+        System.out.print("\tEnter the x origin for " + shape + " : ");
         xCoordinateOrigin = scanner.nextDouble();
-        System.out.print("Enter the y origin for " + shape + " : ");
+        System.out.print("\tEnter the y origin for " + shape + " : ");
         yCoordinateOrigin = scanner.nextDouble();
 
         // Taking sides
         List<Integer> sides = new ArrayList<>(noOfSides);
         for (int i = 0; i < noOfSides; i++) {
             if(shape == Shape.ShapeType.POLYGON && i == 1){
-                System.out.print("Enter the number of sides in the " + shape + " : ");
+                System.out.print("\tEnter the number of sides in the " + shape + " : ");
             }else{
-                System.out.print("Enter the length of side " + (i + 1) + " for " + shape + " : ");
+                System.out.print("\tEnter the length of side " + (i + 1) + " for " + shape + " : ");
             }
             
             Integer side = scanner.nextInt();
@@ -54,7 +54,7 @@ public class Screen {
         boolean isShapeInbound = isShapeInbound(newShape);
 
         if (isShapeInbound && newShape.isValid()) {
-            System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() + ")\n");
+            System.out.println("\tAdded " + shape + " at origin (" + p.getX() + "," + p.getY() + ")\n");
             shapes.add(newShape);
         } else {
             if(!newShape.isValid()){
