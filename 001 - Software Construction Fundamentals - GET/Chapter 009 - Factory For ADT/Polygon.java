@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Polygon implements Shape {
-    private final int NUMBER_OF_SIDES = 1;
+    private final int NUMBER_OF_SIDES = 2;
     private int NUMBER_OF_VERTEX = -1;
 
     private Point p;
