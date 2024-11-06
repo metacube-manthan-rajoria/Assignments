@@ -50,4 +50,7 @@ A method that returns all the shape objects that are on top of a given shape obj
 - [Triangle Calculator](https://www.triangle-calculator.com/?what=vc)
 - [Check if a point is inside a polygon](https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/)
 - [Scanner nextInt Stream Exception](https://stackoverflow.com/questions/13042008/java-util-nosuchelementexception-scanner-reading-user-input)
+- [Multiple sort 1](https://stackoverflow.com/questions/4262029/can-an-object-have-multiple-compare-methods-for-ordering-based-on-different-valu)
+- [Multiple sort 2](https://forum.processing.org/one/topic/multiple-instances-of-comparable-interface-compareto-in-a-class.html)
+- [Multiple sort 3](https://teamtreehouse.com/community/java-compareto-sorting-sorting-multiple-fields-for-same-object)
 
