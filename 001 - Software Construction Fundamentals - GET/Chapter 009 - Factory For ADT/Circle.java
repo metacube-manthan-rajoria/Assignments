@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.geom.Path2D;
+import java.awt.geom.Point2D;
 
 public class Circle implements Shape {
     private final int NUMBER_OF_SIDES = 1;
@@ -66,30 +68,29 @@ public class Circle implements Shape {
         return new Point(p.getX(), p.getY());
     }
 
-    public double isPointEnclosed(Point p) {
-        // Path2D path = new Path2D.Double();
-
-        // // Move to the first point in the polygon
-        // path.moveTo(polygon.get(0).x, polygon.get(0).y);
-
-        // // Connect the points in the polygon
-        // for (int i = 1; i < polygon.size(); i++) {
-        // path.lineTo(polygon.get(i).x, polygon.get(i).y);
-        // }
-
-        // // Close the path
-        // path.closePath();
-
-        // // Create a Point2D object for the test point
-        // Point2D testPoint = new Point2D.Double(point.x, point.y);
-
-        // // Check if the test point is inside the polygon
-        // return path.contains(testPoint);
-        return 0.0;
+    public boolean isPointEnclosed(Point p) {
+        Path2D path = new Path2D.Double();
+ 
+        // Move to the first point in the polygon
+        path.moveTo(shapeVertexes.get(0).getX(), shapeVertexes.get(0).getY());
+ 
+        // Connect the points in the polygon
+        for (int i = 1; i < shapeVertexes.size(); i++) {
+            path.lineTo(shapeVertexes.get(i).getX(), shapeVertexes.get(i).getY());
+        }
+ 
+        path.closePath();
+ 
+        // Create a Point2D object for the test point
+        Point2D testPoint = new Point2D.Double(p.getX(), p.getY());
+ 
+        // Check if the test point is inside the polygon
+        return path.contains(testPoint);
     }
 
-    public double isPointEnclosed(double x, double y) {
-        return 0.0;
+    public boolean isPointEnclosed(double x, double y) {
+        Point p = new Point(x, y);
+        return isPointEnclosed(p);
     }
 
     public boolean isValid() {
