@@ -31,7 +31,7 @@ public class Main {
                                 "2. Get Shape Attributes\n" +
                                 "3. Delete Shape\n" +
                                 "4. Delete all Shapes of certain types\n" +
-                                "");
+                                "5. Sort Shapes");
 
                 System.out.print("Enter operation index : ");
                 int userSelection = scanner.nextInt();
@@ -146,6 +146,28 @@ public class Main {
                         screen.deleteAllShapeTypes(Shape.ShapeType.POLYGON);
                     } else if (selectedShapeTypeIndex == 3) {
                         screen.deleteAllShapeTypes(Shape.ShapeType.CIRCLE);
+                    }
+                } else if (userSelection == 5) {
+                    System.out.println(
+                            "\n\tEnter sort type ->\n" +
+                                    "\t0. Perimeter\n" +
+                                    "\t1. Area\n" +
+                                    "\t2. Timestamp\n" +
+                                    "\t3. Distance from Origin\n" +
+                                    "\t4. Cancel Operation");
+
+                    System.out.print("\tEnter sort type index : ");
+                    int userSortSelection = 0;
+                    userSortSelection = scanner.nextInt();
+
+                    if(userSortSelection == 0){
+                        screen.sortShapes(Screen.ShapeSort.PERIMETER);
+                    }else if(userSortSelection == 1){
+                        screen.sortShapes(Screen.ShapeSort.AREA);
+                    }else if(userSortSelection == 2){
+                        screen.sortShapes(Screen.ShapeSort.TIMESTAMP);
+                    }else if(userSortSelection == 3){
+                        screen.sortShapes(Screen.ShapeSort.ORIGIN_DISTANCE);
                     }
                 } else {
                     continue;
