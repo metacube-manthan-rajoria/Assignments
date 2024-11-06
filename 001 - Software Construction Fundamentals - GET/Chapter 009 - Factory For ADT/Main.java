@@ -27,11 +27,9 @@ public class Main {
             //Delete this later
             System.out.println("P : " + screen.getShape(0).getPerimeter());
             System.out.println("A : " + screen.getShape(0).getArea() + "\n");
+            System.out.println("TS : " + screen.getShape(0).getTimestamp() + "\n");
 
-            List<Point> a = screen.getShape(0).getVertexes();
-            for(Point pw : a){
-                System.out.println(pw.getX() + "  " + pw.getY());
-            }
+    
             
 
             scanner.close();
