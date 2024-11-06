@@ -45,7 +45,6 @@ public class Screen {
             Integer side = scanner.nextInt();
             sides.add(side);
         }
-        scanner.close();
 
         // Creating corresponding shape
         Point p = new Point(xCoordinateOrigin, yCoordinateOrigin);

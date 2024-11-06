@@ -49,4 +49,5 @@ A method that returns all the shape objects that are on top of a given shape obj
 - [Area of regular Polygon](https://byjus.com/maths/area-of-regular-polygon/)
 - [Triangle Calculator](https://www.triangle-calculator.com/?what=vc)
 - [Check if a point is inside a polygon](https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/)
+- [Scanner nextInt Stream Exception](https://stackoverflow.com/questions/13042008/java-util-nosuchelementexception-scanner-reading-user-input)
 
