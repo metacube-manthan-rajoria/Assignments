@@ -25,8 +25,8 @@ public class Main {
             screen.addShape(Shape.ShapeType.TRIANGLE);
 
             //Delete this later
-            System.out.println(screen.getShape(0).getPerimeter());
-            System.out.println(screen.getShape(0).getArea());
+            System.out.println("P : " + screen.getShape(0).getPerimeter());
+            System.out.println("A : " + screen.getShape(0).getArea() + "\n");
 
             List<Point> a = screen.getShape(0).getVertexes();
             for(Point pw : a){
