@@ -3,11 +3,11 @@ import java.util.List;
 
 public class Rectangle implements Shape{
     private final int NUMBER_OF_SIDES = 2;
-    private final int NUMBER_OF_COORDINATES = 4;
+    private final int NUMBER_OF_VERTEX = 4;
 
     private Point p;
     private List<Integer> sides = new ArrayList<Integer>(NUMBER_OF_SIDES);
-    private List<Point> shapeCoordinates;
+    private List<Point> shapeVertexes;
     boolean isValid = true;
 
     public Rectangle(Point p, List<Integer> sides){
@@ -17,11 +17,11 @@ public class Rectangle implements Shape{
 
         this.p = p;
         this.sides = sides;
-        this.shapeCoordinates = new ArrayList<Point>(NUMBER_OF_COORDINATES);
-        makeCoordinates();
+        this.shapeVertexes = new ArrayList<Point>(NUMBER_OF_VERTEX);
+        makeVertexes();
     }
 
-    private void makeCoordinates(){
+    private void makeVertexes(){
         if(!isValid) return;
 
         Point p1 = new Point(p.getX(), p.getY());
@@ -29,10 +29,18 @@ public class Rectangle implements Shape{
         Point p3 = new Point(p.getX() + sides.get(0), p.getY() + sides.get(1));
         Point p4 = new Point(p.getX(), p.getY() + sides.get(1));
 
-        shapeCoordinates.add(p1);
-        shapeCoordinates.add(p2);
-        shapeCoordinates.add(p3);
-        shapeCoordinates.add(p4);
+        shapeVertexes.add(p1);
+        shapeVertexes.add(p2);
+        shapeVertexes.add(p3);
+        shapeVertexes.add(p4);
+    }
+
+    public List<Point> getVertexes(){
+        List<Point> copyShapeVertexes = new ArrayList<Point>();
+        for(Point p : shapeVertexes){
+            copyShapeVertexes.add(p);
+        }
+        return copyShapeVertexes;
     }
 
     public double getArea(){
@@ -78,5 +86,12 @@ public class Rectangle implements Shape{
     }
     public double isPointEnclosed(double x, double y){
         return 0.0;
+    }
+
+    public boolean isValid(){
+        return isValid;
+    }
+    public Shape.ShapeType getShapeType(){
+        return Shape.ShapeType.RECTANGLE;
     }
 }
