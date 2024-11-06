@@ -67,26 +67,34 @@ public class Main {
                     selectedShapeIndex = scanner.nextInt();
 
                     System.out.println(
-                        "\tEnter type of attribute ->\n" +
+                        "\n\tEnter type of attribute ->\n" +
                         "\t0. Perimeter\n" +
                         "\t1. Area\n" +
                         "\t2. Timestamp\n" +
-                        "\t3. Origin\n"
+                        "\t3. Origin\n" +
+                        "\t4. All Attributes\n"
                     );
 
+                    System.out.print("\tEnter attribute index : ");
                     int userAttributeSelection = 0;
                     userAttributeSelection = scanner.nextInt();
 
                     Shape selectedShape = screen.getShape(selectedShapeIndex);
                     if(userAttributeSelection == 0){
-                        System.out.println("Perimeter : " + selectedShape.getPerimeter());
+                        System.out.println("\tPerimeter : " + selectedShape.getPerimeter());
                     }else if(userAttributeSelection == 1){
-                        System.out.println("Area : " + selectedShape.getArea());
+                        System.out.println("\tArea : " + selectedShape.getArea());
                     }else if(userAttributeSelection == 2){
-                        System.out.println("Timestamp : " + selectedShape.getTimestamp());
-                    }else{
+                        System.out.println("\tTimestamp : " + selectedShape.getTimestamp());
+                    }else if(userAttributeSelection == 3){
                         Point origin = selectedShape.getOrigin();
-                        System.out.println("Origin : ( " + origin.getX() + ", " + origin.getY() + " )");
+                        System.out.println("\tOrigin : ( " + origin.getX() + ", " + origin.getY() + " )");
+                    }else{
+                        System.out.println("\tPerimeter : " + selectedShape.getPerimeter());
+                        System.out.println("\tArea : " + selectedShape.getArea());
+                        System.out.println("\tTimestamp : " + selectedShape.getTimestamp());
+                        Point origin = selectedShape.getOrigin();
+                        System.out.println("\tOrigin : ( " + origin.getX() + ", " + origin.getY() + " )");
                     }
                 }else if(userSelection == 3){
                     System.out.print("Enter shape index to delete: ");
@@ -94,10 +102,28 @@ public class Main {
                     selectedShapeIndex = scanner.nextInt();
                     screen.deleteShape(selectedShapeIndex);
                 }else if(userSelection == 4){
-                    System.out.print("Enter shape Type to delete: ");
-                    int selectedShapeIndex = 0;
-                    selectedShapeIndex = scanner.nextInt();
-                    screen.deleteShape(selectedShapeIndex);
+                    System.out.println(
+                        "\n\tEnter type of shape to delete ->\n" +
+                        "\t0. Triangle\n" +
+                        "\t1. Rectangle\n" +
+                        "\t2. Polygon\n" +
+                        "\t3. Circle\n" +
+                        "\t4. Cancel Operation\n"
+                    );
+
+                    System.out.print("\tEnter shape Type to delete: ");
+                    int selectedShapeTypeIndex = 0;
+                    selectedShapeTypeIndex = scanner.nextInt();
+
+                    if(selectedShapeTypeIndex == 0){
+                        screen.deleteAllShapeTypes(Shape.ShapeType.TRIANGLE);
+                    }else if(selectedShapeTypeIndex == 1){
+                        screen.deleteAllShapeTypes(Shape.ShapeType.RECTANGLE);
+                    }else if(selectedShapeTypeIndex == 2){
+                        screen.deleteAllShapeTypes(Shape.ShapeType.POLYGON);
+                    }else if(selectedShapeTypeIndex == 3){
+                        screen.deleteAllShapeTypes(Shape.ShapeType.CIRCLE);
+                    }
                 }else{
                     continue;
                 }
