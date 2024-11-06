@@ -22,7 +22,7 @@ public class Main {
             }
 
             Screen screen = new Screen(xMax, yMax);
-            screen.addShape(Shape.ShapeType.TRIANGLE);
+            screen.addShape(Shape.ShapeType.POLYGON);
 
             //Delete this later
             System.out.println("P : " + screen.getShape(0).getPerimeter());
@@ -38,11 +38,11 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (InputMismatchException e){
-            System.out.println("Input Mismatch Error - Enter valid inputs.");
+            System.out.println("Input Mismatch Error - Enter valid inputs.\n");
         } catch (NullPointerException e) {
-            System.out.println("You are trying to access a null object : \n" + e.getMessage() + "\n");
+            System.out.println("You are trying to access a null object : More details below\n" + e.getMessage() + "\n");
         } catch (Exception e){
-            System.out.println("We ran into an error");
+            System.out.println("We ran into an error : More details below\n");
             System.out.println(e.getMessage() + "\n");
         }
 
