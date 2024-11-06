@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Triangle implements Shape{
-    private final int NUMBER_OF_SIDES = 2;
+    private final int NUMBER_OF_SIDES = 1;
+    private final int NUMBER_OF_VERTEX = 3;
 
     private Point p;
-    private List<Integer> side = new ArrayList<Integer>(NUMBER_OF_SIDES);
+    private List<Integer> sides = new ArrayList<Integer>(NUMBER_OF_SIDES);
+    private List<Point> shapeVertexes;
     boolean isValid = true;
 
     public Triangle(Point p, List<Integer> sides){
@@ -14,21 +15,57 @@ public class Triangle implements Shape{
             isValid = false;
         }
 
-        Scanner scanner = new Scanner(System.in);
-        for(int i = 0; i<NUMBER_OF_SIDES; i++){
-            //side
+        this.p = p;
+        this.sides = sides;
+        this.shapeVertexes = new ArrayList<Point>(NUMBER_OF_VERTEX);
+        makeVertexes();
+    }
+
+    private void makeVertexes(){
+        if(!isValid) return;
+
+        double side = sides.get(0);
+
+        Point p1 = new Point(p.getX(), p.getY());
+        Point p2 = new Point(p.getX() + side, p.getY());
+
+        double p3x = p.getX() + (side * Math.cos((Math.PI * 1)/3));
+        double p3y = p.getY() + (side * Math.sin((Math.PI * 2)/3));
+        Point p3 = new Point(p3x, p3y);
+
+        shapeVertexes.add(p1);
+        shapeVertexes.add(p2);
+        shapeVertexes.add(p3);
+    }
+
+    public List<Point> getVertexes(){
+        List<Point> copyShapeVertexes = new ArrayList<Point>();
+        for(Point p : shapeVertexes){
+            copyShapeVertexes.add(p);
         }
+        return copyShapeVertexes;
     }
 
     public double getArea(){
-        return 0.0;
+        if(isValid){
+            double area = (Math.pow(3, 0.5) * Math.pow(sides.get(0), 2))/4;
+            return area;
+        }
+        return -1;
     }
+
     public double getPerimeter(){
-        return 0.0;
+        if(isValid){
+            double perimeter = sides.get(0) * 3;
+            return perimeter;
+        }
+        return -1;
     }
+
     public Point getOrigin(){
         return new Point(p.getX(), p.getY());
     }
+
     public double isPointEnclosed(Point p){
         // Path2D path = new Path2D.Double();
  
@@ -53,11 +90,11 @@ public class Triangle implements Shape{
     public double isPointEnclosed(double x, double y){
         return 0.0;
     }
-    
+
     public boolean isValid(){
         return isValid;
     }
     public Shape.ShapeType getShapeType(){
-        return Shape.ShapeType.TRIANGLE;
+        return Shape.ShapeType.RECTANGLE;
     }
 }
