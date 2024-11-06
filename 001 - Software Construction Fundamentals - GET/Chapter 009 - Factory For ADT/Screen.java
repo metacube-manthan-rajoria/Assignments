@@ -36,7 +36,7 @@ public class Screen {
         // Taking sides
         List<Integer> sides = new ArrayList<>(noOfSides);
         for (int i = 0; i < noOfSides; i++) {
-            if(shape == Shape.ShapeType.POLYGON){
+            if(shape == Shape.ShapeType.POLYGON && i == 1){
                 System.out.print("Enter the number of sides in the " + shape + " : ");
             }else{
                 System.out.print("Enter the length of side " + (i + 1) + " for " + shape + " : ");
