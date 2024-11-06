@@ -2,7 +2,9 @@
 This is a Academy Goal Management Repo. <br>
 
 <p align="center">
-  <b>Total Visits</b>
+    <b>Total Visits</b>
+</p>
+<p align="center">
   <a href="https://github.com/Gamedemons/Gamedemons">
     <img src="https://count.getloli.com/@metacube-manthan?name=metacube-manthan&theme=booru-helltaker&padding=7&offset=0&align=top&scale=1.1&pixelated=1&darkmode=auto"/>
   </a>
