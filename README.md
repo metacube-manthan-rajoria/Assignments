@@ -1,15 +1,6 @@
 # Academia
 This is a Academy Goal Management Repo. <br>
 
-<p align="center">
-    <b>Total Visits</b>
-</p>
-<p align="center">
-  <a href="https://github.com/Gamedemons/Gamedemons">
-    <img src="https://count.getloli.com/@metacube-manthan?name=metacube-manthan&theme=booru-helltaker&padding=7&offset=0&align=top&scale=1.1&pixelated=1&darkmode=auto"/>
-  </a>
-</p>
-
 ### Usage Guidelines
 - Each folder contains a README file for further info.
 - Assignment.md file contains general overview of problem and some demo code.
@@ -58,4 +49,14 @@ This is a Academy Goal Management Repo. <br>
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
-*Only for educational purposes*
+
+<p align="center">
+    <b>Total Visits</b>
+</p>
+<p align="center">
+  <a href="https://github.com/Gamedemons/Gamedemons">
+    <img src="https://count.getloli.com/@metacube-manthan?name=metacube-manthan&theme=booru-helltaker&padding=7&offset=0&align=top&scale=1.1&pixelated=1&darkmode=auto"/>
+  </a>
+</p>
+
+*This repo is only for educational purposes*
