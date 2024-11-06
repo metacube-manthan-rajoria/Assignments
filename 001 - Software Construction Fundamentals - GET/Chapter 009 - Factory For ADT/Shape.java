@@ -1,4 +1,4 @@
-public interface Shape {
+public interface Shape{
     enum ShapeType{
         TRIANGLE,
         RECTANGLE,
@@ -10,5 +10,5 @@ public interface Shape {
     public double getPerimeter();
     public double getOrigin();
     public double isPointEnclosed(Point p);
-    public double isPointEnclosed(long x, long y);
+    public double isPointEnclosed(double x, double y);
 }
