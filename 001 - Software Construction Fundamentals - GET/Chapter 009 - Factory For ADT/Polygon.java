@@ -26,13 +26,19 @@ public class Polygon implements Shape {
 
         double side = sides.get(0);
 
-        Point firstPoint = new Point(p.getX() + side, p.getY());
+        Point firstPoint = new Point(p.getX(), p.getY());
+        Point secondPoint = new Point(p.getX() + side, p.getY());
         shapeVertexes.add(firstPoint);
+        shapeVertexes.add(secondPoint);
 
         int angle = 2;
-        for(int i = 0; i < NUMBER_OF_VERTEX - 1; i++){
-            double vpx = p.getX() + (side * Math.cos((Math.PI * angle)/NUMBER_OF_VERTEX));
-            double vpy = p.getY() + (side * Math.sin((Math.PI * angle)/NUMBER_OF_VERTEX));
+        double lastX = p.getX() + side;
+        double lastY = p.getY();
+        for(int i = 0; i < NUMBER_OF_VERTEX - 2; i++){
+            double vpx = lastX + (side * Math.cos((Math.PI * angle)/NUMBER_OF_VERTEX));
+            double vpy = lastY + (side * Math.sin((Math.PI * angle)/NUMBER_OF_VERTEX));
+            lastX = vpx;
+            lastY = vpy;
 
             Point vertexPoint = new Point(vpx, vpy);
             shapeVertexes.add(vertexPoint);
