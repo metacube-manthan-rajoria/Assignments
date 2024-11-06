@@ -1,8 +1,17 @@
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Screen {
+    public enum ShapeSort {
+        AREA,
+        PERIMETER,
+        TIMESTAMP,
+        ORIGIN_DISTANCE
+    }
+
     private int xMax = 0;
     private int yMax = 0;
 
@@ -19,9 +28,9 @@ public class Screen {
 
         // Checking number of sides.
         int noOfSides = 0;
-        if(shape == Shape.ShapeType.RECTANGLE || shape == Shape.ShapeType.POLYGON){
+        if (shape == Shape.ShapeType.RECTANGLE || shape == Shape.ShapeType.POLYGON) {
             noOfSides = 2;
-        }else{
+        } else {
             noOfSides = 1;
         }
 
@@ -36,12 +45,12 @@ public class Screen {
         // Taking sides
         List<Integer> sides = new ArrayList<>(noOfSides);
         for (int i = 0; i < noOfSides; i++) {
-            if(shape == Shape.ShapeType.POLYGON && i == 1){
+            if (shape == Shape.ShapeType.POLYGON && i == 1) {
                 System.out.print("\tEnter the number of sides in the " + shape + " : ");
-            }else{
+            } else {
                 System.out.print("\tEnter the length of side " + (i + 1) + " for " + shape + " : ");
             }
-            
+
             Integer side = scanner.nextInt();
             sides.add(side);
         }
@@ -53,20 +62,21 @@ public class Screen {
         boolean isShapeInbound = isShapeInbound(newShape);
 
         if (isShapeInbound && newShape.isValid()) {
-            System.out.println("\tAdded " + shape + " at origin (" + p.getX() + "," + p.getY() + ")\n");
+            System.out.println("\tAdded " + shape + " at origin (" + p.getX() + "," + p.getY() + ") and Timestamp is : "
+                    + newShape.getTimestamp() + "\n");
             shapes.add(newShape);
         } else {
-            if(!newShape.isValid()){
+            if (!newShape.isValid()) {
                 System.out.println("\nInvalid inputs for " + shape);
-            }else{
+            } else {
                 System.out.println(
-                    "\nCannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")");
+                        "\nCannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")");
             }
         }
     }
 
     public Shape getShape(int index) {
-        if(shapes.size() == 0){
+        if (shapes.size() == 0) {
             System.out.println("\nCannot fetch the shape at index : " + index + " : Shape does not exist!");
             return null;
         }
@@ -74,7 +84,7 @@ public class Screen {
     }
 
     public void deleteShape(int index) {
-        if(shapes.size() == 0){
+        if (shapes.size() == 0) {
             System.out.println("Cannot delete the shape at index : " + index + " : Shape does not exist!");
             return;
         }
@@ -103,5 +113,62 @@ public class Screen {
         }
 
         return true;
+    }
+
+    public List<Shape> sortShapes(ShapeSort sort) {
+        List<Shape> shapesCopy = new ArrayList<Shape>();
+        shapesCopy.addAll(shapes);
+
+        if (sort == ShapeSort.AREA) {
+            Collections.sort(shapesCopy, new Comparator<Shape>() {
+                public int compare(Shape s1, Shape s2) {
+                    double diff = s1.getArea() - s2.getArea();
+                    if (diff == 0)
+                        return 0;
+                    else if (diff > 0)
+                        return 1;
+                    else
+                        return -1;
+                }
+            });
+        } else if (sort == ShapeSort.PERIMETER) {
+            Collections.sort(shapesCopy, new Comparator<Shape>() {
+                public int compare(Shape s1, Shape s2) {
+                    double diff = s1.getPerimeter() - s2.getPerimeter();
+                    if (diff == 0)
+                        return 0;
+                    else if (diff > 0)
+                        return 1;
+                    else
+                        return -1;
+                }
+            });
+        } else if (sort == ShapeSort.ORIGIN_DISTANCE) {
+            Collections.sort(shapesCopy, new Comparator<Shape>() {
+                public int compare(Shape s1, Shape s2) {
+                    double diff = s1.getOrigin().distanceFromOrigin() - s2.getOrigin().distanceFromOrigin();
+                    if (diff == 0)
+                        return 0;
+                    else if (diff > 0)
+                        return 1;
+                    else
+                        return -1;
+                }
+            });
+        } else {
+            Collections.sort(shapesCopy, new Comparator<Shape>() {
+                public int compare(Shape s1, Shape s2) {
+                    long diff = s1.getTimestamp() - s2.getTimestamp();
+                    if (diff == 0)
+                        return 0;
+                    else if (diff > 0)
+                        return 1;
+                    else
+                        return -1;
+                }
+            });
+        }
+
+        return shapesCopy;
     }
 }
