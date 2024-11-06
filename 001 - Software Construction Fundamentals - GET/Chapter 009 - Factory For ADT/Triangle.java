@@ -95,6 +95,6 @@ public class Triangle implements Shape{
         return isValid;
     }
     public Shape.ShapeType getShapeType(){
-        return Shape.ShapeType.RECTANGLE;
+        return Shape.ShapeType.TRIANGLE;
     }
 }

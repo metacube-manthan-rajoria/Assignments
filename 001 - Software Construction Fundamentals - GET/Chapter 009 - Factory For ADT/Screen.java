@@ -19,12 +19,12 @@ public class Screen {
 
         // Checking number of sides.
         int noOfSides = 0;
-        if(shape == Shape.ShapeType.RECTANGLE){
+        if(shape == Shape.ShapeType.RECTANGLE || shape == Shape.ShapeType.POLYGON){
             noOfSides = 2;
         }else{
             noOfSides = 1;
         }
-        
+
         // Taking origin
         double xCoordinateOrigin = 0;
         double yCoordinateOrigin = 0;
@@ -36,7 +36,12 @@ public class Screen {
         // Taking sides
         List<Integer> sides = new ArrayList<>(noOfSides);
         for (int i = 0; i < noOfSides; i++) {
-            System.out.print("Enter the side " + (i + 1) + " for " + shape + " : ");
+            if(shape == Shape.ShapeType.POLYGON){
+                System.out.print("Enter the number of sides in the " + shape + " : ");
+            }else{
+                System.out.print("Enter the length of side " + (i + 1) + " for " + shape + " : ");
+            }
+            
             Integer side = scanner.nextInt();
             sides.add(side);
         }
