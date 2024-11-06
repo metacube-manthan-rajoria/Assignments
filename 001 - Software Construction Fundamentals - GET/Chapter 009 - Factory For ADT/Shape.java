@@ -19,4 +19,5 @@ public interface Shape{
     
     public boolean isValid();
     public Shape.ShapeType getShapeType();
+    public long getTimestamp();
 }
