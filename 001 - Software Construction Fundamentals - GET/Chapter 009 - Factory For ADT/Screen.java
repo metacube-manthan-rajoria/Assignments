@@ -58,17 +58,17 @@ public class Screen {
             shapes.add(newShape);
         } else {
             if(!newShape.isValid()){
-                System.out.println("Invalid inputs for " + shape);
+                System.out.println("\nInvalid inputs for " + shape);
             }else{
                 System.out.println(
-                    "Cannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")\n");
+                    "\nCannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")");
             }
         }
     }
 
     public Shape getShape(int index) {
         if(shapes.size() == 0){
-            System.out.println("Cannot fetch the shape at index : " + index + " : Shape does not exist!");
+            System.out.println("\nCannot fetch the shape at index : " + index + " : Shape does not exist!");
             return null;
         }
         return shapes.get(index);
