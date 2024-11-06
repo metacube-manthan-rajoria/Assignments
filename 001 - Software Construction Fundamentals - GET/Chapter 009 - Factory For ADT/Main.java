@@ -1,10 +1,11 @@
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
             int xMax = 0;
             int yMax = 0;
@@ -109,9 +110,6 @@ public class Main {
             System.out.println("Input Mismatch Error - Enter valid inputs.\n");
         } catch (NullPointerException e) {
             System.out.println("You are trying to access a null object : More details below\n" + e.getMessage() + "\n");
-        } catch (Exception e){
-            System.out.println("We ran into an error : More details below\n");
-            System.out.println(e.getMessage() + "\n");
         }
     }
 }
