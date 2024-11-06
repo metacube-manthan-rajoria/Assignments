@@ -110,6 +110,9 @@ public class Main {
             System.out.println("Input Mismatch Error - Enter valid inputs.\n");
         } catch (NullPointerException e) {
             System.out.println("You are trying to access a null object : More details below\n" + e.getMessage() + "\n");
+        } catch (Exception e){
+            System.out.println("We ran into an error : More details below\n");
+            System.out.println(e.getMessage() + "\n");
         }
     }
 }
