@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Screen {
     private int xMax = 0;
     private int yMax = 0;
-    private Point screenEnd;
 
     private List<Shape> shapes;
 
     public Screen(int xMax, int yMax) {
         this.xMax = Math.abs(yMax);
         this.yMax = Math.abs(yMax);
-        screenEnd = new Point(xMax, yMax);
         shapes = new ArrayList<Shape>();
     }
 
@@ -21,14 +19,12 @@ public class Screen {
 
         // Checking number of sides.
         int noOfSides = 0;
-        if (shape == Shape.ShapeType.TRIANGLE || shape == Shape.ShapeType.POLYGON) {
-            noOfSides = 1;
-        } else if (shape == Shape.ShapeType.RECTANGLE) {
+        if(shape == Shape.ShapeType.RECTANGLE){
             noOfSides = 2;
-        } else if (shape == Shape.ShapeType.CIRCLE) {
-            noOfSides = 0;
+        }else{
+            noOfSides = 1;
         }
-
+        
         // Taking origin
         double xCoordinateOrigin = 0;
         double yCoordinateOrigin = 0;
@@ -52,20 +48,32 @@ public class Screen {
 
         boolean isShapeInbound = isShapeInbound(newShape);
 
-        if (isShapeInbound) {
+        if (isShapeInbound && newShape.isValid()) {
             System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() + ")\n");
             shapes.add(newShape);
         } else {
-            System.out.println(
+            if(!newShape.isValid()){
+                System.out.println("Invalid inputs for " + shape);
+            }else{
+                System.out.println(
                     "Cannot add " + shape + " to screen : Shape out of bounds for (" + xMax + "," + yMax + ")\n");
+            }
         }
     }
 
     public Shape getShape(int index) {
+        if(shapes.size() == 0){
+            System.out.println("Cannot fetch the shape at index : " + index + " : Shape does not exist!");
+            return null;
+        }
         return shapes.get(index);
     }
 
     public void deleteShape(int index) {
+        if(shapes.size() == 0){
+            System.out.println("Cannot delete the shape at index : " + index + " : Shape does not exist!");
+            return;
+        }
         shapes.remove(index);
     }
 
@@ -86,7 +94,7 @@ public class Screen {
             return false;
 
         for (Point point : allShapeVertex) {
-            if (point.getX() > xMax || point.getY() > yMax)
+            if (point.getX() > xMax || point.getY() > yMax || point.getX() < 0 || point.getY() < 0)
                 return false;
         }
 
