@@ -169,6 +169,7 @@ public class Screen {
             });
         }
 
+        shapes = shapesCopy;
         return shapesCopy;
     }
 }
