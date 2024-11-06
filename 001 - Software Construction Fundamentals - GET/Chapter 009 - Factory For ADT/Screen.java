@@ -48,8 +48,10 @@ public class Screen {
         Point p = new Point(xCoordinateOrigin, yCoordinateOrigin);
         Shape newShape = ShapeFactory.createShape(shape, p, sides);
 
-        // Check if shape if addadble(inblounds of xMax and yMax)
-        
+        // TODO : Check if shape if addadble(inblounds of xMax and yMax)
+
+
+        System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() +")");
         shapes.add(newShape);
     }
 
@@ -58,6 +60,11 @@ public class Screen {
     }
     public void deleteAllShapeTypes(Shape.ShapeType shapeType){
 
+    }
+
+    // TODO : add code here later
+    private boolean isShapeInbounds(Shape shape){
+        return true;
     }
     
 }
