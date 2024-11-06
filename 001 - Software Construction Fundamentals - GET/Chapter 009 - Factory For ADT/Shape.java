@@ -8,7 +8,7 @@ public interface Shape{
 
     public double getArea();
     public double getPerimeter();
-    public double getOrigin();
+    public Point getOrigin();
     public double isPointEnclosed(Point p);
     public double isPointEnclosed(double x, double y);
 }
