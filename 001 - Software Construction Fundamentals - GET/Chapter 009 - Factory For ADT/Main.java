@@ -14,6 +14,7 @@ public class Main {
             xMax = scanner.nextInt();
             System.out.print("Length in y axis : ");
             yMax = scanner.nextInt();
+            System.out.println();
 
             if (xMax <= 5 || yMax <= 5) {
                 scanner.close();

@@ -51,12 +51,16 @@ public class Screen {
         // TODO : Check if shape if addadble(inblounds of xMax and yMax)
 
 
-        System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() +")");
+        System.out.println("Added " + shape + " at origin (" + p.getX() + "," + p.getY() +")\n");
         shapes.add(newShape);
     }
 
-    public void deleteShape(){
+    public Shape getShape(int index){
+        return shapes.get(index);
+    }
 
+    public void deleteShape(int index){
+        shapes.remove(index);
     }
     public void deleteAllShapeTypes(Shape.ShapeType shapeType){
 
