@@ -26,8 +26,8 @@ public class Polygon implements Shape{
     public double getPerimeter(){
         return 0.0;
     }
-    public double getOrigin(){
-        return 0.0;
+    public Point getOrigin(){
+        return new Point(p.getX(), p.getY());
     }
     public double isPointEnclosed(Point p){
         // Path2D path = new Path2D.Double();
@@ -54,4 +54,10 @@ public class Polygon implements Shape{
         return 0.0;
     }
     
+    public boolean isValid(){
+        return isValid;
+    }
+    public Shape.ShapeType getShapeType(){
+        return Shape.ShapeType.POLYGON;
+    }
 }
