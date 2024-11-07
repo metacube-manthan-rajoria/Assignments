@@ -23,6 +23,10 @@ public class Screen {
         shapes = new ArrayList<Shape>();
     }
 
+    /**
+     * Adds a given shape to list based on Shape.ShapeType
+     * @param shape type of object
+     */
     public void addShape(Shape.ShapeType shape) {
         Scanner scanner = new Scanner(System.in);
 
@@ -75,6 +79,11 @@ public class Screen {
         }
     }
 
+    /**
+     * Gives the shape from list based on given index
+     * @param index of shape to get
+     * @return Shape object
+     */
     public Shape getShape(int index) {
         if (shapes.size() == 0) {
             System.out.println("\nCannot fetch the shape at index : " + index + " : Shape does not exist!");
@@ -83,6 +92,10 @@ public class Screen {
         return shapes.get(index);
     }
 
+    /**
+     * Takes the index of the shape to delete
+     * @param index of the shape
+     */
     public void deleteShape(int index) {
         if (shapes.size() == 0) {
             System.out.println("Cannot delete the shape at index : " + index + " : Shape does not exist!");
@@ -91,6 +104,10 @@ public class Screen {
         shapes.remove(index);
     }
 
+    /**
+     * Deletes all shape of certain ShapeType
+     * @param shapeType Shape.ShapeType to be deleted
+     */
     public void deleteAllShapeTypes(Shape.ShapeType shapeType) {
         for (int i = 0; i < shapes.size(); i++) {
             Shape.ShapeType currentShapeType = shapes.get(i).getShapeType();
@@ -100,6 +117,11 @@ public class Screen {
         }
     }
 
+    /**
+     * Checks if the shape is inside screen and does not clip
+     * @param shape shape object to be checked
+     * @return true if shape is inside screen
+     */
     private boolean isShapeInbound(Shape shape) {
         if (shape == null || !shape.isValid())
             return false;
@@ -115,6 +137,11 @@ public class Screen {
         return true;
     }
 
+    /**
+     * Sorts shapes based on Screen.ShapeSort Type
+     * @param sort ShapeSort Type
+     * @return List<Shape> of sorted shapes
+     */
     public List<Shape> sortShapes(ShapeSort sort) {
         List<Shape> shapesCopy = new ArrayList<Shape>();
         shapesCopy.addAll(shapes);

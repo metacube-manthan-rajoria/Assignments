@@ -18,6 +18,11 @@ public class Point {
         return y;
     }
     
+    /**
+     * Calculates distance from a point p
+     * @param p Point object
+     * @return double distance
+     */
     public double distanceFrom(Point p){
         double xDifference = p.getX() - x;
         double yDifference = p.getY() - y;
@@ -33,6 +38,10 @@ public class Point {
         return distance;
     }
 
+    /**
+     * Uses distanceFrom function to calculate distance from screen
+     * @return double distance
+     */
     public double distanceFromOrigin(){
         return distanceFrom(ORIGIN_X, ORIGIN_Y);
     }
