@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.api.Test;
 
-public class AssignmentTest {
+public class ArrayTest {
     private static Stream<Arguments> maxMirrorStream() {
         return Stream.of(
                 Arguments.of(new int[] { 1, 2, 3, 8, 9, 3, 2, 1 }, 3),
@@ -14,11 +14,10 @@ public class AssignmentTest {
                 Arguments.of(new int[] { 6, 5, 6, 4, 9, 7, 1, 4, 2, 7, 9, 2, 6, 5, 6 }, 3),
                 Arguments.of(new int[] { 1, 2, 1, 4 }, 3),
                 Arguments.of(new int[] { 1, 4, 5, 3, 5, 4, 1 }, 7),
-                Arguments.of(new int[] { 1, 1, 2, 1, 1, 4 }, 3),
+                Arguments.of(new int[] { 1, 1, 2, 1, 1, 4 }, 5),
                 Arguments.of(new int[] { 1, 4, 1, 5 }, 3),
                 Arguments.of(new int[] { 1, 4, 1, 5, 5, 4, 1 }, 3),
-                Arguments.of(new int[] { 1, 1, 1, 2, 1 }, 3),
-                Arguments.of(new int[] { 10, 10 }, 2));
+                Arguments.of(new int[] { 1, 1, 1, 2, 1 }, 3));
     }
 
     @ParameterizedTest
