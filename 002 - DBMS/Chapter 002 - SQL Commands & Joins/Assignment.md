@@ -23,6 +23,6 @@ Write SQL scripts for the following:
 - Display all the Orders which are placed more than 10 days old and one or more items from those orders are still not shipped.
 - Display list of shoppers which haven't ordered anything since last month.
 - Display list of shopper along with orders placed by them in last 15 days. 
-- Display list of order items which are in “shipped” state for particular Order Id (i.e.: 1020))
+- Display list of order items which are in “shipped” state for particular Order Id (i.e.: 1020)
 - Display list of order items along with order placed date which fall between Rs 20 to Rs 50 price.
 
