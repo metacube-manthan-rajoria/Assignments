@@ -1,6 +1,8 @@
-# Shopping Cart
+# OOP Basics
 
 [Click to open the Original Problem Document](https://docs.google.com/document/d/1dmzUOzn2xc1SJ7myohmhplJuxWN52420rluoFHqOE1o/edit?usp=sharing)
+
+### Shopping Cart
 
 - [My Solution (Annotated Markdown File)](./Assignment.md)
 - [My Solution (Raw Java File)](./Assignment.java)
