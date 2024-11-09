@@ -14,7 +14,7 @@ This is a Academy Goal Management Repo. <br>
 
 ### Sections
 
-<details open>
+<details>
 <summary>🧩 <b>Software Construction Fundamentals</b></summary>
   
 - [Shopping Cart](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20001%20-%20Software%20Construction%20Fundamental%20Overview/Assignment.java)
@@ -46,6 +46,13 @@ This is a Academy Goal Management Repo. <br>
 - [Organization](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20008%20-%20Inheritance%20and%20Composition/Organization.java)
 
 - [Shape Factory](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20009%20-%20Factory%20For%20ADT/Main.java)
+</details>
+
+<details open>
+<summary>💾 <b>DBMS</b></summary>
+
+- [StoreFront ER Diagram](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20001%20-%20Introduction%20to%20DBMS/StoreFront.svg)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
