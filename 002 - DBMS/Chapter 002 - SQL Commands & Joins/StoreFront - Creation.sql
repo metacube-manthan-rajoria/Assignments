@@ -19,6 +19,11 @@ create table products(
     stock INT NOT NULL
 );
 
+create table images(
+	product_id INT NOT NULL, 
+    product_url VARCHAR(1000) NOT NULL
+);
+
 create table addresses(
 	user_id INT NOT NULL, 
     address_line1 VARCHAR(100) NOT NULL, 
@@ -32,6 +37,7 @@ create table zipcodes(
     state VARCHAR(100) NOT NULL,
     country VARCHAR(100) NOT NULL
 );
+
 
 
 
