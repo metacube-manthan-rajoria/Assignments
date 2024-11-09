@@ -66,5 +66,7 @@ This is a Academy Goal Management Repo. <br>
   </a>
 </p>
 <p align="center">
+  
     *This repo is only for educational purposes*
+    
 </p>
