@@ -21,7 +21,7 @@ INSERT INTO users(first_name, middle_name, last_name, email, user_type) VALUES
 ('Rachel', '', 'Green', 'rachel.green@example.com', 'customer'),
 ('Steve', '', 'Jobs', 'steve.jobs@example.com', 'administrator'),
 ('Tina', '', 'Fey', 'tina.fey@example.com', 'customer'),
-('Ursula' 'K. Le', 'Guin', 'ursula.leguin@example.com', 'customer'),
+('Ursula', 'K. Le', 'Guin', 'ursula.leguin@example.com', 'customer'),
 ('Victor', '', 'Hugo', 'victor.hugo@example.com', 'customer'),
 ('Wendy', '', 'Williams', 'wendy.williams@example.com', 'customer'),
 ('Xena', '', 'Warrior', 'xena.warrior@example.com', 'administrator'),
