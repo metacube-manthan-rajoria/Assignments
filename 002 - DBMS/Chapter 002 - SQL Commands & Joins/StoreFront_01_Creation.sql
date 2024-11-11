@@ -35,15 +35,14 @@ CREATE TABLE products(
 
 CREATE TABLE images(
 	product_id INT NOT NULL, 
-    product_url VARCHAR(1000) NOT NULL,
+    image_url VARCHAR(1000) NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 CREATE TABLE zipcodes(
 	zipcode_id VARCHAR(15) NOT NULL PRIMARY KEY,
 	city VARCHAR(170) NOT NULL,
-    state VARCHAR(100) NOT NULL,
-    country VARCHAR(100) NOT NULL
+    state VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE addresses(
@@ -74,6 +73,7 @@ CREATE TABLE orders (
 CREATE TABLE order_products (
     order_id INT NOT NULL,
     product_id INT NOT NULL,
+    quantity INT NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
