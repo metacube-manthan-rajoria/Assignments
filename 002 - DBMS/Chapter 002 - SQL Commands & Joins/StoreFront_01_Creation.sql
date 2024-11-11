@@ -11,7 +11,10 @@ CREATE TABLE users(
     middle_name VARCHAR(100), 
     last_name VARCHAR(100), 
     email VARCHAR(320) NOT NULL, 
-    user_type VARCHAR(20) NOT NULL
+    user_type ENUM(
+        'shopper',
+        'administrator'
+    ) NOT NULL
 );
 
 CREATE TABLE categories(
