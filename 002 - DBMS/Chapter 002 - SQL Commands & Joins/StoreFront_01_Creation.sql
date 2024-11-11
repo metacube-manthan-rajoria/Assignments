@@ -2,6 +2,9 @@ CREATE DATABASE store_front;
 
 USE store_front;
 
+/*
+Part 1
+*/
 CREATE TABLE users(
 	user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
     first_name VARCHAR(100) NOT NULL, 
@@ -72,4 +75,25 @@ CREATE TABLE order_products (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
+/*
+Part 2
+*/
+SHOW TABLES;
 
+/*
+Part 3
+*/
+DROP TABLE products;
+
+/*
+Part 4
+*/
+CREATE TABLE products(
+	product_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    name VARCHAR(200) NOT NULL, 
+    date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
+    category INT,
+    price DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL,
+    FOREIGN KEY (category) REFERENCES categories(category_id)
+);
