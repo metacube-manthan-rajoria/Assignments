@@ -73,15 +73,3 @@ CREATE TABLE order_products (
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
