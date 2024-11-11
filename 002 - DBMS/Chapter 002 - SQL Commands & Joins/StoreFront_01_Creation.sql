@@ -12,7 +12,7 @@ CREATE TABLE users(
     last_name VARCHAR(100), 
     email VARCHAR(320) NOT NULL, 
     user_type ENUM(
-        'shopper',
+        'customer',
         'administrator'
     ) NOT NULL
 );
