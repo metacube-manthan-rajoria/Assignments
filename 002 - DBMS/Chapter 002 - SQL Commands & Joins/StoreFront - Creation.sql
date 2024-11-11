@@ -51,9 +51,9 @@ CREATE TABLE addresses(
 );
 
 CREATE TABLE orders (
-    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    order_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL, 
-    order_date DATETIME NOT NULL,
+    order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     status ENUM(
         'shipping',
         'returned',
