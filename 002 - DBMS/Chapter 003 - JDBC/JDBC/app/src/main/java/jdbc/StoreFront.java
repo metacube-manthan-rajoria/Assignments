@@ -57,4 +57,22 @@ public class StoreFront {
             return null;
         }
     }
+
+    public void addImagesToProduct(int productId){
+        String batchQuery = "INSERT INTO images (product_id, image_url) VALUES (?, ?)";
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(batchQuery);
+
+            for(int i = 0; i<5; i++){
+                preparedStatement.setInt(1, productId);
+                preparedStatement.setString(2, "https://example.com/images/product" + (int)(Math.random()*100) + ".jpg");
+                preparedStatement.addBatch();
+            }
+
+            preparedStatement.executeBatch();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
