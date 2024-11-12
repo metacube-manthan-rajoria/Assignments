@@ -20,7 +20,40 @@ Display all Id, Title and Parent Category Title for all the Categories listed,
 sorted by Parent Category Title and then Category Title. 
 (If Category is top category then Parent Category Title column should display “Top Category” as value.)
 */
-SELECT categories.category_id, categories.name, categories.id
+
+
+/* Task 2 - Query 5
+Display Id, Title, Parent Category Title of all the leaf Categories 
+(categories which are not parent of any other category)
+*/
+
+
+/* Task 2 - Query 6
+Display Product Title, Price & Description which falls into particular category Title (i.e. “Mobile”)
+*/
+SELECT products.name, products.price
+FROM products
+JOIN categories On categories.category_id = products.category
+WHERE categories.name LIKE "Laptops";
+
+/* Task 2 - Query 7
+Display the list of Products whose Quantity on hand (Inventory) is under 50.
+*/
+SELECT products.product_id, products.name, products.stock
+FROM products
+WHERE products.stock < 50;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SELECT orders.order_id, orders.order_date, SUM(products.price * order_products.quantity)
