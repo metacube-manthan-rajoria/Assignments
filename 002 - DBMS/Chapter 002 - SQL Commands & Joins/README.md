@@ -2,4 +2,6 @@
 
 ### StoreFront Database Creation
 - [My Solution (Annotated Markdown File)](./Assignment.md)
-- [My Solution (SQL File)](./StoreFront.svg)
+- [My Solution (SQL File) - Database Creation](./StoreFront_01_Creation.sql)
+- [My Solution (SQL File) - Database Data Insertion](./StoreFront_02_Data_Insertion.sql)
+- [My Solution (SQL File) - Database Queries](./StoreFront_03_Queries.sql)
