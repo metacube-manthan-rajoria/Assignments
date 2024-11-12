@@ -3,7 +3,7 @@ package jdbc;
 import java.sql.*;
 
 public class StoreFront {
-    public enum OrderStatus{
+    public enum OrderStatus {
         DELIVERED,
         SHIPPING,
         CANCELLED,
@@ -26,16 +26,16 @@ public class StoreFront {
 
     private Connection connection;
 
-    public StoreFront(){
-        try{
+    public StoreFront() {
+        try {
             connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public Records getUserOrders(int userId, StoreFront.OrderStatus status){
-        try{
+    public Records getUserOrders(int userId, StoreFront.OrderStatus status) {
+        try {
             StringBuilder query = new StringBuilder("SELECT ");
             query.append(ORDERS_TABLE_NAME + ".order_id,");
             query.append(ORDERS_TABLE_NAME + ".order_date,");
@@ -52,27 +52,45 @@ public class StoreFront {
             ResultSet results = statement.executeQuery(query.toString());
 
             return new Records(results);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
-    public void addImagesToProduct(int productId){
+    public void addImagesToProduct(int productId) {
         String batchQuery = "INSERT INTO images (product_id, image_url) VALUES (?, ?)";
 
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(batchQuery);
 
-            for(int i = 0; i<5; i++){
+            for (int i = 0; i < 5; i++) {
                 preparedStatement.setInt(1, productId);
                 preparedStatement.setString(2, "https://example.com/images/product" + (int)(Math.random()*100) + ".jpg");
                 preparedStatement.addBatch();
             }
 
             preparedStatement.executeBatch();
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public int deleteUnpopularProducts(String date) {
+        StringBuilder query = new StringBuilder(
+            "DELETE FROM products" +
+            "WHERE products.product_id IN (SELECT order_products.product_id" +
+            "FROM order_products" +
+            "JOIN orders ON orders.order_id = order_products.order_id" +
+            "WHERE order_date < \"" + date + "\");");
+
+        try {
+            Statement statement = connection.createStatement();
+            int results = statement.executeUpdate(query.toString());
+            return results;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return 0;
         }
     }
 }
