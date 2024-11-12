@@ -35,7 +35,7 @@ CREATE TABLE products(
 
 CREATE TABLE images(
 	product_id INT NOT NULL, 
-    image_url VARCHAR(1000) NOT NULL,
+    image_url VARCHAR(1000),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
