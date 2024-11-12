@@ -6,29 +6,14 @@ package jdbc;
 import java.sql.*;
 
 public class App {
-    static final String DATABASE_URL = "jdbc:mysql://localhost/store_front";
+    static final String DATABASE_NAME = "store_front";
+    static final String DATABASE_URL = "jdbc:mysql://localhost/" + DATABASE_NAME;
     static final String USER = "root";
-    static final String PASS = "root";
-    static final String QUERY = "SELECT first_name, last_name FROM users";
-
+    static final String PASSWORD = "root";
+    
     public static void main(String[] args) {
-
         try {
-            // String driverClassName = "sun.jdbc.odbc.JdbcOdbcDriver";
-            // String url = "jdbc:odbc:XE";
-            // String username = "root";
-            // String password = "root";
-            // String query = "insert into students values(109, 'bhatt')";
-            // Class.forName(driverClassName);
-            // Connection con = DriverManager.getConnection(
-            // url, username, password);
-            // Statement st = con.createStatement();
-            // int count = st.executeUpdate(query);
-            // System.out.println(
-            // "number of rows affected by this query= "
-            // + count);
-            // con.close();
-
+            String QUERY = "SELECT first_name, last_name FROM users";
             Connection conn = DriverManager.getConnection(DATABASE_URL, USER, PASS);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(QUERY);
@@ -41,6 +26,5 @@ public class App {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 }
