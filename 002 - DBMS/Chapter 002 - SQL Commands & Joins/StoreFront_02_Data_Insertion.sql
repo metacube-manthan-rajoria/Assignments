@@ -245,7 +245,7 @@ INSERT INTO images (product_id, image_url) VALUES
 (57 ,'https://example.com/images/product65.jpg'),
 (58 ,'https://example.com/images/product66.jpg'),
 (59 ,'https://example.com/images/product67.jpg'),
-(60 ,'https://example.com/images/product68.jpg');
+(60 ,NULL);
 
 INSERT INTO zipcodes (zipcode_id, city, state) VALUES
 ("62701", "Springfield", "Illinois"),
