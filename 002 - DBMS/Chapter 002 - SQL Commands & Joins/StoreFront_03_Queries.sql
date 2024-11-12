@@ -84,3 +84,31 @@ JOIN orders ON users.user_id = orders.user_id
 WHERE orders.order_date < "2023-11-01"
 AND users.user_type = "customer";
 
+/* Task 3 - Query 5
+Display list of shopper along with orders placed by them in last 15 days. 
+*/
+SELECT users.user_id, users.first_name, users.last_name, orders.order_id, orders.order_date
+FROM users
+JOIN orders ON users.user_id = orders.user_id
+WHERE orders.order_date > "2023-11-15"
+AND users.user_type = "customer";
+
+/* Task 3 - Query 6
+Display list of order items which are in “shipped” state for particular Order Id (i.e.: 1020)
+*/
+SELECT order_products.product_id
+From order_products
+JOIN orders ON orders.order_id = order_products.order_id
+WHERE orders.status = "delivered"
+AND orders.order_id = 30;
+
+
+/* Task 3 - Query 7
+Display list of order items along with order placed date which fall between Rs 180 to Rs 200 price.
+*/
+SELECT products.product_id, products.name, orders.order_date, products.price
+From orders
+JOIN order_products ON orders.order_id = order_products.order_id
+JOIN products ON products.product_id = order_products.product_id
+WHERE products.price BETWEEN 180 AND 200;
+
