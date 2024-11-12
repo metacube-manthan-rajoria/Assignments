@@ -10,10 +10,17 @@ ORDER BY products.date_added DESC;
 /* Task 2 - Query 3
 Display the list of products which don't have any images.
 */
-SELECT products.product_id, products.name, count(images.image_url)
+SELECT products.product_id, products.name, images.image_url
 FROM products
-WHERE products.product_id = images.product_id
-GROUP BY products.product_id;
+JOIN images ON products.product_id = images.product_id
+WHERE images.image_url IS NULL;
+
+/* Task 2 - Query 4
+Display all Id, Title and Parent Category Title for all the Categories listed, 
+sorted by Parent Category Title and then Category Title. 
+(If Category is top category then Parent Category Title column should display “Top Category” as value.)
+*/
+SELECT categories.category_id, categories.name, categories.id
 
 
 SELECT orders.order_id, orders.order_date, SUM(products.price * order_products.quantity)
