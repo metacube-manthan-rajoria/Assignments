@@ -36,7 +36,7 @@ CREATE TABLE products(
 CREATE TABLE images(
 	product_id INT NOT NULL, 
     image_url VARCHAR(1000),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
+    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
 );
 
 CREATE TABLE zipcodes(
@@ -74,8 +74,8 @@ CREATE TABLE order_products (
     order_id INT NOT NULL,
     product_id INT NOT NULL,
     quantity INT NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
+    FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(product_id)  ON DELETE CASCADE
 );
 
 /*
