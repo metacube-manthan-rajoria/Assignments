@@ -11,6 +11,15 @@ public class StoreFront {
     }
 
     private static final String DATABASE_NAME = "store_front";
+    private static final String USERS_TABLE_NAME = "users";
+    private static final String ORDERS_TABLE_NAME = "orders";
+    private static final String PRODUCTS_TABLE_NAME = "products";
+    private static final String CART_TABLE_NAME = "order_products";
+    private static final String CATEGORIES_TABLE_NAME = "categories";
+    private static final String IMAGES_TABLE_NAME = "images";
+    private static final String ADDRESSES_TABLE_NAME = "addresses";
+    private static final String ZIPCODES_TABLE_NAME = "zipcodes";
+
     private static final String DATABASE_URL = "jdbc:mysql://localhost/" + DATABASE_NAME;
     private static final String USER = "root";
     private static final String PASSWORD = "root";
@@ -25,14 +34,24 @@ public class StoreFront {
         }
     }
 
-    public ResultSet getUserOrders(int userId, StoreFront.OrderStatus status){
+    public Records getUserOrders(int userId, StoreFront.OrderStatus status){
         try{
-            String QUERY = "SELECT first_name, last_name FROM users";
+            StringBuilder query = new StringBuilder("SELECT ");
+            query.append(ORDERS_TABLE_NAME + ".order_id,");
+            query.append(ORDERS_TABLE_NAME + ".order_date,");
+            query.append("SUM(" + PRODUCTS_TABLE_NAME + ".price * " + CART_TABLE_NAME + ".quantity) ");
+            query.append("FROM " + ORDERS_TABLE_NAME + " ");
+            query.append("JOIN " + CART_TABLE_NAME + " ON " + ORDERS_TABLE_NAME + ".order_id = " + CART_TABLE_NAME + ".order_id ");
+            query.append("JOIN " + PRODUCTS_TABLE_NAME + " ON " + CART_TABLE_NAME + ".product_id = " + PRODUCTS_TABLE_NAME + ".product_id ");
+            query.append("WHERE " + ORDERS_TABLE_NAME + ".user_id = " + userId + " ");
+            query.append("AND " + ORDERS_TABLE_NAME + ".status LIKE \"" + status.toString().toLowerCase() + "\" ");
+            query.append("GROUP BY " + ORDERS_TABLE_NAME + ".order_id ");
+            query.append("ORDER BY " + ORDERS_TABLE_NAME + ".order_date");
 
             Statement statement = connection.createStatement();
-            ResultSet results = statement.executeQuery(QUERY);
+            ResultSet results = statement.executeQuery(query.toString());
 
-            return results;
+            return new Records(results);
         }catch(Exception e){
             System.out.println(e.getMessage());
             return null;
