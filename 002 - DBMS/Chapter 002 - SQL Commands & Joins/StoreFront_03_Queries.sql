@@ -20,7 +20,9 @@ Display all Id, Title and Parent Category Title for all the Categories listed,
 sorted by Parent Category Title and then Category Title. 
 (If Category is top category then Parent Category Title column should display “Top Category” as value.)
 */
-
+SELECT self_cat.category_id, self_cat.name, IF(cat.name IS NULL, "Top Category", cat.name) AS parent
+FROM categories AS cat
+RIGHT JOIN categories AS self_cat ON cat.category_id = self_cat.parent_category_id;
 
 /* Task 2 - Query 5
 Display Id, Title, Parent Category Title of all the leaf Categories 
