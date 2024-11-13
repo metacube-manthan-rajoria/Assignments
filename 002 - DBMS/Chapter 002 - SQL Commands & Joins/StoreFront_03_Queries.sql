@@ -28,7 +28,9 @@ RIGHT JOIN categories AS self_cat ON cat.category_id = self_cat.parent_category_
 Display Id, Title, Parent Category Title of all the leaf Categories 
 (categories which are not parent of any other category)
 */
-
+SELECT cat.category_id, cat.name
+FROM categories as cat
+WHERE cat.category_id NOT IN (SELECT categories.parent_category_id FROM categories);
 
 /* Task 2 - Query 6
 Display Product Title, Price & Description which falls into particular category Title (i.e. “Mobile”)
