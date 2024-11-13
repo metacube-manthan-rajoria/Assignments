@@ -10,10 +10,11 @@ Display the list of products (Id, Title, Count of Categories) which fall in more
 Display Count of products as per below price range:
 
 | Range in Rs. | |
-| Count | |
-| 0 - 100 | |
-| 101 - 500 | |
-| Above 500 | |
+|--------------|-|
+| Count        | |
+| 0 - 100      | |
+| 101 - 500    | |
+| Above 500    | |
 
 Display the Categories along with number of products under each category.
 
