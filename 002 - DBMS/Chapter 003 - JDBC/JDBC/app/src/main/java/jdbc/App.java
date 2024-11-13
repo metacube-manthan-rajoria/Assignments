@@ -17,12 +17,17 @@ public class App {
                 userId1,
                 StoreFront.OrderStatus.DELIVERED
             );
+            System.out.print("\nOrder Records for user : " + userId1);
             userOrders1.printRecords();
 
             storeFront.addImagesToProduct(productId1);
 
             int deletedRecords = storeFront.deleteUnpopularProducts("2023-10-07");
-            System.out.println("Deleted records : " + deletedRecords);
+            System.out.println("\nDeleted records : " + deletedRecords);
+
+            Records topCategories = storeFront.getTopCategories();
+            System.out.print("\nTop Level Categories ->");
+            topCategories.printRecords();
 
             scanner.close();
         } catch (Exception e) {

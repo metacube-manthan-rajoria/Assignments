@@ -78,10 +78,10 @@ public class StoreFront {
 
     public int deleteUnpopularProducts(String date) {
         StringBuilder query = new StringBuilder(
-            "DELETE FROM products" +
-            "WHERE products.product_id IN (SELECT order_products.product_id" +
-            "FROM order_products" +
-            "JOIN orders ON orders.order_id = order_products.order_id" +
+            "DELETE FROM products " +
+            "WHERE products.product_id IN (SELECT order_products.product_id " +
+            "FROM order_products " +
+            "JOIN orders ON orders.order_id = order_products.order_id " +
             "WHERE order_date < \"" + date + "\");");
 
         try {
@@ -91,6 +91,23 @@ public class StoreFront {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return 0;
+        }
+    }
+
+    public Records getTopCategories(){
+        StringBuilder query = new StringBuilder(
+            "SELECT cat.category_id, cat.name " +
+            "FROM categories as cat " +
+            "WHERE cat.parent_category_id = 0;"
+        );
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet results = statement.executeQuery(query.toString());
+            return new Records(results);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 }
