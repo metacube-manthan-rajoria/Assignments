@@ -24,7 +24,7 @@ public class StoreFront {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
-    private Connection connection;
+    private static Connection connection;
 
     public StoreFront() {
         try {
