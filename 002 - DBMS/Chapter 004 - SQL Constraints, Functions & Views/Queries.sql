@@ -1,4 +1,24 @@
 /*
+Task 2 - Query 2
+*/
+create table price_sort(ranges varchar(100), count int);
+
+INSERT INTO price_sort (ranges, count)
+SELECT "0-100", COUNT(products.product_id) 
+FROM products 
+WHERE products.price >= 0 AND products.price <= 100;
+
+INSERT INTO price_sort (ranges, count)
+SELECT "101-500", COUNT(products.product_id) 
+FROM products 
+WHERE products.price >= 101 AND products.price <= 500;
+
+INSERT INTO price_sort (ranges, count)
+SELECT "Above 500", COUNT(products.product_id) 
+FROM products 
+WHERE products.price > 500;
+
+/*
 Task 3 - Query 1
 */
 SELECT users.user_id, CONCAT(users.first_name, " ", users.last_name), COUNT(orders.order_id)
