@@ -1,5 +1,5 @@
-[Click to open the Original Problem Document](https://docs.google.com/document/d/1JduF7qZbL6-ZCCMDoMiHmmk3h1kuY3CzdQ2c4kDc0_o/edit)
+[Click to open the Original Problem Document](https://docs.google.com/document/d/12_hmyuFYNu3kRrTuwY3Q6IrPBux5j9D8zl9zBoNQDK8/edit)
 
-### StoreFront Database Creation
+### StoreFront Queries
 - [My Solution (Annotated Markdown File)](./Assignment.md)
-- [My Solution (App.java) - Entry Point](./Queries.sql)
+- [My Solution](./Queries.sql)
