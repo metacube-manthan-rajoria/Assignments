@@ -38,6 +38,17 @@ GROUP BY orders.user_id
 ORDER BY 2 DESC
 LIMIT 10;
 
+/*
+Task 3 - Query 3
+*/
+SELECT products.product_id, products.name, count(order_products.order_id)
+FROM products
+JOIN order_products ON order_products.product_id = products.product_id
+JOIN orders ON orders.order_id = order_products.order_id
+WHERE orders.order_date > "2023-10-01"
+GROUP BY products.product_id
+ORDER BY 3 DESC, products.product_id ASC
+LIMIT 20;
 
 /*
 Task 3 - Query 6
