@@ -54,6 +54,12 @@ This is a Academy Goal Management Repo. <br>
 
 - [StoreFront ER Diagram](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20001%20-%20Introduction%20to%20DBMS/StoreFront.svg)
 
+- [StoreFront Database Queries](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20002%20-%20SQL%20Commands%20%26%20Joins/README.md)
+
+- [StoreFront JDBC](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20003%20-%20JDBC/JDBC/app/src/main/java/jdbc/App.java)
+
+- [StoreFront Queries](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20004%20-%20SQL%20Constraints%2C%20Functions%20%26%20Views/Queries.sql)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
