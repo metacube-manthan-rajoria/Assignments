@@ -429,7 +429,7 @@ FROM recent_orders
 WHERE status LIKE "delivered";
 
 /*
-Task 5 - Query 6
+Task 5 - Query 3
 */
 select product_id, count(product_id) AS product_count
 FROM recent_orders
