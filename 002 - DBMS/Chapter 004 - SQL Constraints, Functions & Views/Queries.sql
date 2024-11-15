@@ -424,6 +424,14 @@ ORDER BY orders.order_date;
 /*
 Task 5 - Query 2
 */
-select order_id, product_id
+SELECT order_id, product_id
 FROM recent_orders
-where status LIKE "delivered";
+WHERE status LIKE "delivered";
+
+/*
+Task 5 - Query 6
+*/
+select product_id, count(product_id) AS product_count
+FROM recent_orders
+GROUP BY product_id
+ORDER BY product_count DESC;
