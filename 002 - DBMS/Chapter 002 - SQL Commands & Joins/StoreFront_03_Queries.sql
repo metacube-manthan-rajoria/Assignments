@@ -12,7 +12,7 @@ Display the list of products which don't have any images.
 */
 SELECT products.product_id, products.name, images.image_url
 FROM products
-JOIN images ON products.product_id = images.product_id
+LEFT JOIN images ON products.product_id = images.product_id
 WHERE images.image_url IS NULL;
 
 /* Task 2 - Query 4
@@ -51,7 +51,7 @@ WHERE products.stock < 50;
 /* Task 3 - Query 1
 Display Recent 50 Orders placed (Id, Order Date, Order Total).
 */
-SELECT orders.order_id, orders.order_date, SUM(products.price * order_products.quantity)
+SELECT orders.order_id, orders.order_date, SUM(products.price * order_products.quantity) AS Order_Toral
 FROM orders
 JOIN order_products ON orders.order_id = order_products.order_id
 JOIN products ON order_products.product_id = products.product_id
@@ -67,7 +67,7 @@ FROM orders
 JOIN order_products ON orders.order_id = order_products.order_id
 JOIN products ON order_products.product_id = products.product_id
 GROUP BY orders.order_id
-ORDER BY 2 DESC
+ORDER BY Total DESC
 LIMIT 10;
 
 /* Task 3 - Query 3
@@ -76,7 +76,7 @@ and one or more items from those orders are still not shipped.
 */
 SELECT orders.order_id, orders.order_date 
 FROM orders
-WHERE orders.order_date < "2023-10-10" 
+WHERE orders.order_date < CURDATE() - INTERVAL 15 DAY
 AND orders.status = "shipping";
 
 /* Task 3 - Query 4
@@ -84,7 +84,7 @@ Display list of shoppers which haven't ordered anything since last month.
 */
 SELECT users.user_id, users.first_name, users.last_name, orders.order_date
 FROM users
-JOIN orders ON users.user_id = orders.user_id
+LEFT JOIN orders ON users.user_id = orders.user_id
 WHERE orders.order_date < "2023-11-01"
 AND users.user_type = "customer";
 
