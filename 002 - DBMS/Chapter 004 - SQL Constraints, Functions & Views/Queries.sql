@@ -1,7 +1,24 @@
 /*
+Task 2 - Query 1
+*/
+CREATE VIEW category_count AS
+SELECT 
+    products.product_id, 
+    products.name, 
+    COUNT(product_categories.category_id) AS category_count
+FROM products
+JOIN product_categories ON product_categories.product_id = products.product_id
+GROUP BY products.product_id
+ORDER BY category_count DESC;
+
+SELECT category_count.name, category_count.category_count
+FROM category_count
+WHERE category_count.category_count >1;
+
+/*
 Task 2 - Query 2
 */
-create table price_sort(ranges varchar(100), count int);
+CREATE TABLE price_sort(ranges VARCHAR(100), count INT);
 
 INSERT INTO price_sort (ranges, count)
 SELECT "0-100", COUNT(products.product_id) 
@@ -17,6 +34,37 @@ INSERT INTO price_sort (ranges, count)
 SELECT "Above 500", COUNT(products.product_id) 
 FROM products 
 WHERE products.price > 500;
+
+/*
+Task 2 - Query 3
+*/
+CREATE DATABASE category_count_demo;
+USE category_count_demo;
+
+CREATE TABLE categories(
+	category_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    parent_category_id INT
+);
+
+CREATE TABLE products(
+    product_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100)
+)
+
+CREATE TABLE product_categories(
+    product_id INT NOT NULL,
+    category_id INT NOT NULL,
+    FOREIGN KEY(product_id) REFERENCES products(product_id),
+    FOREIGN KEY(category_id) REFERENCES categories(category_id)
+);
+
+SELECT categories.name, COUNT(products.product_id) as product_count
+FROM categories
+JOIN product_categories ON categories.category_id = product_categories.category_id
+JOIN products ON products.product_id = product_categories.product_id
+GROUP BY categories.category_id
+ORDER BY product_count DESC;
 
 /*
 Task 3 - Query 1
