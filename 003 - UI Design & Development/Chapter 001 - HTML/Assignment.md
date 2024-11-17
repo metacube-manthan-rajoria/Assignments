@@ -36,7 +36,7 @@ Use appropriate tags for the above defined fields according to their usage. Try 
 
 4. After the “vehicle” region, “feedback” region should be added. Create a feedback type form with fields of your choice. Sample feedback form can be like the image below. Only the HTML for the form is required with HTML validations.
 
-![](blob:https://docs.google.com/26c36d33-0205-48e4-861f-aee09f71302c)
+![](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/003%20-%20UI%20Design%20%26%20Development/Chapter%20001%20-%20HTML/res/feedback.png)
 
 5. After the “feedback” region, add a layout for pricing section resembling as shown in the below image for all the following vehicle types with format as Type(daily price, monthly price, yearly price) :- 
     - Cycle (5, 100, 500)
@@ -44,4 +44,4 @@ Use appropriate tags for the above defined fields according to their usage. Try 
     - Four Wheelers (20, 500, 3500)
 Create such sections for all the three types one below the other in the “pricing” section.
 
-![](blob:https://docs.google.com/5a9bf398-6f6a-42a5-b91d-ee8d1c833154)
+![](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/003%20-%20UI%20Design%20%26%20Development/Chapter%20001%20-%20HTML/res/pricing.png)
