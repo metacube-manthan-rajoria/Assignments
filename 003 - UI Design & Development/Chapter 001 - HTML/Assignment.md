@@ -7,7 +7,7 @@ Only the HTML part is required for this assignment. No need to focus on achievin
 - Try to create reusable things.
 - Add comments wherever possible to make the code more readable.	
 
-Assume a Metacube Parking System. 
+### Assume a Metacube Parking System. 
 1. Create a landing page for the website of the above system as described. Create a navbar with navigation items. Add any covering image of your choice for the system. There will be 4 navigation items - 
     - Add Employee
     - Add Vehicle
