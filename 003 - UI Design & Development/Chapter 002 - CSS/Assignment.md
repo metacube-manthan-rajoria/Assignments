@@ -26,7 +26,7 @@ On click of each navigation item, the page should scroll automatically to the co
 Image shows “Employee” region in collapsed form & “vehicle” region in expanded form (with different color & background depending on the state). Just need to add style to depict expanded & collapsed state toggle just by adding a particular class. (As explained in the session). <br>
 Regions should have all the fields as given in the previous assignment. You can style the fields according to your wish to make it more intuitive but keeping the base style.
 
-“Employee” region has following fields :-
+- “Employee” region has following fields
     - Full Name
     - Gender
     - Email Id
@@ -34,7 +34,7 @@ Regions should have all the fields as given in the previous assignment. You can 
     - Confirm Password
     - Contact Number
 
-“Vehicle” region has following fields :-
+- “Vehicle” region has following fields :-
     - Vehicle Make (Company)
     - Vehicle Model
     - Type
