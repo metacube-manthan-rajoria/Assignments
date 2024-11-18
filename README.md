@@ -49,7 +49,7 @@ This is a Academy Goal Management Repo. <br>
 - [Shape Factory](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/001%20-%20Software%20Construction%20Fundamentals%20-%20GET/Chapter%20009%20-%20Factory%20For%20ADT/Main.java)
 </details>
 
-<details open>
+<details>
 <summary>💾 <b>DBMS</b></summary>
 
 - [StoreFront ER Diagram](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20001%20-%20Introduction%20to%20DBMS/StoreFront.svg)
@@ -59,6 +59,15 @@ This is a Academy Goal Management Repo. <br>
 - [StoreFront JDBC](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20003%20-%20JDBC/JDBC/app/src/main/java/jdbc/App.java)
 
 - [StoreFront Queries](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20004%20-%20SQL%20Constraints%2C%20Functions%20%26%20Views/Queries.sql)
+
+- [StoreFront StoredProcedures](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/002%20-%20DBMS/Chapter%20005%20-%20Best%20Practices%20%26%20Implementation/Queries.sql)
+
+</details>
+
+<details open>
+<summary>💾 <b>UI Design</b></summary>
+
+- [Metacube Parking System](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001)
 
 </details>
 
