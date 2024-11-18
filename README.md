@@ -67,7 +67,9 @@ This is a Academy Goal Management Repo. <br>
 <details open>
 <summary>💾 <b>UI Design</b></summary>
 
-- [Metacube Parking System](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001)
+- [Metacube Parking System (HTML)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_001)
+
+- [Metacube Parking System (CSS)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_002)
 
 </details>
 
