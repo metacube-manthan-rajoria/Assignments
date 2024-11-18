@@ -2,6 +2,6 @@
 
 ### HTML - Metacube Parking System
 - [Assignment (Annotated Markdown File)](./Assignment.md)
-- [Solution Repository](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001)
-- [My Solution (HTML File)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/blob/main/index.html)
+- [Solution Repository](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_001)
+- [My Solution (HTML File)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/blob/Chapter_001/index.html)
 - [Live Website](https://metacube-manthan-rajoria.github.io/GET_003_Chapter_001/)
