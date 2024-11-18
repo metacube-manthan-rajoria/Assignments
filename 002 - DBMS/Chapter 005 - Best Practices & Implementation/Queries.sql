@@ -27,7 +27,7 @@ BEGIN
     SET maxSaleMonth = (
         SELECT MONTH(orders.order_date) AS order_month
         FROM orders
-        JOIN order_products ON order_products.order_id = order_products.order_id
+        JOIN order_products ON order_products.order_id = orders.order_id
         JOIN products ON products.product_id = order_products.product_id
         WHERE YEAR(orders.order_date) = year
         GROUP BY order_month
