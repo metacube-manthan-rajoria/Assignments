@@ -78,12 +78,12 @@ GROUP BY users.user_id;
 /*
 Task 3 - Query 2
 */
-SELECT orders.user_id, sum(products.price * order_products.quantity)
+SELECT orders.user_id, sum(products.price * order_products.quantity) as total
 FROM orders
 JOIN order_products ON orders.order_id = order_products.order_id
 JOIN products ON order_products.product_id = products.product_id
 GROUP BY orders.user_id
-ORDER BY 2 DESC
+ORDER BY total DESC
 LIMIT 10;
 
 /*
@@ -99,11 +99,23 @@ ORDER BY 3 DESC, products.product_id ASC
 LIMIT 20;
 
 /*
+Task 3 - Query 4
+*/
+SELECT MONTH(orders.order_date) as months, sum(products.price * order_products.quantity) as total
+FROM orders
+JOIN order_products ON order_products.order_id = orders.order_id
+JOIN products ON products.product_id = order_products.product_id
+WHERE orders.order_date > "2023-11-01"
+GROUP BY months;
+
+SELECT products.product_id, "inactive" from products;
+
+/*
 Task 3 - Query 6
 */
 SELECT products.name from products
 JOIN categories ON products.category = categories.category_id
-WHERE categories.name LIKE "Laptops";
+WHERE categories.name = "Laptops";
 
 
 /*

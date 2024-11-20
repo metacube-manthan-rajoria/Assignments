@@ -61,11 +61,10 @@ Task 2 - Query 2
 DELIMITER >ᴗ<
 CREATE Procedure orders_in_period(IN startDate DATE, IN endDate DATE)
 BEGIN 
-    IF startDate > endDate
-    BEGIN
-        RAISERROR('Enter valid inputs for date and year');
-        RETURN;
-    END
+IF(startDate > endDate) THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Order No not found in orders table';
+END IF;
     SELECT 
         orders.order_id, 
         orders.user_id, 
@@ -73,9 +72,9 @@ BEGIN
         orders.status,
         orders.address_id
     FROM orders
-    WHERE orders.order_date BETWEEN startDate AND endDate
-END;
-
+    WHERE orders.order_date BETWEEN startDate AND endDate;
+END >ᴗ<
+DELIMITER ;
 /*
 Task 3
 */
