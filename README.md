@@ -71,6 +71,8 @@ This is a Academy Goal Management Repo. <br>
 
 - [Metacube Parking System (CSS)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_002)
 
+- [Weather App](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_003/)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
