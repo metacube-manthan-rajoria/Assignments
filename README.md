@@ -75,7 +75,7 @@ This is a Academy Goal Management Repo. <br>
 
 - [Blog Post](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_004)
 
-- [Blog Post](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_005)
+- [Dashboard](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_005)
 
 </details>
 
