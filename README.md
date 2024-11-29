@@ -77,6 +77,8 @@ This is a Academy Goal Management Repo. <br>
 
 - [Dashboard](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_005)
 
+- [Metacube Parking System (JavaScript)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_006)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
