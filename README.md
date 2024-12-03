@@ -79,6 +79,10 @@ This is a Academy Goal Management Repo. <br>
 
 - [Metacube Parking System (JavaScript)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_006)
 
+- [Metacube Parking System (ECMAScript)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_007)
+
+- [NPM Project Creation](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_008)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
