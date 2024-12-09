@@ -85,6 +85,19 @@ This is a Academy Goal Management Repo. <br>
 
 - [Metacube Parking System (TypeScript)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_009)
 
+- [Kanban - React 1](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_010)
+
+- [Kanban - React 2](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_011)
+
+</details>
+
+<details open>
+<summary>⚙️ <b>QA Testing</b></summary>
+
+- [Testing Concepts](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/004%20-%20QA%20Testing/Chapter%20001%20-%20Testing%20Concepts)
+
+- [Test Automation](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/004%20-%20QA%20Testing/Chapter%20002%20-%20Test%20Automation)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
