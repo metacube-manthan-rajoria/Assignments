@@ -61,8 +61,29 @@ Verify refund amount calculation is correct for all cases.
 > 1. Use boundary Value analysis technique and provide the set of data which you will take for testing.
 > 2. Use equivalence partitioning technique and create test data which you will use for testing.
 
-```Answer
-1. Boundary Value Analysis
-| 
 ```
+Boundary Value Analysis Data
+```
+| BV Data    |
+| ---------- |
+| 0          |
+| 1          |
+| 10         |
+| 11         |
+| 30         |
+| 31         |
+| 60         |
+| 61         |
+
+```
+Equivalance Partitioning Technique
+```
+| EP Data    |
+| ---------- |
+| 0          |
+| 5          |
+| 20         |
+| 40         |
+| 80         |
+
 </details>
