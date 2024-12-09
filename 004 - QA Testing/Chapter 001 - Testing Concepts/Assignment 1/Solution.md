@@ -16,6 +16,7 @@
     a. Is the user logged in? 
     b. Did he apply for refund scheme in the first place.
     c. Does the user even has a trip scheduled?
+    d. Any condition under which a ticket cannot be cancelled. for eg chart prepared
 ```
 </details>
 
@@ -46,6 +47,22 @@ If the date is in future then all boundary cases and equivalance cases.
 > 4. If user cancels the ticket between 10-1 days - Refund 20% of amount.
 
 ```Answer
+The cancel button should not be available if there are no trips.
+The cancel button should not be available if the trip has already passed.
+Verify refund amount calculation is correct for all cases.
+```
+</details>
 
+
+<details>
+<summary>Question 4</summary><br>
+
+> For our use case:
+> 1. Use boundary Value analysis technique and provide the set of data which you will take for testing.
+> 2. Use equivalence partitioning technique and create test data which you will use for testing.
+
+```Answer
+1. Boundary Value Analysis
+| 
 ```
 </details>
