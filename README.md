@@ -85,9 +85,9 @@ This is a Academy Goal Management Repo. <br>
 
 - [Metacube Parking System (TypeScript)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_009)
 
-- [Kanban - React 1](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_010)
+- [Kanban - React 1](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_010/tree/ab0287ec0f9f1cebb370232ffbf92a78fb48dced)
 
-- [Kanban - React 2](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_011)
+- [Kanban - React 2](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_010)
 
 </details>
 
