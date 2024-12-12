@@ -64,7 +64,7 @@ This is a Academy Goal Management Repo. <br>
 
 </details>
 
-<details open>
+<details>
 <summary>📰 <b>UI Design</b></summary>
 
 - [Metacube Parking System (HTML)](https://github.com/metacube-manthan-rajoria/GET_003_Chapter_001/tree/Chapter_001)
@@ -91,7 +91,7 @@ This is a Academy Goal Management Repo. <br>
 
 </details>
 
-<details open>
+<details>
 <summary>⚙️ <b>QA Testing</b></summary>
 
 - [Testing Concepts](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/004%20-%20QA%20Testing/Chapter%20001%20-%20Testing%20Concepts)
