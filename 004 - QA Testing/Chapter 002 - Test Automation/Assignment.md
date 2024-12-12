@@ -1,0 +1,12 @@
+# Problem Statement
+- Which software development technique is good for the systems that have third party API calls, cron jobs, data exports/imports, etc.,
+- Where does Test Automation fit in the Software Life Cycle? Explain with a diagram.
+- Can we skip the manual testing and why?
+- Give the names of the selector(locators) ?
+- What is the modular framework? 
+- Explain the Open source tool.
+- What is a Hybrid framework?
+- Write a name of record and replay tool.
+- What is the difference between BDD and Cucumber?
+- Can we replace the Manual Regression testing effort from Test automation and how?
+- How many ‘A’s test script has? Explain them.
