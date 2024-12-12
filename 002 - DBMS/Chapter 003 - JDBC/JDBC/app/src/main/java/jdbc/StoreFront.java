@@ -11,14 +11,9 @@ public class StoreFront {
     }
 
     private static final String DATABASE_NAME = "store_front";
-    private static final String USERS_TABLE_NAME = "users";
     private static final String ORDERS_TABLE_NAME = "orders";
     private static final String PRODUCTS_TABLE_NAME = "products";
     private static final String CART_TABLE_NAME = "order_products";
-    private static final String CATEGORIES_TABLE_NAME = "categories";
-    private static final String IMAGES_TABLE_NAME = "images";
-    private static final String ADDRESSES_TABLE_NAME = "addresses";
-    private static final String ZIPCODES_TABLE_NAME = "zipcodes";
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost/" + DATABASE_NAME;
     private static final String USER = "root";
