@@ -100,6 +100,13 @@ This is a Academy Goal Management Repo. <br>
 
 </details>
 
+<details open>
+<summary>.🥅 <b>.NET</b></summary>
+
+- [Fundamentals of .NET](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20001%20-%20Introduction/Assignment%20001%20-%20Fundamentals%20of%20.NET/Assignment.md)
+
+</details>
+
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
 
 <p align="center">
