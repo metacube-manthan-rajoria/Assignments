@@ -4,7 +4,7 @@ Answer the following questions
 - List the responsibilities of CLR
 - What is the significance of Private and Shared assemblies? Provide steps to register an assembly as shared.
 
-- [Assignment (Annotated Markdown File)](./Assignment.md)
+[Assignment (Annotated Markdown File)](./Assignment.md)
 
 ### Links
 - [.NET Introduction](https://docs.microsoft.com/en-us/dotnet/core/introduction)
