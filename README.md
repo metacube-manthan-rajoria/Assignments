@@ -105,6 +105,10 @@ This is a Academy Goal Management Repo. <br>
 
 - [Fundamentals of .NET](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20001%20-%20Introduction/Assignment%20001%20-%20Fundamentals%20of%20.NET/Assignment.md)
 
+- [Console Application](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20001%20-%20Introduction/Assignment%20002%20-%20Console%20Application)
+
+- [Zoo Management](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20002%20-%20Basics/Assignment%20002%20-%20C%23%20OOP)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
