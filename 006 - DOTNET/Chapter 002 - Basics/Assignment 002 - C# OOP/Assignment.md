@@ -3,7 +3,7 @@
 - Project 2 (Console). Create a console application with a menu to perform operations on zoo management. Exception handling is a must. The namespace should be `Metacube.Net.ZooManagement.Console`
 
 > [!note]
-> The above 2 projects should be separate. Console project should have only reference of the project#1
+> The above 2 projects should be separate. Console project should have only reference of the Project 1(Class Library)
 
 ### Problem
 
