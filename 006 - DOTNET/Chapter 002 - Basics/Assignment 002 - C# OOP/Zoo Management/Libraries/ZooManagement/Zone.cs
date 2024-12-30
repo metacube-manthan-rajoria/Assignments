@@ -4,9 +4,7 @@ public class Zone
 {
     private int maxCageCount = 0;
     private List<Cage> cages;
-
     private AnimalType animalType;
-
     private readonly bool hasPark = false;
     private readonly bool hasCanteen = false;
 
@@ -31,10 +29,13 @@ public class Zone
         }
     }
 
+    public bool HasSpace(){
+        if(cages.Count < maxCageCount) return true;
+        return false;
+    }
     public List<Cage> GetCages(){
         return cages;
     }
-
     public AnimalType GetAnimalType(){
         return animalType;
     }

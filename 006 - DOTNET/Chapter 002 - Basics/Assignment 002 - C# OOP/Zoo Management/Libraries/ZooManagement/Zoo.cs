@@ -19,40 +19,53 @@ public class Zoo
             Type species = animal.GetType().BaseType;
             Type subspecies = animal.GetType();
 
-            bool suitableZonePresent = false;
-            bool suitableZoneHasSpace = false;
-            bool suitableCagePresent = false;
-            bool suitableCageHasSpace = false;
-
+            // Looping over existing cages to find space for animal
             foreach(var zone in zones){
                 string zoneAnimalType = (NAMESPACE_NAME + zone.GetAnimalType().ToString()).ToLower();
                 if(zoneAnimalType.Equals(species.ToString().ToLower())){
                     foreach(var cage in zone.GetCages()){
                         string zoneAnimalSubType = (NAMESPACE_NAME + zone.GetAnimalType().ToString()).ToLower();
-                        if(cage.GetAnimalSubType().Equals(subspecies.ToString().ToLower())){
-
+                        if(cage.GetAnimalSubType().Equals(subspecies.ToString().ToLower()) && cage.HasSpace()){
+                            cage.AddAnimal(animal);
+                            return true;
                         }
+                    }
+
+                    // Creating new cage if current zone has space
+                    if(zone.HasSpace()){
+                        zone.AddCage(subspecies.ToString().ToLower(), 5);
+                        zone.GetCages()[zone.GetCages().Count - 1].AddAnimal(animal);
+                        return true;
                     }
                 }
             }
 
+            // Adding new Zone to add animal
+            AnimalType animalEnumType;
+            switch(species.ToString().ToLower()){
+                case "metacube.net.zoomanagement.reptile": 
+                    animalEnumType = AnimalType.REPTILE;
+                    break;
+                case "metacube.net.zoomanagement.bird": 
+                    animalEnumType = AnimalType.BIRD;
+                    break;
+                case "metacube.net.zoomanagement.fish": 
+                    animalEnumType = AnimalType.FISH;
+                    break;
+                default:
+                    animalEnumType = AnimalType.MAMMAL;
+                    break;
+            }
+            AddZone(animalEnumType, 5, true, true);
+            zones[zones.Count - 1].AddCage(subspecies.ToString().ToLower(), 5);
+            zones[zones.Count - 1].GetCages()[0].AddAnimal(animal);
+            return true;
         }catch(NullReferenceException){
             Console.WriteLine("Null Exception for animal class.");
         }
-
-        // foreach(var zone in zones){
-        //     if(zone.GetAnimalType().ToString().Equals(animal.GetType()))
-        //     foreach(var cage in zone.GetCages()){
-        //         bool isAnimalAdded = cage.AddAnimal(animal);
-        //         if(isAnimalAdded){
-        //             Console.WriteLine("Animal added to cage");
-        //         }else{
-                    
-        //         }
-        //     }
-        // }
         return false;
     }
+
     public bool AnimalDied(string name) {
         foreach(var zone in zones){
             foreach(var cage in zone.GetCages()){
@@ -67,6 +80,18 @@ public class Zoo
         return false;
     }
 
+    public List<Animal> GetAllAnimals(){
+        List<Animal> allAnimals = new List<Animal>();
+        foreach(var zone in zones){
+            foreach(var cage in zone.GetCages()){
+                foreach(var animal in cage.GetAnimals()){
+                    allAnimals.Add(animal);
+                }
+            }
+        }
+        return allAnimals;
+    }
+
     public void PrintZooStatistics(){
         Console.WriteLine("Zoo Statistics");
 
@@ -78,17 +103,13 @@ public class Zoo
             int cageCount = 0;
             foreach(var cage in zone.GetCages()){
                 cageCount++;
-                Console.WriteLine($"\tCage {cageCount} : " + cage.GetType());
+                Console.WriteLine($"\tCage {cageCount} : " + cage.GetAnimalSubType());
 
                 foreach(var Animal in cage.GetAnimals()){
-                    Console.WriteLine($"{Animal.GetType()}, Name : {Animal.GetName()}, Age : {Animal.GetAge()}, Weight : {Animal.GetWeight()}");
+                    Console.WriteLine($"\t\t{Animal.GetType()}, Name : {Animal.GetName()}, Age : {Animal.GetAge()}, Weight : {Animal.GetWeight()}");
                 }
             }
         }
-    }
-
-    public List<Zone> GetZones(){
-        return zones;
     }
 }
 
@@ -98,30 +119,3 @@ public enum AnimalType {
     BIRD,
     FISH
 }
-
-// public enum Mammal {
-//     ELEPHANT,
-//     LION,
-//     TIGER
-// }
-
-// public enum Reptile {
-//     ALIGATOR,
-//     TURTLE,
-//     IGUANA,
-//     SNAKE
-// }
-
-// public enum Bird {
-//     OWL,
-//     WOODPECKER,
-//     EAGLE,
-//     PARROT,
-//     PENGUIN
-// }
-
-// public enum Fish {
-//     DOLPHIN,
-//     SALMON,
-//     CARP
-// }

@@ -2,10 +2,10 @@ namespace Metacube.Net.ZooManagement;
 
 public class Cage
 {
-    private readonly string animalSubType = "";
     private readonly int maxAnimalCount = 0;
-
+    private readonly string animalSubType = "";
     private List<Animal> animals;
+
     public Cage(string subtype, int maxAnimalCount){
         animalSubType = subtype;
         this.maxAnimalCount = maxAnimalCount;
@@ -15,13 +15,8 @@ public class Cage
 
     public bool AddAnimal(Animal animal){
         if(animals.Count >= maxAnimalCount) return false;
-
-        if(animal.GetType().ToString() == animalSubType){
-            animals.Add(animal);
-            return true;
-        }
-        Console.WriteLine("Incompatible animal type");
-        return false;
+        animals.Add(animal);
+        return true;
     }
 
     public bool RemoveAnimal(string name){
@@ -34,6 +29,10 @@ public class Cage
         return false;
     }
 
+    public bool HasSpace(){
+        if(animals.Count < maxAnimalCount) return true;
+        return false;
+    }
     public string GetAnimalSubType(){
         return animalSubType;
     }
