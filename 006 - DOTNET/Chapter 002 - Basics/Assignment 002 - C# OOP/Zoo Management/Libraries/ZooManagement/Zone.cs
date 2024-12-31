@@ -2,7 +2,7 @@ namespace Metacube.Net.ZooManagement;
 
 public class Zone
 {
-    private int maxCageCount = 0;
+    private readonly int maxCageCount = 0;
     private List<Cage> cages;
     private AnimalType animalType;
     private readonly bool hasPark = false;

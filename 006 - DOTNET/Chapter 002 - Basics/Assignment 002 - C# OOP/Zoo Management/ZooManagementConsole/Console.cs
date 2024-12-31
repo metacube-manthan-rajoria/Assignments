@@ -18,6 +18,7 @@ class Console
 
         Tiger tiger1 = new Tiger(13, 51.0);
         Tiger tiger2 = new Tiger(15, 52.0);
+        Tiger tiger3 = new Tiger(15, 52.0);
 
         Owl owl1 = new Owl(3, 1.0);
         Owl owl2 = new Owl(4, 1.5);
@@ -32,13 +33,15 @@ class Console
         zoo.AddAnimal(lion6);
         zoo.AddAnimal(tiger1);
         zoo.AddAnimal(tiger2);
+        zoo.AddAnimal(tiger3);
         zoo.AddAnimal(owl1);
         zoo.AddAnimal(owl2);
+        zoo.AddAnimal(owl3);
         zoo.AddAnimal(owl3);
 
         zoo.PrintZooStatistics();
 
-        zoo.AnimalDied(zoo.GetAllAnimals()[10].GetName());
+        zoo.AnimalDied(zoo.GetAllAnimals()[100].GetName());
 
         zoo.PrintZooStatistics();
 
