@@ -1,0 +1,45 @@
+@{
+    ViewData["NumTimes"] = 5;
+    ViewData["a"] = new List<User>{
+        new User{Username="Gamedemons", Email="gamedemons55@gmail.com", Password="12345678", ConfirmPassword="12345678"},
+        new User{Username="Nyx", Email="nyxane@gmail.com", Password="12345678", ConfirmPassword="12345678"}
+    };
+}
+
+<h2>Users</h2>
+
+<ul id="users_list">
+    @foreach(var item in (List<User>)ViewData["a"]){
+        <li>
+            <div class="users_item_info">
+                <span>@item.Username</span>
+                <span>@item.Email</span>
+            </div>
+            <div class="users_item_buttons">
+                <a class="btn btn-outline-warning">
+                    Edit
+                </a>
+                <a class="btn btn-outline-danger">
+                    Delete
+                </a>
+            </div>
+        </li>
+    }
+    @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
+    {
+        <li>
+            <div class="users_item_info">
+                <span>@ViewData["a"]</span>
+                <span>Email</span>
+            </div>
+            <div class="users_item_buttons">
+                <a class="btn btn-outline-warning">
+                    Edit
+                </a>
+                <a class="btn btn-outline-danger">
+                    Delete
+                </a>
+            </div>
+        </li>
+    }
+</ul>

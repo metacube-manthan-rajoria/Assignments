@@ -1,10 +1,11 @@
-using System;
-
 namespace MetaUser.Models;
 
 public class User
 {
-    private int Id {get; set;}
-    private string ?Email {get; set;}
-    private string ?Password {get; set;}
+    [Key]
+    public int Id {get; set;}
+    public required string Username {get; set;}
+    public required string Email {get; set;}
+    public required string Password {get; set;}
+    public required string ConfirmPassword {get; set;}
 }
