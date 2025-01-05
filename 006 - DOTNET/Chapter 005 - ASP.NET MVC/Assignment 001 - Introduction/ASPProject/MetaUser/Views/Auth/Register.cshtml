@@ -1,11 +1,13 @@
-@model MetaUser.Models.User
+@model User
 <h1>Register as a new user</h1>
 
-<form asp-action="Index" method="post">
-    <input type="text" name="name" id="register_name" placeholder="Username" asp-for="Username">
-    <input type="email" name="" id="register_email" placeholder="Email" asp-for="Email">
-    <input type="password" name="" id="register_password" placeholder="Password" asp-for="Password">
-    <input type="password" name="" id="register_confirm_password" placeholder="Confirm Password" asp-for="ConfirmPassword">
+<form action="@Url.Action("Index","Home")" method="post">
+    <div id="auth_register_form">
+        <input type="text" name="Username" id="register_name" placeholder="Username">
+        <input type="email" name="Email" id="register_email" placeholder="Email">
+        <input type="password" name="Password" id="register_password" placeholder="Password">
+        <input type="password" name="ConfirmPassword" id="register_confirm_password" placeholder="Confirm Password">
 
-    <button type="submit">Register</button>
+        <button>Register</button>
+    </div>
 </form>

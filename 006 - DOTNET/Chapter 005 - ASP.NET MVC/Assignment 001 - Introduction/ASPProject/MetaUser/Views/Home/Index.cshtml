@@ -1,20 +1,59 @@
-﻿@{
+﻿@model List<User>;
+
+@{
     ViewData["Title"] = "Home Page";
+    List<User>? userList = (List<User>?)ViewData["userList"];
+    bool? isLoggedIn = (bool?)ViewData["isLoggedIn"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome To MetaUser</h1>
-    <p>This is a ASP.NET Application that I made for the first time.</p>
 
-    <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Index">
-        <button class="home_button">
-            Register as a New User
-        </button>
-    </a>
+@if (!isLoggedIn.HasValue || isLoggedIn == false)
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome To MetaUser</h1>
+        <p>This is a ASP.NET Application that I made for the first time.</p>
 
-    <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">
-        <button class="home_button">
-            Login
-        </button>
-    </a>
-</div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Index">
+            <button class="home_button">
+                Register as a New User
+            </button>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">
+            <button class="home_button">
+                Login
+            </button>
+        </a>
+    </div>
+
+}
+else
+{
+    <h2>Users</h2>
+    @if (userList == null)
+    {
+        <span>No users registered</span>
+    }
+    else
+    {
+        <ul id="users_list">
+            @foreach (User item in userList)
+            {
+                <li>
+                    <div class="users_item_info">
+                        <span>@item.Username</span>
+                        <span>@item.Email</span>
+                    </div>
+                    <div class="users_item_buttons">
+                        <a class="btn btn-outline-warning">
+                            Edit
+                        </a>
+                        <a class="btn btn-outline-danger">
+                            Delete
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+}
