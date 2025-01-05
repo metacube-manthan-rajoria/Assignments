@@ -33,4 +33,31 @@ public class UsersServices
         }
         return false;
     }
+
+    public bool FindUser(string email, string password){
+        foreach(var user in userList){
+            if(user.Email.Equals(email) && user.Password.Equals(password)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public User GetUser(string email, string password){
+        foreach(var user in userList){
+            if(user.Email.Equals(email) && user.Password.Equals(password)){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public bool EmailAlreadyInUse(string email){
+        foreach(var user in userList){
+            if(user.Email.Equals(email)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

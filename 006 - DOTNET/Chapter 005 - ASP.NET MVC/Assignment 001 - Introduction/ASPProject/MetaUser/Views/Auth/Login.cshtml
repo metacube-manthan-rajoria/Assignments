@@ -1,7 +1,7 @@
 @model User
 <h1>Login as a existing user</h1>
 
-<form action="@Url.Action("Index","Home")" method="post">
+<form action="@Url.Action("LoginUser","Home")" method="post">
     <div id="auth_login_form">
         <input type="email" name="Email" id="login_email" placeholder="Email">
         <input type="password" name="Password" id="login_password" placeholder="Password">

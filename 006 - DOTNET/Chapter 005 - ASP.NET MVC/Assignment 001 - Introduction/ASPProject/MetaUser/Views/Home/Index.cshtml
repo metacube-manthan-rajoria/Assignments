@@ -4,6 +4,7 @@
     ViewData["Title"] = "Home Page";
     List<User>? userList = (List<User>?)ViewData["userList"];
     bool? isLoggedIn = (bool?)ViewData["isLoggedIn"];
+    string? currentUser = (string?)ViewData["currentUsername"];
 }
 
 
@@ -25,10 +26,10 @@
             </button>
         </a>
     </div>
-
 }
 else
 {
+    <h2>Current User : @currentUser</h2>
     <h2>Users</h2>
     @if (userList == null)
     {
@@ -37,18 +38,18 @@ else
     else
     {
         <ul id="users_list">
-            @foreach (User item in userList)
+            @foreach (User user in userList)
             {
                 <li>
                     <div class="users_item_info">
-                        <span>@item.Username</span>
-                        <span>@item.Email</span>
+                        <span>@user.Username</span>
+                        <span>@user.Email</span>
                     </div>
                     <div class="users_item_buttons">
                         <a class="btn btn-outline-warning">
                             Edit
                         </a>
-                        <a class="btn btn-outline-danger">
+                        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser">
                             Delete
                         </a>
                     </div>

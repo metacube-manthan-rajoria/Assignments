@@ -1,7 +1,7 @@
 @model User
 <h1>Register as a new user</h1>
 
-<form action="@Url.Action("Index","Home")" method="post">
+<form action="@Url.Action("RegisterUser","Home")" method="post">
     <div id="auth_register_form">
         <input type="text" name="Username" id="register_name" placeholder="Username">
         <input type="email" name="Email" id="register_email" placeholder="Email">
