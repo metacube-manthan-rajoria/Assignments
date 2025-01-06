@@ -3,9 +3,9 @@ using ExtensionLibrary;
 
 public class Console {
     public static void Main(){
-        int i = 1;
-        i.IsEven();
-        int j = 2;
-        j.IsEven();
+        string i = "Hello World";
+        i.RemoveWhiteSpaces();
+        string j = "Ei & Rin";
+        j.RemoveWhiteSpaces();
     }
 }
