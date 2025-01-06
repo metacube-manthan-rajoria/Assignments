@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MetaUser.Models;
+using MetaUser.Services;
 
 namespace MetaUser.Controllers;
 
@@ -21,6 +22,12 @@ public class AuthController : Controller
 
     public IActionResult Login()
     {
+        return View();
+    }
+
+    public IActionResult Update(Guid id){
+        User? user = UserServices.FindUser(id);
+        ViewBag.user = user;
         return View();
     }
 

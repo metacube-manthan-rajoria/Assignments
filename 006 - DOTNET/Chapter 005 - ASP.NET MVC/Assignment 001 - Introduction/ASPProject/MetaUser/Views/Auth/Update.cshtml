@@ -1,0 +1,17 @@
+@model User
+@{
+    User user = ViewBag.user;
+}
+<h1>Update Profile</h1>
+
+<form action="@Url.Action("UpdateUser","Home")" method="post">
+    <div id="auth_update_form">
+        <input type="hidden" value="@user.Id" name="Id">
+        <input type="text" name="Username" id="update_name" placeholder="Username" value="@user.Username">
+        <input type="email" name="Email" id="update_email" placeholder="Email" value="@user.Email">
+        <input type="password" name="Password" id="update_password" placeholder="Password">
+        <input type="password" name="ConfirmPassword" id="update_confirm_password" placeholder="Confirm Password">
+
+        <button>Update</button>
+    </div>
+</form>

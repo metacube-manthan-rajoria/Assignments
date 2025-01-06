@@ -27,6 +27,19 @@ public class UserServices
         return true;
     }
 
+    public static bool UpdateUser(User updatedUser){
+        int index = 0;
+        foreach(var user in userList){
+            if(user.Id == updatedUser.Id){
+                break;
+            }
+            index++;
+        }
+        if(index == 0) return false;
+        userList[index] = updatedUser;
+        return true;
+    }
+
     public static bool RemoveUser(Guid id){
         User? userToRemove = null;
         int index = 0;
@@ -52,6 +65,15 @@ public class UserServices
         return null;
     }
 
+    public static User? FindUser(Guid id){
+        foreach(var user in userList){
+            if(user.Id == id){
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static bool EmailAlreadyInUse(string email){
         foreach(var user in userList){
             if(user.Email.Equals(email)){
@@ -59,5 +81,9 @@ public class UserServices
             }
         }
         return false;
+    }
+
+    public static bool isAdmin(Guid id){
+        return userList[0].Id == id;
     }
 }

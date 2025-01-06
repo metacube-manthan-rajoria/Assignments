@@ -19,6 +19,7 @@ public class HomeController : Controller
     {
         ViewData["userList"] = UserServices.GetUserList();
         ViewData["isLoggedIn"] = UserServices.isLoggedIn;
+        ViewBag.isAdmin = false;
         return View();
     }
 
@@ -35,6 +36,7 @@ public class HomeController : Controller
         
         ViewData["userList"] = UserServices.GetUserList();
         ViewData["isLoggedIn"] = UserServices.isLoggedIn;
+        ViewBag.isAdmin = false;
         return View("Index");
     }
 
@@ -46,20 +48,40 @@ public class HomeController : Controller
 
         if(userAvailable != null){
             UserServices.isLoggedIn = true;
-            ViewData["currentUsername"] = UserServices.FindUser(email, password)?.Username;
+            ViewData["currentUsername"] = userAvailable.Username;
         }else{
             UserServices.isLoggedIn = false;
         }
 
         ViewData["isLoggedIn"] = UserServices.isLoggedIn;
         ViewData["userList"] = UserServices.GetUserList();
+        ViewBag.isAdmin = UserServices.isAdmin(userAvailable.Id);
+        return View("Index");
+    }
+
+    [HttpPost]
+    public IActionResult UpdateUser(User user){
+        bool passwordValid = user.Password.Equals(user.ConfirmPassword);
+        bool accountExistsAlready = UserServices.EmailAlreadyInUse(user.Email);
+
+        if(passwordValid && (!accountExistsAlready || (accountExistsAlready && UserServices.FindUser(user.Id).Email.Equals(user.Email)))){
+            UserServices.UpdateUser(user);
+            ViewData["currentUsername"] = user.Username;
+            UserServices.isLoggedIn = true;
+        }
+        
+        ViewData["userList"] = UserServices.GetUserList();
+        ViewData["isLoggedIn"] = UserServices.isLoggedIn;
+        ViewBag.isAdmin = UserServices.isAdmin(user.Id);
         return View("Index");
     }
 
     public IActionResult DeleteUser(Guid id){
+        ViewData["currentUsername"] = UserServices.GetUserList()[0].Username;
         ViewData["userList"] = UserServices.RemoveUser(id);
         ViewData["isLoggedIn"] = true;
         ViewData["userList"] = UserServices.GetUserList();
+        ViewBag.isAdmin = true;
         return View("Index");
     }
 

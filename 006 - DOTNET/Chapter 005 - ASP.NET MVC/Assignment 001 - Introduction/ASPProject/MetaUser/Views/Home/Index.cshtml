@@ -46,13 +46,16 @@ else
                         <span>@user.Email</span>
                     </div>
                     <div class="users_item_buttons">
-                        <a class="btn btn-outline-warning">
+                        <a class="btn btn-outline-warning" asp-controller="Auth" asp-action="Update" asp-route-id="@user.Id">
                             Edit
                         </a>
-                        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id">
-                            Delete @user.Id
-                        </a>
+                        @if(ViewBag.isAdmin){
+                            <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id">
+                                Delete
+                            </a>
+                        }
                     </div>
+                    
                 </li>
             }
         </ul>
