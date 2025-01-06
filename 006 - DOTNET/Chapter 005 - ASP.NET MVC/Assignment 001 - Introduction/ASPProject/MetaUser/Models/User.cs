@@ -5,7 +5,7 @@ namespace MetaUser.Models;
 public class User
 {
     [Key]
-    public Guid Id = Guid.NewGuid();
+    public Guid Id {get; set;}
     [Required]
     public required string Username {get; set;}
     [Required]

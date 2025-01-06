@@ -49,8 +49,8 @@ else
                         <a class="btn btn-outline-warning">
                             Edit
                         </a>
-                        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser">
-                            Delete
+                        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id">
+                            Delete @user.Id
                         </a>
                     </div>
                 </li>

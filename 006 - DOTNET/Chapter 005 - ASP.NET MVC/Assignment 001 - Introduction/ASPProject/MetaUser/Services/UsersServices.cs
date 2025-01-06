@@ -9,10 +9,10 @@ public class UsersServices
 
     public UsersServices(){
         userList = new List<User>{
-            new User{Username="Gamedemons", Email="gamedemons55@gmail.com", Password="12345678", ConfirmPassword="12345678"},
-            new User{Username="Void", Email="void@proton.me", Password="12345678", ConfirmPassword="12345678"},
-            new User{Username="Manthan", Email="manthanrajoria@hotmail.com", Password="12345678", ConfirmPassword="12345678"},
-            new User{Username="Nyx", Email="nyxane@gmail.com", Password="12345678", ConfirmPassword="12345678"}
+            new User{Id=Guid.NewGuid(), Username="Gamedemons", Email="gamedemons55@gmail.com", Password="12345678", ConfirmPassword="12345678"},
+            new User{Id=Guid.NewGuid(), Username="Void", Email="void@proton.me", Password="12345678", ConfirmPassword="12345678"},
+            new User{Id=Guid.NewGuid(), Username="Manthan", Email="manthanrajoria@hotmail.com", Password="12345678", ConfirmPassword="12345678"},
+            new User{Id=Guid.NewGuid(), Username="Nyx", Email="nyxane@gmail.com", Password="12345678", ConfirmPassword="12345678"}
         };
     }
 
@@ -21,15 +21,20 @@ public class UsersServices
     }
 
     public void AddUser(User user){
+        user.Id = Guid.NewGuid();
         userList.Add(user);
     }
 
     public bool RemoveUser(Guid id){
+        User? userToRemove = null;
         foreach(var user in userList){
             if(user.Id == id){
-                userList.Remove(user);
-                return true;
+                userToRemove = user;
             }
+        }
+        if(userToRemove != null){
+            userList.Remove(userToRemove);
+            return true;
         }
         return false;
     }
