@@ -9,37 +9,32 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    private readonly UsersServices _userService;
-
-    public bool isLoggedIn = false;
-
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _userService = new UsersServices();
     }
 
     [HttpGet]
     public IActionResult Index()
     {
-        ViewData["userList"] = _userService.GetUserList();
-        ViewData["isLoggedIn"] = isLoggedIn;
+        ViewData["userList"] = UserServices.GetUserList();
+        ViewData["isLoggedIn"] = UserServices.isLoggedIn;
         return View();
     }
 
     [HttpPost]
     public IActionResult RegisterUser(User user){
         bool passwordValid = user.Password.Equals(user.ConfirmPassword);
-        bool accountExistsAlready = _userService.EmailAlreadyInUse(user.Email);
+        bool accountExistsAlready = UserServices.EmailAlreadyInUse(user.Email);
 
         if(passwordValid && !accountExistsAlready){
-            _userService.AddUser(user);
+            UserServices.AddUser(user);
             ViewData["currentUsername"] = user.Username;
-            isLoggedIn = true;
+            UserServices.isLoggedIn = true;
         }
         
-        ViewData["userList"] = _userService.GetUserList();
-        ViewData["isLoggedIn"] = isLoggedIn;
+        ViewData["userList"] = UserServices.GetUserList();
+        ViewData["isLoggedIn"] = UserServices.isLoggedIn;
         return View("Index");
     }
 
@@ -47,24 +42,24 @@ public class HomeController : Controller
     public IActionResult LoginUser(User user){
         string email = user.Email;
         string password = user.Password;
-        bool userAvailable = _userService.FindUser(email, password);
+        User? userAvailable = UserServices.FindUser(email, password);
 
-        if(userAvailable){
-            isLoggedIn = true;
-            ViewData["currentUsername"] = _userService.GetUser(email, password).Username;
+        if(userAvailable != null){
+            UserServices.isLoggedIn = true;
+            ViewData["currentUsername"] = UserServices.FindUser(email, password)?.Username;
         }else{
-            isLoggedIn = false;
+            UserServices.isLoggedIn = false;
         }
 
-        ViewData["isLoggedIn"] = isLoggedIn;
-        ViewData["userList"] = _userService.GetUserList();
+        ViewData["isLoggedIn"] = UserServices.isLoggedIn;
+        ViewData["userList"] = UserServices.GetUserList();
         return View("Index");
     }
 
     public IActionResult DeleteUser(Guid id){
-        _userService.RemoveUser(id);
+        ViewData["userList"] = UserServices.RemoveUser(id);
         ViewData["isLoggedIn"] = true;
-        ViewData["userList"] = _userService.GetUserList();
+        ViewData["userList"] = UserServices.GetUserList();
         return View("Index");
     }
 
