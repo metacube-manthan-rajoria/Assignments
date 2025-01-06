@@ -29,10 +29,12 @@ public class UserServices
 
     public static bool RemoveUser(Guid id){
         User? userToRemove = null;
+        int index = 0;
         foreach(var user in userList){
-            if(user.Id == id){
+            if(user.Id == id && index!=0){
                 userToRemove = user;
             }
+            index++;
         }
         if(userToRemove != null){
             userList.Remove(userToRemove);
