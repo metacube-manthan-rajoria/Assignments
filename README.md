@@ -109,6 +109,18 @@ This is a Academy Goal Management Repo. <br>
 
 - [Zoo Management](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20002%20-%20Basics/Assignment%20002%20-%20C%23%20OOP)
 
+- [Partial Classes](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20003%20-%20Intermediate%201/Assignment%20001%20-%20Partial%20Classes/Assignment.md)
+
+- [Generics](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20003%20-%20Intermediate%201/Assignment%20002%20-%20Generics)
+
+- [Extension Methods](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20003%20-%20Intermediate%201/Assignment%20003%20-%20Extension%20Methods)
+
+- [Delegates](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20003%20-%20Intermediate%201/Assignment%20004%20-%20Delegates)
+
+- [Anonymous Methods](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20003%20-%20Intermediate%201/Assignment%20005%20-%20Anonymous%20Methods)
+
+- [MetaUser](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20005%20-%20ASP.NET%20MVC/Assignment%20001%20-%20Introduction)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
