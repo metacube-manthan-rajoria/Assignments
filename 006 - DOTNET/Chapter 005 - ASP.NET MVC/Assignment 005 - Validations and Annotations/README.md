@@ -8,7 +8,3 @@
 ### Links
 
 - [ASP.NET Documentation](https://www.asp.net/mvc)
-
-### Docs
-
-- [How to get started with MVC](./Docs/GetStarted.md)
