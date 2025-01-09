@@ -121,6 +121,8 @@ This is a Academy Goal Management Repo. <br>
 
 - [MetaUser](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20005%20-%20ASP.NET%20MVC/Assignment%20001%20-%20Introduction)
 
+- [Friendly (Models, Views, Controller, Validation, Application)](https://github.com/metacube-manthan-rajoria/Friendly)
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
