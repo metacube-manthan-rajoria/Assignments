@@ -1,7 +1,7 @@
 # ASP.NET Exception Handling
 
 - [Assignment (Annotated Markdown File)](./Assignment.md)
-- [Project Link]()
+- [Project Link](https://github.com/metacube-manthan-rajoria/Friendly)
 
 ### Links
 
