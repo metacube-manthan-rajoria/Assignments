@@ -123,7 +123,7 @@ This is a Academy Goal Management Repo. <br>
 
 - [Friendly (Models, Views, Controller, Validation, Application, Exception Handling)](https://github.com/metacube-manthan-rajoria/Friendly)
 
-- [Friendly (Garbage Collection)](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20004%20-%20Intermediate%202/Assignment%20002%20-%20Garbage%20Collection)
+- [Garbage Collection](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20004%20-%20Intermediate%202/Assignment%20002%20-%20Garbage%20Collection)
 
 - [Data Serialization](https://github.com/metacube-manthan-rajoria/EmployeeSerializer)
 
