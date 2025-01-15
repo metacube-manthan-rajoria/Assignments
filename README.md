@@ -123,6 +123,14 @@ This is a Academy Goal Management Repo. <br>
 
 - [Friendly (Models, Views, Controller, Validation, Application)](https://github.com/metacube-manthan-rajoria/Friendly)
 
+- [Exception Handling]()
+
+- [Friendly (Garbage Collection)](https://github.com/metacube-manthan-rajoria/Friendly)
+
+- [Data Serialization]()
+
+- [Reflection]()
+
 </details>
 
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
