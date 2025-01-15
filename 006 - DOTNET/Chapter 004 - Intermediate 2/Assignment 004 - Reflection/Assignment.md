@@ -1,0 +1,1 @@
+Iterate through any simple class having properties, methods and display each member, its access modifier and other useful information via Reflection.
