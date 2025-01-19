@@ -134,14 +134,14 @@ This is a Academy Goal Management Repo. <br>
 ### Extra
 
 <details open>
-<summary>Projects</summary>
+<summary>🤖 Projects</summary>
 
 - [Bookworm](https://github.com/metacube-manthan-rajoria/Bookworm)
   
 </details>
 
 <details open>
-<summary>Miscellaneous</summary>
+<summary>🎃 Miscellaneous</summary>
 
 - [Backups](https://github.com/metacube-manthan-rajoria/Extras)
 
