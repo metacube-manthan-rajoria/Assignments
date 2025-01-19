@@ -131,6 +131,26 @@ This is a Academy Goal Management Repo. <br>
 
 </details>
 
+### Extra
+
+<details open>
+<summary>Projects</summary>
+
+- [Bookworm](https://github.com/metacube-manthan-rajoria/Bookworm)
+  
+</details>
+
+<details open>
+<summary>Miscellaneous</summary>
+
+- [Backups](https://github.com/metacube-manthan-rajoria/Extras)
+
+- [Slides](https://github.com/metacube-manthan-rajoria/Slides)
+
+- [Libraries](https://github.com/metacube-manthan-rajoria/Libraries)
+
+</details>
+
 ![](https://github.com/Gamedemons/Gamedemons/blob/main/Resources/waxline.png)
 
 <p align="center">
