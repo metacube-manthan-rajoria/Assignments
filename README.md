@@ -127,7 +127,9 @@ This is a Academy Goal Management Repo. <br>
 
 - [Data Serialization](https://github.com/metacube-manthan-rajoria/EmployeeSerializer)
 
-- [Reflection]()
+- [Reflection](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20004%20-%20Intermediate%202/Assignment%20004%20-%20Reflection/ReflectionConsole)
+
+- [SQL Server 1](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20006%20-%20SQL%20Server%201)
 
 </details>
 
