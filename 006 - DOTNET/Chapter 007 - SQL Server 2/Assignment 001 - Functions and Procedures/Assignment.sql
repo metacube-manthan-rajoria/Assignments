@@ -35,6 +35,3 @@ END
 
 -- Using Procedure
 EXEC updateBookReturnDate @id = 15, @date = '2025-01-20';
-
-
-

@@ -38,14 +38,14 @@ CREATE PROCEDURE updateBookReturnDate @id INT, @date DATE
 AS
 BEGIN
 	DECLARE @valid INT
-	SELECT @valid = [dbo].[checkBookDate](BorrowDate, @date) FROM Borrowing WHERE BorrowID = @id
+	SELECT @valid = [dbo].[checkBookDate](BorrowDate, @date) FROM #demoTempTable WHERE BorrowID = @id
 	IF @valid = 1
 		BEGIN
-			UPDATE Borrowing SET ReturnDate = @date WHERE BorrowID = @id
+			UPDATE #demoTempTable SET ReturnDate = @date WHERE BorrowID = @id
 		END
 	ELSE
 		BEGIN
-			UPDATE Borrowing SET ReturnDate = null WHERE BorrowID = @id
+			UPDATE #demoTempTable SET ReturnDate = null WHERE BorrowID = @id
 		END
 END
 
