@@ -12,15 +12,12 @@ BEGIN
 END
 
 
-
-
 BEGIN TRY
 	SELECT * FROM randomTable;
 END TRY
 BEGIN CATCH
 	PRINT "We ran into an error"
 END CATCH 
-
 
 
 WHILE (
