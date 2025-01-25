@@ -131,6 +131,26 @@ This is a Academy Goal Management Repo. <br>
 
 - [SQL Server 1](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20006%20-%20SQL%20Server%201)
 
+- [SQL Functions and Procedures](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20001%20-%20Functions%20and%20Procedures)
+
+- [SQL Temp Tables](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20002%20-%20Temp%20Table)
+
+- [SQL CTE](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20003%20-%20CTE)
+
+- [SQL Cursors](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20004%20-%20Cursors)
+
+- [SQL Ranking Functions](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20005%20-%20Ranking%20Functions)
+
+- [SQL Control Flow Keywords](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20006%20-%20Control%20Flow%20Keywords)
+
+- [SQL Aggregate Functions](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20007%20-%20SQL%20Server%202/Assignment%20007%20-%20Aggregate%20Functions)
+
+- [SQL Data Client](https://github.com/metacube-manthan-rajoria/Bookworm/tree/f9da16eae80c1a33fcd9f7e2a9098674f9fe34c2)
+
+- [ADO.NET Basics](https://github.com/metacube-manthan-rajoria/Bookworm/tree/f9da16eae80c1a33fcd9f7e2a9098674f9fe34c2)
+
+- [System.Data Namespace](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20002%20-%20System.Data%20Namespace)
+
 </details>
 
 ### Extra
