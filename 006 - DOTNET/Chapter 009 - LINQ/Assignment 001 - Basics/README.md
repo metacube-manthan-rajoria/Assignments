@@ -4,6 +4,8 @@
 
 - [Assignment(Annotated Markdown File)](./Assignment.md)
 
+- [Solution](./Solution.md)
+
 ### Links
 
 - [LINQ Overview - Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/csharp/linq/)
