@@ -4,7 +4,7 @@
 
 - [Assignment(Annotated Markdown File)](./Assignment.md)
 
-- [Project Link]()
+- [Project Link](./LinqSqlConsole/LinqSqlConsole/)
 
 ### Links
 
