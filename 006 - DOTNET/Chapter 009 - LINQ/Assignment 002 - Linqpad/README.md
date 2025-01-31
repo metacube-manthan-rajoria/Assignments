@@ -4,8 +4,6 @@
 
 - [Assignment(Annotated Markdown File)](./Assignment.md)
 
-- [Project Link]()
-
 ### Links
 
 - [LinqPad - Microsoft Docs](https://www.linqpad.net/)
