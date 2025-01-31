@@ -149,7 +149,25 @@ This is a Academy Goal Management Repo. <br>
 
 - [ADO.NET Basics](https://github.com/metacube-manthan-rajoria/Bookworm/tree/f9da16eae80c1a33fcd9f7e2a9098674f9fe34c2)
 
-- [System.Data Namespace](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20002%20-%20System.Data%20Namespace)
+- [ADO.NET System.Data Namespace](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20002%20-%20System.Data%20Namespace)
+
+- [ADO.NET Accessing Data in Connected Environment](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20003%20-%20Accessing%20Data%20in%20Connected%20Environment)
+
+- [ADO.NET Accessing Data in Disconnected Environment](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20004%20-%20Accessing%20Data%20in%20Disconnected%20Environment)
+
+- [ADO.NET Stored Procedure](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20005%20-%20Stored%20Procedure)
+
+- [ADO.NET Transactions](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20008%20-%20ADO.NET/Assignment%20006%20-%20Transactions)
+
+- [LINQ Basics](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20001%20-%20Basics)
+
+- [LINQ Query Operator](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20003%20-%20Query%20Operator)
+
+- [LINQ to Objects](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20004%20-%20LINQ%20to%20Objects)
+
+- [LINQ to XML](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20005%20-%20LINQ%20to%20XML)
+
+- [LINQ to SQL](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20006%20-%20LINQ%20to%20SQL)
 
 </details>
 
