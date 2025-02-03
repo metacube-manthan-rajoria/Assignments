@@ -4,8 +4,10 @@ ASP.NET supports two approaches for API
 - Controller Based API
 - Minimal API
 
-[!Note]
-The design of minimal APIs hides the host class by default and focuses on configuration and extensibility via extension methods that take functions as lambda expressions. Controllers are classes that can take dependencies via constructor injection or property injection, and generally follow object-oriented patterns. Minimal APIs support dependency injection through other approaches such as accessing the service provider.
+> [!Note]
+> The design of minimal APIs hides the host class by default and focuses on configuration and extensibility via extension methods that take functions as lambda
+> expressions. Controllers are classes that can take dependencies via constructor injection or property injection, and generally follow object-oriented patterns.
+> Minimal APIs support dependency injection through other approaches such as accessing the service provider.
 
 > Minimal API's do not have some functionality provided with Controller Based API
 
