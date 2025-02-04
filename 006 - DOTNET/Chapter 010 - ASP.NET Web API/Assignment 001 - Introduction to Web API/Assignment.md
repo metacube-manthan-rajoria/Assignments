@@ -1,13 +1,16 @@
 # Assignment
 
+API stands for Application Programming Interface. It is a set of rules that tell us how to interact and communicate with a software.
+
+API's work on request and response model. The client sends a request, which is processed and a response is sent.
+
 ASP.NET supports two approaches for API
 - Controller Based API
 - Minimal API
 
 > [!Note]
 > The design of minimal APIs hides the host class by default and focuses on configuration and extensibility via extension methods that take functions as lambda
-> expressions. Controllers are classes that can take dependencies via constructor injection or property injection, and generally follow object-oriented patterns.
-> Minimal APIs support dependency injection through other approaches such as accessing the service provider.
+> expressions.
 
 > Minimal API's do not have some functionality provided with Controller Based API
 
