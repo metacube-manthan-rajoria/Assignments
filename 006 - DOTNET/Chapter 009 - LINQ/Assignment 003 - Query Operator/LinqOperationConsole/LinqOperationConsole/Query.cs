@@ -4,7 +4,7 @@ namespace LinqOperationConsole;
 
 public class Query {
     public static void SelectOddNumbers(){
-        int[] numbers = [ 0, 1, 2, 3, 4, 5, 6 ];
+        List<int> numbers = new List<int>(){ 0, 1, 2, 3, 4, 5, 6 };
 
         var numQuery = 
                     from num in numbers
