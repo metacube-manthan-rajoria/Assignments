@@ -169,6 +169,21 @@ This is a Academy Goal Management Repo. <br>
 
 - [LINQ to SQL](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20009%20-%20LINQ/Assignment%20006%20-%20LINQ%20to%20SQL)
 
+
+- [Web API - Introduction to Web Api](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20001%20-%20Introduction%20to%20Web%20API)
+
+- [Web API - Web and HTTP](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20002%20-%20Web%20and%20HTTP)
+
+- [Web API - Model Binding and Validation](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20003%20-%20Model%20Binding%20and%20Validation)
+
+- [Web API - Media Formatter](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20004%20-%20Media%20Formatters)
+
+- [Web API - Routing](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20005%20-%20Routing)
+
+- [Web API - Hosting](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20006%20-%20Hosting)
+
+- [Web API - Consuming API using jQuery](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20007%20-%20Consuming%20Web%20API)
+
 </details>
 
 ### Extra
