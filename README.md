@@ -100,7 +100,7 @@ This is a Academy Goal Management Repo. <br>
 
 </details>
 
-<details open>
+<details>
 <summary>🥅 <b>.NET</b></summary>
 
 - [Fundamentals of .NET](https://github.com/metacube-manthan-rajoria/Assignments/blob/main/006%20-%20DOTNET/Chapter%20001%20-%20Introduction/Assignment%20001%20-%20Fundamentals%20of%20.NET/Assignment.md)
@@ -183,6 +183,23 @@ This is a Academy Goal Management Repo. <br>
 - [Web API - Hosting](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20006%20-%20Hosting)
 
 - [Web API - Consuming API using jQuery](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/006%20-%20DOTNET/Chapter%20010%20-%20ASP.NET%20Web%20API/Assignment%20007%20-%20Consuming%20Web%20API)
+
+</details>
+
+<details open>
+<summary>🪟 <b>Windows Service</b></summary>
+
+- [Understanding Windows Service]()
+
+- [Creating Windows Service]()
+
+- [Setting Properties]()
+
+- [Compile, Run and Install Services]()
+
+- [Event Log Services]()
+
+- [Debug Windows Services]()
 
 </details>
 
