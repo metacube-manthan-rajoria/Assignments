@@ -189,17 +189,17 @@ This is a Academy Goal Management Repo. <br>
 <details open>
 <summary>🪟 <b>Windows Service</b></summary>
 
-- [Understanding Windows Service]()
+- [Understanding Windows Service](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20001%20-%20Understanding%20Windows%20Service)
 
-- [Creating Windows Service]()
+- [Creating Windows Service](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20002%20-%20Creating%20Windows%20Service)
 
-- [Setting Properties]()
+- [Setting Properties](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20003%20-%20Setting%20Properties)
 
-- [Compile, Run and Install Services]()
+- [Compile, Run and Install Services](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20004%20-%20Compile%2C%20Run%20and%20Install%20Services)
 
-- [Event Log Services]()
+- [Event Log Services](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20005%20-%20Event%20Log%20Services)
 
-- [Debug Windows Services]()
+- [Debug Windows Services](https://github.com/metacube-manthan-rajoria/Assignments/tree/main/007%20-%20Windows%20Service/Chapter%20006%20-%20Debug%20Windows%20Services)
 
 </details>
 
