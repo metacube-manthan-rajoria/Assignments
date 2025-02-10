@@ -1,6 +1,10 @@
 # Hosting
 
-[Project Link]()
+Run the publish command below in terminal to build the Api
+
+```bash
+dotnet publish -c Release -o ./publish
+```
 
 ### Links
 
