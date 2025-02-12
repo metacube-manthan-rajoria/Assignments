@@ -13,15 +13,15 @@ We can change many properties of our service.
 
 The Service Name is a unique identifier for the service within the Windows operating system. It is used by the system to manage the service and is typically not user-friendly.
 
-<br>
+<hr>
 
 The Display Name is a more user-friendly name that is shown in the Windows Services management console (services.msc) and other user interfaces.
 
-<br>
+<hr>
 
 Description is a brief summary about the service.
 
-<br>
+<hr>
 
 StartType tells us how the service will start(auto, manual) etc.
 
