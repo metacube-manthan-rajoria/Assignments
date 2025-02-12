@@ -8,3 +8,4 @@
 ### Links
 
 - [ASP.NET Documentation](https://www.asp.net/mvc)
+- [Action Filters - Microsoft Docs](https://www.c-sharpcorner.com/article/action-filters-in-asp-net-core/)
