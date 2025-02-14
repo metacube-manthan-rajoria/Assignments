@@ -1,6 +1,6 @@
 # Event Log Services
 
-[Assignment](./Assignment.md)
+Log text to event viewer
 
 ### Links
 
